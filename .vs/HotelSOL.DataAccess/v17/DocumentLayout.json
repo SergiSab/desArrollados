@@ -1,189 +1,192 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\HotelSOL\\",
+  "WorkspaceRootPath": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DCD37750-4A22-4E2B-9FDE-5C4344D9EB7F}|HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj|d:\\hotelsol\\hotelsol1.formsapp\\hotelsol1.formsapp\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Administrator\\AppData\\Local\\Temp\\9bdb1bb9-87c7-4014-b0bd-f080438c0a8c_HotelSOL (3).zip.HotelSOL (3).zip\\HotelSOL\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DCD37750-4A22-4E2B-9FDE-5C4344D9EB7F}|HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj|c:\\users\\administrator\\onedrive\\escritorio\\uni\\producto2capadatos(p59)_diazrisso_ingrid\\desarrollados\\hotelsol1.formsapp\\hotelsol1.formsapp\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{DCD37750-4A22-4E2B-9FDE-5C4344D9EB7F}|HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj|solutionrelative:hotelsol1.formsapp\\hotelsol1.formsapp\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DCD37750-4A22-4E2B-9FDE-5C4344D9EB7F}|HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj|d:\\hotelsol\\hotelsol1.formsapp\\hotelsol1.formsapp\\hotelsol1.formsapp.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "AbsoluteMoniker": "D:0:0:{DCD37750-4A22-4E2B-9FDE-5C4344D9EB7F}|HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj|C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\hotelsol1.formsapp\\hotelsol1.formsapp\\hotelsol1.formsapp.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{DCD37750-4A22-4E2B-9FDE-5C4344D9EB7F}|HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj|solutionrelative:hotelsol1.formsapp\\hotelsol1.formsapp\\hotelsol1.formsapp.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DCD37750-4A22-4E2B-9FDE-5C4344D9EB7F}|HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj|d:\\hotelsol\\hotelsol1.formsapp\\hotelsol1.formsapp\\habitacionform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{DCD37750-4A22-4E2B-9FDE-5C4344D9EB7F}|HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj|C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\hotelsol1.formsapp\\hotelsol1.formsapp\\habitacionform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DCD37750-4A22-4E2B-9FDE-5C4344D9EB7F}|HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj|solutionrelative:hotelsol1.formsapp\\hotelsol1.formsapp\\habitacionform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9663FCC9-33E3-4E11-97B9-097014E49C79}|HotelSOL.DataAccess\\HotelSOL.DataAccess.csproj|d:\\hotelsol\\hotelsol.dataaccess\\service\\habitacionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9663FCC9-33E3-4E11-97B9-097014E49C79}|HotelSOL.DataAccess\\HotelSOL.DataAccess.csproj|C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\hotelsol.dataaccess\\service\\habitacionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9663FCC9-33E3-4E11-97B9-097014E49C79}|HotelSOL.DataAccess\\HotelSOL.DataAccess.csproj|solutionrelative:hotelsol.dataaccess\\service\\habitacionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9663FCC9-33E3-4E11-97B9-097014E49C79}|HotelSOL.DataAccess\\HotelSOL.DataAccess.csproj|d:\\hotelsol\\hotelsol.dataaccess\\models\\tipohabitacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9663FCC9-33E3-4E11-97B9-097014E49C79}|HotelSOL.DataAccess\\HotelSOL.DataAccess.csproj|C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\hotelsol.dataaccess\\models\\tipohabitacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9663FCC9-33E3-4E11-97B9-097014E49C79}|HotelSOL.DataAccess\\HotelSOL.DataAccess.csproj|solutionrelative:hotelsol.dataaccess\\models\\tipohabitacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9663FCC9-33E3-4E11-97B9-097014E49C79}|HotelSOL.DataAccess\\HotelSOL.DataAccess.csproj|d:\\hotelsol\\hotelsol.dataaccess\\models\\habitacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9663FCC9-33E3-4E11-97B9-097014E49C79}|HotelSOL.DataAccess\\HotelSOL.DataAccess.csproj|C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\hotelsol.dataaccess\\models\\habitacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9663FCC9-33E3-4E11-97B9-097014E49C79}|HotelSOL.DataAccess\\HotelSOL.DataAccess.csproj|solutionrelative:hotelsol.dataaccess\\models\\habitacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DCD37750-4A22-4E2B-9FDE-5C4344D9EB7F}|HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj|D:\\HotelSOL\\hotelsol1.formsapp\\hotelsol1.formsapp\\habitacionform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{DCD37750-4A22-4E2B-9FDE-5C4344D9EB7F}|HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj|C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\hotelsol1.formsapp\\hotelsol1.formsapp\\habitacionform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{DCD37750-4A22-4E2B-9FDE-5C4344D9EB7F}|HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj|solutionrelative:hotelsol1.formsapp\\hotelsol1.formsapp\\habitacionform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DCD37750-4A22-4E2B-9FDE-5C4344D9EB7F}|HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj|d:\\hotelsol\\hotelsol1.formsapp\\hotelsol1.formsapp\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{DCD37750-4A22-4E2B-9FDE-5C4344D9EB7F}|HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj|C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\hotelsol1.formsapp\\hotelsol1.formsapp\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DCD37750-4A22-4E2B-9FDE-5C4344D9EB7F}|HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj|solutionrelative:hotelsol1.formsapp\\hotelsol1.formsapp\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DCD37750-4A22-4E2B-9FDE-5C4344D9EB7F}|HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj|d:\\hotelsol\\hotelsol1.formsapp\\hotelsol1.formsapp\\habitacionform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{DCD37750-4A22-4E2B-9FDE-5C4344D9EB7F}|HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj|C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\hotelsol1.formsapp\\hotelsol1.formsapp\\habitacionform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DCD37750-4A22-4E2B-9FDE-5C4344D9EB7F}|HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj|solutionrelative:hotelsol1.formsapp\\hotelsol1.formsapp\\habitacionform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DCD37750-4A22-4E2B-9FDE-5C4344D9EB7F}|HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj|d:\\hotelsol\\hotelsol1.formsapp\\hotelsol1.formsapp\\generarfacturaform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{DCD37750-4A22-4E2B-9FDE-5C4344D9EB7F}|HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj|C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\hotelsol1.formsapp\\hotelsol1.formsapp\\generarfacturaform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DCD37750-4A22-4E2B-9FDE-5C4344D9EB7F}|HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj|solutionrelative:hotelsol1.formsapp\\hotelsol1.formsapp\\generarfacturaform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DCD37750-4A22-4E2B-9FDE-5C4344D9EB7F}|HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj|D:\\HotelSOL\\hotelsol1.formsapp\\hotelsol1.formsapp\\generarfacturaform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{DCD37750-4A22-4E2B-9FDE-5C4344D9EB7F}|HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj|C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\hotelsol1.formsapp\\hotelsol1.formsapp\\generarfacturaform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{DCD37750-4A22-4E2B-9FDE-5C4344D9EB7F}|HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj|solutionrelative:hotelsol1.formsapp\\hotelsol1.formsapp\\generarfacturaform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DCD37750-4A22-4E2B-9FDE-5C4344D9EB7F}|HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj|d:\\hotelsol\\hotelsol1.formsapp\\hotelsol1.formsapp\\crearreservafrom.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{DCD37750-4A22-4E2B-9FDE-5C4344D9EB7F}|HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj|C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\hotelsol1.formsapp\\hotelsol1.formsapp\\crearreservafrom.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DCD37750-4A22-4E2B-9FDE-5C4344D9EB7F}|HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj|solutionrelative:hotelsol1.formsapp\\hotelsol1.formsapp\\crearreservafrom.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DCD37750-4A22-4E2B-9FDE-5C4344D9EB7F}|HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj|d:\\hotelsol\\hotelsol1.formsapp\\hotelsol1.formsapp\\crearreservafrom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{DCD37750-4A22-4E2B-9FDE-5C4344D9EB7F}|HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj|C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\hotelsol1.formsapp\\hotelsol1.formsapp\\crearreservafrom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DCD37750-4A22-4E2B-9FDE-5C4344D9EB7F}|HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj|solutionrelative:hotelsol1.formsapp\\hotelsol1.formsapp\\crearreservafrom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DCD37750-4A22-4E2B-9FDE-5C4344D9EB7F}|HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj|D:\\HotelSOL\\hotelsol1.formsapp\\hotelsol1.formsapp\\crearreservafrom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{DCD37750-4A22-4E2B-9FDE-5C4344D9EB7F}|HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj|C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\hotelsol1.formsapp\\hotelsol1.formsapp\\crearreservafrom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{DCD37750-4A22-4E2B-9FDE-5C4344D9EB7F}|HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj|solutionrelative:hotelsol1.formsapp\\hotelsol1.formsapp\\crearreservafrom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9663FCC9-33E3-4E11-97B9-097014E49C79}|HotelSOL.DataAccess\\HotelSOL.DataAccess.csproj|d:\\hotelsol\\hotelsol.dataaccess\\models\\pago.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9663FCC9-33E3-4E11-97B9-097014E49C79}|HotelSOL.DataAccess\\HotelSOL.DataAccess.csproj|C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\hotelsol.dataaccess\\models\\pago.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9663FCC9-33E3-4E11-97B9-097014E49C79}|HotelSOL.DataAccess\\HotelSOL.DataAccess.csproj|solutionrelative:hotelsol.dataaccess\\models\\pago.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9663FCC9-33E3-4E11-97B9-097014E49C79}|HotelSOL.DataAccess\\HotelSOL.DataAccess.csproj|d:\\hotelsol\\hotelsol.dataaccess\\models\\reserva.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9663FCC9-33E3-4E11-97B9-097014E49C79}|HotelSOL.DataAccess\\HotelSOL.DataAccess.csproj|C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\hotelsol.dataaccess\\models\\reserva.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9663FCC9-33E3-4E11-97B9-097014E49C79}|HotelSOL.DataAccess\\HotelSOL.DataAccess.csproj|solutionrelative:hotelsol.dataaccess\\models\\reserva.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9663FCC9-33E3-4E11-97B9-097014E49C79}|HotelSOL.DataAccess\\HotelSOL.DataAccess.csproj|d:\\hotelsol\\hotelsol.dataaccess\\models\\reservahabitaciones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9663FCC9-33E3-4E11-97B9-097014E49C79}|HotelSOL.DataAccess\\HotelSOL.DataAccess.csproj|C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\hotelsol.dataaccess\\models\\reservahabitaciones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9663FCC9-33E3-4E11-97B9-097014E49C79}|HotelSOL.DataAccess\\HotelSOL.DataAccess.csproj|solutionrelative:hotelsol.dataaccess\\models\\reservahabitaciones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9663FCC9-33E3-4E11-97B9-097014E49C79}|HotelSOL.DataAccess\\HotelSOL.DataAccess.csproj|d:\\hotelsol\\hotelsol.dataaccess\\models\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9663FCC9-33E3-4E11-97B9-097014E49C79}|HotelSOL.DataAccess\\HotelSOL.DataAccess.csproj|C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\hotelsol.dataaccess\\models\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9663FCC9-33E3-4E11-97B9-097014E49C79}|HotelSOL.DataAccess\\HotelSOL.DataAccess.csproj|solutionrelative:hotelsol.dataaccess\\models\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9663FCC9-33E3-4E11-97B9-097014E49C79}|HotelSOL.DataAccess\\HotelSOL.DataAccess.csproj|d:\\hotelsol\\hotelsol.dataaccess\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9663FCC9-33E3-4E11-97B9-097014E49C79}|HotelSOL.DataAccess\\HotelSOL.DataAccess.csproj|C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\hotelsol.dataaccess\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9663FCC9-33E3-4E11-97B9-097014E49C79}|HotelSOL.DataAccess\\HotelSOL.DataAccess.csproj|solutionrelative:hotelsol.dataaccess\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9663FCC9-33E3-4E11-97B9-097014E49C79}|HotelSOL.DataAccess\\HotelSOL.DataAccess.csproj|d:\\hotelsol\\hotelsol.dataaccess\\models\\servicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9663FCC9-33E3-4E11-97B9-097014E49C79}|HotelSOL.DataAccess\\HotelSOL.DataAccess.csproj|C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\hotelsol.dataaccess\\models\\servicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9663FCC9-33E3-4E11-97B9-097014E49C79}|HotelSOL.DataAccess\\HotelSOL.DataAccess.csproj|solutionrelative:hotelsol.dataaccess\\models\\servicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9663FCC9-33E3-4E11-97B9-097014E49C79}|HotelSOL.DataAccess\\HotelSOL.DataAccess.csproj|d:\\hotelsol\\hotelsol.dataaccess\\service\\clienteservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9663FCC9-33E3-4E11-97B9-097014E49C79}|HotelSOL.DataAccess\\HotelSOL.DataAccess.csproj|C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\hotelsol.dataaccess\\service\\clienteservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9663FCC9-33E3-4E11-97B9-097014E49C79}|HotelSOL.DataAccess\\HotelSOL.DataAccess.csproj|solutionrelative:hotelsol.dataaccess\\service\\clienteservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9663FCC9-33E3-4E11-97B9-097014E49C79}|HotelSOL.DataAccess\\HotelSOL.DataAccess.csproj|d:\\hotelsol\\hotelsol.dataaccess\\service\\servicioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9663FCC9-33E3-4E11-97B9-097014E49C79}|HotelSOL.DataAccess\\HotelSOL.DataAccess.csproj|C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\hotelsol.dataaccess\\service\\servicioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9663FCC9-33E3-4E11-97B9-097014E49C79}|HotelSOL.DataAccess\\HotelSOL.DataAccess.csproj|solutionrelative:hotelsol.dataaccess\\service\\servicioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9663FCC9-33E3-4E11-97B9-097014E49C79}|HotelSOL.DataAccess\\HotelSOL.DataAccess.csproj|d:\\hotelsol\\hotelsol.dataaccess\\service\\pagoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9663FCC9-33E3-4E11-97B9-097014E49C79}|HotelSOL.DataAccess\\HotelSOL.DataAccess.csproj|C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\hotelsol.dataaccess\\service\\pagoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9663FCC9-33E3-4E11-97B9-097014E49C79}|HotelSOL.DataAccess\\HotelSOL.DataAccess.csproj|solutionrelative:hotelsol.dataaccess\\service\\pagoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9663FCC9-33E3-4E11-97B9-097014E49C79}|HotelSOL.DataAccess\\HotelSOL.DataAccess.csproj|d:\\hotelsol\\hotelsol.dataaccess\\service\\reservaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9663FCC9-33E3-4E11-97B9-097014E49C79}|HotelSOL.DataAccess\\HotelSOL.DataAccess.csproj|C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\hotelsol.dataaccess\\service\\reservaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9663FCC9-33E3-4E11-97B9-097014E49C79}|HotelSOL.DataAccess\\HotelSOL.DataAccess.csproj|solutionrelative:hotelsol.dataaccess\\service\\reservaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9663FCC9-33E3-4E11-97B9-097014E49C79}|HotelSOL.DataAccess\\HotelSOL.DataAccess.csproj|d:\\hotelsol\\hotelsol.dataaccess\\service\\facturaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9663FCC9-33E3-4E11-97B9-097014E49C79}|HotelSOL.DataAccess\\HotelSOL.DataAccess.csproj|C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\hotelsol.dataaccess\\service\\facturaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9663FCC9-33E3-4E11-97B9-097014E49C79}|HotelSOL.DataAccess\\HotelSOL.DataAccess.csproj|solutionrelative:hotelsol.dataaccess\\service\\facturaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9663FCC9-33E3-4E11-97B9-097014E49C79}|HotelSOL.DataAccess\\HotelSOL.DataAccess.csproj|d:\\hotelsol\\hotelsol.dataaccess\\service\\usarioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9663FCC9-33E3-4E11-97B9-097014E49C79}|HotelSOL.DataAccess\\HotelSOL.DataAccess.csproj|C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\hotelsol.dataaccess\\service\\usarioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9663FCC9-33E3-4E11-97B9-097014E49C79}|HotelSOL.DataAccess\\HotelSOL.DataAccess.csproj|solutionrelative:hotelsol.dataaccess\\service\\usarioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9663FCC9-33E3-4E11-97B9-097014E49C79}|HotelSOL.DataAccess\\HotelSOL.DataAccess.csproj|d:\\hotelsol\\hotelsol.dataaccess\\models\\incidencia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9663FCC9-33E3-4E11-97B9-097014E49C79}|HotelSOL.DataAccess\\HotelSOL.DataAccess.csproj|C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\hotelsol.dataaccess\\models\\incidencia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9663FCC9-33E3-4E11-97B9-097014E49C79}|HotelSOL.DataAccess\\HotelSOL.DataAccess.csproj|solutionrelative:hotelsol.dataaccess\\models\\incidencia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9663FCC9-33E3-4E11-97B9-097014E49C79}|HotelSOL.DataAccess\\HotelSOL.DataAccess.csproj|d:\\hotelsol\\hotelsol.dataaccess\\models\\factura.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9663FCC9-33E3-4E11-97B9-097014E49C79}|HotelSOL.DataAccess\\HotelSOL.DataAccess.csproj|C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\hotelsol.dataaccess\\models\\factura.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9663FCC9-33E3-4E11-97B9-097014E49C79}|HotelSOL.DataAccess\\HotelSOL.DataAccess.csproj|solutionrelative:hotelsol.dataaccess\\models\\factura.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9663FCC9-33E3-4E11-97B9-097014E49C79}|HotelSOL.DataAccess\\HotelSOL.DataAccess.csproj|d:\\hotelsol\\hotelsol.dataaccess\\dbcontext\\hotelsolcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9663FCC9-33E3-4E11-97B9-097014E49C79}|HotelSOL.DataAccess\\HotelSOL.DataAccess.csproj|C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\hotelsol.dataaccess\\dbcontext\\hotelsolcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9663FCC9-33E3-4E11-97B9-097014E49C79}|HotelSOL.DataAccess\\HotelSOL.DataAccess.csproj|solutionrelative:hotelsol.dataaccess\\dbcontext\\hotelsolcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DCD37750-4A22-4E2B-9FDE-5C4344D9EB7F}|HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj|d:\\hotelsol\\hotelsol1.formsapp\\hotelsol1.formsapp\\menuprincipalform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{DCD37750-4A22-4E2B-9FDE-5C4344D9EB7F}|HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj|C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\hotelsol1.formsapp\\hotelsol1.formsapp\\menuprincipalform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DCD37750-4A22-4E2B-9FDE-5C4344D9EB7F}|HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj|solutionrelative:hotelsol1.formsapp\\hotelsol1.formsapp\\menuprincipalform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DCD37750-4A22-4E2B-9FDE-5C4344D9EB7F}|HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj|d:\\hotelsol\\hotelsol1.formsapp\\hotelsol1.formsapp\\verreservasform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{DCD37750-4A22-4E2B-9FDE-5C4344D9EB7F}|HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj|C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\hotelsol1.formsapp\\hotelsol1.formsapp\\verreservasform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DCD37750-4A22-4E2B-9FDE-5C4344D9EB7F}|HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj|solutionrelative:hotelsol1.formsapp\\hotelsol1.formsapp\\verreservasform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DCD37750-4A22-4E2B-9FDE-5C4344D9EB7F}|HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj|d:\\hotelsol\\hotelsol1.formsapp\\hotelsol1.formsapp\\verreservasform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{DCD37750-4A22-4E2B-9FDE-5C4344D9EB7F}|HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj|C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\hotelsol1.formsapp\\hotelsol1.formsapp\\verreservasform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DCD37750-4A22-4E2B-9FDE-5C4344D9EB7F}|HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj|solutionrelative:hotelsol1.formsapp\\hotelsol1.formsapp\\verreservasform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DCD37750-4A22-4E2B-9FDE-5C4344D9EB7F}|HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj|d:\\hotelsol\\hotelsol1.formsapp\\hotelsol1.formsapp\\registrarusuarioform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{DCD37750-4A22-4E2B-9FDE-5C4344D9EB7F}|HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj|C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\hotelsol1.formsapp\\hotelsol1.formsapp\\registrarusuarioform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DCD37750-4A22-4E2B-9FDE-5C4344D9EB7F}|HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj|solutionrelative:hotelsol1.formsapp\\hotelsol1.formsapp\\registrarusuarioform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DCD37750-4A22-4E2B-9FDE-5C4344D9EB7F}|HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj|d:\\hotelsol\\hotelsol1.formsapp\\hotelsol1.formsapp\\registrarusuarioform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{DCD37750-4A22-4E2B-9FDE-5C4344D9EB7F}|HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj|C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\hotelsol1.formsapp\\hotelsol1.formsapp\\registrarusuarioform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DCD37750-4A22-4E2B-9FDE-5C4344D9EB7F}|HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj|solutionrelative:hotelsol1.formsapp\\hotelsol1.formsapp\\registrarusuarioform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DCD37750-4A22-4E2B-9FDE-5C4344D9EB7F}|HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj|d:\\hotelsol\\hotelsol1.formsapp\\hotelsol1.formsapp\\registrarclienteform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{DCD37750-4A22-4E2B-9FDE-5C4344D9EB7F}|HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj|C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\hotelsol1.formsapp\\hotelsol1.formsapp\\registrarclienteform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DCD37750-4A22-4E2B-9FDE-5C4344D9EB7F}|HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj|solutionrelative:hotelsol1.formsapp\\hotelsol1.formsapp\\registrarclienteform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DCD37750-4A22-4E2B-9FDE-5C4344D9EB7F}|HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj|d:\\hotelsol\\hotelsol1.formsapp\\hotelsol1.formsapp\\pagoform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{DCD37750-4A22-4E2B-9FDE-5C4344D9EB7F}|HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj|C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\hotelsol1.formsapp\\hotelsol1.formsapp\\pagoform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DCD37750-4A22-4E2B-9FDE-5C4344D9EB7F}|HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj|solutionrelative:hotelsol1.formsapp\\hotelsol1.formsapp\\pagoform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DCD37750-4A22-4E2B-9FDE-5C4344D9EB7F}|HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj|D:\\HotelSOL\\hotelsol1.formsapp\\hotelsol1.formsapp\\registrarclienteform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{DCD37750-4A22-4E2B-9FDE-5C4344D9EB7F}|HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj|C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\hotelsol1.formsapp\\hotelsol1.formsapp\\registrarclienteform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{DCD37750-4A22-4E2B-9FDE-5C4344D9EB7F}|HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj|solutionrelative:hotelsol1.formsapp\\hotelsol1.formsapp\\registrarclienteform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DCD37750-4A22-4E2B-9FDE-5C4344D9EB7F}|HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj|d:\\hotelsol\\hotelsol1.formsapp\\hotelsol1.formsapp\\pagoform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{DCD37750-4A22-4E2B-9FDE-5C4344D9EB7F}|HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj|C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\hotelsol1.formsapp\\hotelsol1.formsapp\\pagoform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DCD37750-4A22-4E2B-9FDE-5C4344D9EB7F}|HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj|solutionrelative:hotelsol1.formsapp\\hotelsol1.formsapp\\pagoform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DCD37750-4A22-4E2B-9FDE-5C4344D9EB7F}|HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj|D:\\HotelSOL\\hotelsol1.formsapp\\hotelsol1.formsapp\\pagoform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{DCD37750-4A22-4E2B-9FDE-5C4344D9EB7F}|HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj|C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\hotelsol1.formsapp\\hotelsol1.formsapp\\pagoform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{DCD37750-4A22-4E2B-9FDE-5C4344D9EB7F}|HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj|solutionrelative:hotelsol1.formsapp\\hotelsol1.formsapp\\pagoform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DCD37750-4A22-4E2B-9FDE-5C4344D9EB7F}|HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj|d:\\hotelsol\\hotelsol1.formsapp\\hotelsol1.formsapp\\loginform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{DCD37750-4A22-4E2B-9FDE-5C4344D9EB7F}|HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj|C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\hotelsol1.formsapp\\hotelsol1.formsapp\\loginform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DCD37750-4A22-4E2B-9FDE-5C4344D9EB7F}|HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj|solutionrelative:hotelsol1.formsapp\\hotelsol1.formsapp\\loginform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DCD37750-4A22-4E2B-9FDE-5C4344D9EB7F}|HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj|D:\\HotelSOL\\hotelsol1.formsapp\\hotelsol1.formsapp\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{DCD37750-4A22-4E2B-9FDE-5C4344D9EB7F}|HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj|C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\hotelsol1.formsapp\\hotelsol1.formsapp\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{DCD37750-4A22-4E2B-9FDE-5C4344D9EB7F}|HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj|solutionrelative:hotelsol1.formsapp\\hotelsol1.formsapp\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DCD37750-4A22-4E2B-9FDE-5C4344D9EB7F}|HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj|d:\\hotelsol\\hotelsol1.formsapp\\hotelsol1.formsapp\\generarfacturaform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{DCD37750-4A22-4E2B-9FDE-5C4344D9EB7F}|HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj|C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\hotelsol1.formsapp\\hotelsol1.formsapp\\generarfacturaform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DCD37750-4A22-4E2B-9FDE-5C4344D9EB7F}|HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj|solutionrelative:hotelsol1.formsapp\\hotelsol1.formsapp\\generarfacturaform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DCD37750-4A22-4E2B-9FDE-5C4344D9EB7F}|HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj|D:\\HotelSOL\\hotelsol1.formsapp\\hotelsol1.formsapp\\menuprincipalform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{DCD37750-4A22-4E2B-9FDE-5C4344D9EB7F}|HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj|C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\hotelsol1.formsapp\\hotelsol1.formsapp\\menuprincipalform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{DCD37750-4A22-4E2B-9FDE-5C4344D9EB7F}|HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj|solutionrelative:hotelsol1.formsapp\\hotelsol1.formsapp\\menuprincipalform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DCD37750-4A22-4E2B-9FDE-5C4344D9EB7F}|HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj|D:\\HotelSOL\\hotelsol1.formsapp\\hotelsol1.formsapp\\registrarusuarioform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{DCD37750-4A22-4E2B-9FDE-5C4344D9EB7F}|HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj|C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\hotelsol1.formsapp\\hotelsol1.formsapp\\registrarusuarioform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{DCD37750-4A22-4E2B-9FDE-5C4344D9EB7F}|HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj|solutionrelative:hotelsol1.formsapp\\hotelsol1.formsapp\\registrarusuarioform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DCD37750-4A22-4E2B-9FDE-5C4344D9EB7F}|HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj|D:\\HotelSOL\\hotelsol1.formsapp\\hotelsol1.formsapp\\verreservasform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{DCD37750-4A22-4E2B-9FDE-5C4344D9EB7F}|HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj|C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\hotelsol1.formsapp\\hotelsol1.formsapp\\verreservasform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{DCD37750-4A22-4E2B-9FDE-5C4344D9EB7F}|HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj|solutionrelative:hotelsol1.formsapp\\hotelsol1.formsapp\\verreservasform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DCD37750-4A22-4E2B-9FDE-5C4344D9EB7F}|HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj|D:\\HotelSOL\\hotelsol1.formsapp\\hotelsol1.formsapp\\generarfacturaform.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}",
+      "AbsoluteMoniker": "D:0:0:{DCD37750-4A22-4E2B-9FDE-5C4344D9EB7F}|HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj|C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\hotelsol1.formsapp\\hotelsol1.formsapp\\generarfacturaform.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}",
       "RelativeMoniker": "D:0:0:{DCD37750-4A22-4E2B-9FDE-5C4344D9EB7F}|HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj|solutionrelative:hotelsol1.formsapp\\hotelsol1.formsapp\\generarfacturaform.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}"
     }
   ],
@@ -194,11 +197,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 0,
           "Children": [
             {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Administrator\\AppData\\Local\\Temp\\9bdb1bb9-87c7-4014-b0bd-f080438c0a8c_HotelSOL (3).zip.HotelSOL (3).zip\\HotelSOL\\appsettings.json",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\AppData\\Local\\Temp\\9bdb1bb9-87c7-4014-b0bd-f080438c0a8c_HotelSOL (3).zip.HotelSOL (3).zip\\HotelSOL\\appsettings.json",
+              "ToolTip": "C:\\Users\\Administrator\\AppData\\Local\\Temp\\9bdb1bb9-87c7-4014-b0bd-f080438c0a8c_HotelSOL (3).zip.HotelSOL (3).zip\\HotelSOL\\appsettings.json [Solo lectura]",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\AppData\\Local\\Temp\\9bdb1bb9-87c7-4014-b0bd-f080438c0a8c_HotelSOL (3).zip.HotelSOL (3).zip\\HotelSOL\\appsettings.json [Solo lectura]",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-05-21T20:00:10.996Z",
+              "EditorCaption": " [Solo lectura]"
+            },
+            {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
             },
             {
               "$type": "Bookmark",
@@ -209,71 +225,60 @@
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "appsettings.json",
-              "DocumentMoniker": "D:\\HotelSOL\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\appsettings.json",
               "RelativeDocumentMoniker": "HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\appsettings.json",
-              "ToolTip": "D:\\HotelSOL\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\appsettings.json",
+              "ToolTip": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\appsettings.json",
               "RelativeToolTip": "HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2025-05-21T19:04:24.975Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "HotelSOL1.FormsAPP",
-              "DocumentMoniker": "D:\\HotelSOL\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj",
+              "DocumentIndex": 2,
+              "Title": "HotelSOL1.FormsAPP.csproj",
+              "DocumentMoniker": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj",
               "RelativeDocumentMoniker": "HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj",
-              "ToolTip": "D:\\HotelSOL\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj",
-              "RelativeToolTip": "HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAKAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj*",
+              "RelativeToolTip": "HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj*",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2025-05-21T19:00:35.373Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "HabitacionForm.cs [Design]",
-              "DocumentMoniker": "D:\\HotelSOL\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HabitacionForm.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HabitacionForm.cs",
               "RelativeDocumentMoniker": "HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HabitacionForm.cs",
               "ToolTip": "D:\\HotelSOL\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HabitacionForm.cs [Design]",
-              "RelativeToolTip": "HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HabitacionForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T21:33:14.416Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-05-20T21:33:14.416Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "HabitacionForm.cs",
-              "DocumentMoniker": "D:\\HotelSOL\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HabitacionForm.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HabitacionForm.cs",
               "RelativeDocumentMoniker": "HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HabitacionForm.cs",
-              "ToolTip": "D:\\HotelSOL\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HabitacionForm.cs",
+              "ToolTip": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HabitacionForm.cs",
               "RelativeToolTip": "HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HabitacionForm.cs",
               "ViewState": "AgIAAFQAAAAAAAAAAAAAAFcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T21:33:16.644Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T21:33:16.644Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "Habitacion.cs",
-              "DocumentMoniker": "D:\\HotelSOL\\HotelSOL.DataAccess\\Models\\Habitacion.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\HotelSOL.DataAccess\\Models\\Habitacion.cs",
               "RelativeDocumentMoniker": "HotelSOL.DataAccess\\Models\\Habitacion.cs",
-              "ToolTip": "D:\\HotelSOL\\HotelSOL.DataAccess\\Models\\Habitacion.cs",
+              "ToolTip": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\HotelSOL.DataAccess\\Models\\Habitacion.cs",
               "RelativeToolTip": "HotelSOL.DataAccess\\Models\\Habitacion.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -281,11 +286,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "TipoHabitacion.cs",
-              "DocumentMoniker": "D:\\HotelSOL\\HotelSOL.DataAccess\\Models\\TipoHabitacion.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\HotelSOL.DataAccess\\Models\\TipoHabitacion.cs",
               "RelativeDocumentMoniker": "HotelSOL.DataAccess\\Models\\TipoHabitacion.cs",
-              "ToolTip": "D:\\HotelSOL\\HotelSOL.DataAccess\\Models\\TipoHabitacion.cs",
+              "ToolTip": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\HotelSOL.DataAccess\\Models\\TipoHabitacion.cs",
               "RelativeToolTip": "HotelSOL.DataAccess\\Models\\TipoHabitacion.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -293,11 +298,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "HabitacionService.cs",
-              "DocumentMoniker": "D:\\HotelSOL\\HotelSOL.DataAccess\\Service\\HabitacionService.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\HotelSOL.DataAccess\\Service\\HabitacionService.cs",
               "RelativeDocumentMoniker": "HotelSOL.DataAccess\\Service\\HabitacionService.cs",
-              "ToolTip": "D:\\HotelSOL\\HotelSOL.DataAccess\\Service\\HabitacionService.cs",
+              "ToolTip": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\HotelSOL.DataAccess\\Service\\HabitacionService.cs",
               "RelativeToolTip": "HotelSOL.DataAccess\\Service\\HabitacionService.cs",
               "ViewState": "AQIAACoAAAAAAAAAAAAowH4AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -305,24 +310,23 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "LoginForm.cs",
-              "DocumentMoniker": "D:\\HotelSOL\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\LoginForm.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\LoginForm.cs",
               "RelativeDocumentMoniker": "HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\LoginForm.cs",
-              "ToolTip": "D:\\HotelSOL\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\LoginForm.cs",
+              "ToolTip": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\LoginForm.cs",
               "RelativeToolTip": "HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\LoginForm.cs",
               "ViewState": "AQIAACkAAAAAAAAAAAAgwBYAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T21:34:17.902Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T21:34:17.902Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "HabitacionForm.Designer.cs",
-              "DocumentMoniker": "D:\\HotelSOL\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HabitacionForm.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HabitacionForm.Designer.cs",
               "RelativeDocumentMoniker": "HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HabitacionForm.Designer.cs",
-              "ToolTip": "D:\\HotelSOL\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HabitacionForm.Designer.cs",
+              "ToolTip": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HabitacionForm.Designer.cs",
               "RelativeToolTip": "HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HabitacionForm.Designer.cs",
               "ViewState": "AQIAAKMAAAAAAAAAAAAkwMEAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -330,74 +334,67 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "GenerarFacturaForm.cs",
-              "DocumentMoniker": "D:\\HotelSOL\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\GenerarFacturaForm.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\GenerarFacturaForm.cs",
               "RelativeDocumentMoniker": "HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\GenerarFacturaForm.cs",
-              "ToolTip": "D:\\HotelSOL\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\GenerarFacturaForm.cs",
+              "ToolTip": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\GenerarFacturaForm.cs",
               "RelativeToolTip": "HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\GenerarFacturaForm.cs",
               "ViewState": "AQIAABMAAAAAAAAAAAAQwCUAAAAVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-19T18:13:21.828Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "GenerarFacturaForm.cs [Dise\u00F1o]",
-              "DocumentMoniker": "D:\\HotelSOL\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\GenerarFacturaForm.cs",
-              "RelativeDocumentMoniker": "HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\GenerarFacturaForm.cs",
-              "ToolTip": "D:\\HotelSOL\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\GenerarFacturaForm.cs [Dise\u00F1o]",
-              "RelativeToolTip": "HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\GenerarFacturaForm.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-19T18:13:17.193Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "WhenOpened": "2025-05-19T18:13:21.828Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 11,
-              "Title": "CrearReservaFrom.Designer.cs",
-              "DocumentMoniker": "D:\\HotelSOL\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\CrearReservaFrom.Designer.cs",
-              "RelativeDocumentMoniker": "HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\CrearReservaFrom.Designer.cs",
-              "ToolTip": "D:\\HotelSOL\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\CrearReservaFrom.Designer.cs",
-              "RelativeToolTip": "HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\CrearReservaFrom.Designer.cs",
-              "ViewState": "AQIAABYAAAAAAAAAAAAgwJYAAAAAAAAA",
+              "Title": "GenerarFacturaForm.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\GenerarFacturaForm.cs",
+              "RelativeDocumentMoniker": "HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\GenerarFacturaForm.cs",
+              "ToolTip": "D:\\HotelSOL\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\GenerarFacturaForm.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T22:15:58.258Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-19T18:13:17.193Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 12,
-              "Title": "CrearReservaFrom.cs",
-              "DocumentMoniker": "D:\\HotelSOL\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\CrearReservaFrom.cs",
-              "RelativeDocumentMoniker": "HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\CrearReservaFrom.cs",
-              "ToolTip": "D:\\HotelSOL\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\CrearReservaFrom.cs",
-              "RelativeToolTip": "HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\CrearReservaFrom.cs",
-              "ViewState": "AQIAACoAAAAAAAAAAAAYwIcAAAAAAAAA",
+              "Title": "CrearReservaFrom.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\CrearReservaFrom.Designer.cs",
+              "RelativeDocumentMoniker": "HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\CrearReservaFrom.Designer.cs",
+              "ToolTip": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\CrearReservaFrom.Designer.cs",
+              "RelativeToolTip": "HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\CrearReservaFrom.Designer.cs",
+              "ViewState": "AQIAABYAAAAAAAAAAAAgwJYAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T15:38:36.284Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T22:15:58.258Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 13,
-              "Title": "CrearReservaFrom.cs [Dise\u00F1o]",
-              "DocumentMoniker": "D:\\HotelSOL\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\CrearReservaFrom.cs",
+              "Title": "CrearReservaFrom.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\CrearReservaFrom.cs",
               "RelativeDocumentMoniker": "HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\CrearReservaFrom.cs",
-              "ToolTip": "D:\\HotelSOL\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\CrearReservaFrom.cs [Dise\u00F1o]",
-              "RelativeToolTip": "HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\CrearReservaFrom.cs [Dise\u00F1o]",
+              "ToolTip": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\CrearReservaFrom.cs",
+              "RelativeToolTip": "HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\CrearReservaFrom.cs",
+              "ViewState": "AQIAACoAAAAAAAAAAAAYwIcAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T21:29:45.05Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "WhenOpened": "2025-05-20T15:38:36.284Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 14,
+              "Title": "CrearReservaFrom.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\CrearReservaFrom.cs",
+              "RelativeDocumentMoniker": "HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\CrearReservaFrom.cs",
+              "ToolTip": "D:\\HotelSOL\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\CrearReservaFrom.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T21:29:45.05Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
               "Title": "Pago.cs",
-              "DocumentMoniker": "D:\\HotelSOL\\HotelSOL.DataAccess\\Models\\Pago.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\HotelSOL.DataAccess\\Models\\Pago.cs",
               "RelativeDocumentMoniker": "HotelSOL.DataAccess\\Models\\Pago.cs",
-              "ToolTip": "D:\\HotelSOL\\HotelSOL.DataAccess\\Models\\Pago.cs",
+              "ToolTip": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\HotelSOL.DataAccess\\Models\\Pago.cs",
               "RelativeToolTip": "HotelSOL.DataAccess\\Models\\Pago.cs",
               "ViewState": "AQIAAAMAAAAAAAAAAAAAABYAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -405,11 +402,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "Reserva.cs",
-              "DocumentMoniker": "D:\\HotelSOL\\HotelSOL.DataAccess\\Models\\Reserva.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\HotelSOL.DataAccess\\Models\\Reserva.cs",
               "RelativeDocumentMoniker": "HotelSOL.DataAccess\\Models\\Reserva.cs",
-              "ToolTip": "D:\\HotelSOL\\HotelSOL.DataAccess\\Models\\Reserva.cs",
+              "ToolTip": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\HotelSOL.DataAccess\\Models\\Reserva.cs",
               "RelativeToolTip": "HotelSOL.DataAccess\\Models\\Reserva.cs",
               "ViewState": "AQIAAAsAAAAAAAAAAAAAwBkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -417,11 +414,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "ReservaHabitaciones.cs",
-              "DocumentMoniker": "D:\\HotelSOL\\HotelSOL.DataAccess\\Models\\ReservaHabitaciones.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\HotelSOL.DataAccess\\Models\\ReservaHabitaciones.cs",
               "RelativeDocumentMoniker": "HotelSOL.DataAccess\\Models\\ReservaHabitaciones.cs",
-              "ToolTip": "D:\\HotelSOL\\HotelSOL.DataAccess\\Models\\ReservaHabitaciones.cs",
+              "ToolTip": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\HotelSOL.DataAccess\\Models\\ReservaHabitaciones.cs",
               "RelativeToolTip": "HotelSOL.DataAccess\\Models\\ReservaHabitaciones.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -429,11 +426,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "Cliente.cs",
-              "DocumentMoniker": "D:\\HotelSOL\\HotelSOL.DataAccess\\Models\\Cliente.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\HotelSOL.DataAccess\\Models\\Cliente.cs",
               "RelativeDocumentMoniker": "HotelSOL.DataAccess\\Models\\Cliente.cs",
-              "ToolTip": "D:\\HotelSOL\\HotelSOL.DataAccess\\Models\\Cliente.cs",
+              "ToolTip": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\HotelSOL.DataAccess\\Models\\Cliente.cs",
               "RelativeToolTip": "HotelSOL.DataAccess\\Models\\Cliente.cs",
               "ViewState": "AQIAAAUAAAAAAAAAAAAxwBkAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -441,11 +438,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "Usuario.cs",
-              "DocumentMoniker": "D:\\HotelSOL\\HotelSOL.DataAccess\\Models\\Usuario.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\HotelSOL.DataAccess\\Models\\Usuario.cs",
               "RelativeDocumentMoniker": "HotelSOL.DataAccess\\Models\\Usuario.cs",
-              "ToolTip": "D:\\HotelSOL\\HotelSOL.DataAccess\\Models\\Usuario.cs",
+              "ToolTip": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\HotelSOL.DataAccess\\Models\\Usuario.cs",
               "RelativeToolTip": "HotelSOL.DataAccess\\Models\\Usuario.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -453,11 +450,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "Servicio.cs",
-              "DocumentMoniker": "D:\\HotelSOL\\HotelSOL.DataAccess\\Models\\Servicio.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\HotelSOL.DataAccess\\Models\\Servicio.cs",
               "RelativeDocumentMoniker": "HotelSOL.DataAccess\\Models\\Servicio.cs",
-              "ToolTip": "D:\\HotelSOL\\HotelSOL.DataAccess\\Models\\Servicio.cs",
+              "ToolTip": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\HotelSOL.DataAccess\\Models\\Servicio.cs",
               "RelativeToolTip": "HotelSOL.DataAccess\\Models\\Servicio.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -465,11 +462,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "ClienteService.cs",
-              "DocumentMoniker": "D:\\HotelSOL\\HotelSOL.DataAccess\\Service\\ClienteService.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\HotelSOL.DataAccess\\Service\\ClienteService.cs",
               "RelativeDocumentMoniker": "HotelSOL.DataAccess\\Service\\ClienteService.cs",
-              "ToolTip": "D:\\HotelSOL\\HotelSOL.DataAccess\\Service\\ClienteService.cs",
+              "ToolTip": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\HotelSOL.DataAccess\\Service\\ClienteService.cs",
               "RelativeToolTip": "HotelSOL.DataAccess\\Service\\ClienteService.cs",
               "ViewState": "AQIAAA0AAAAAAAAAAAAQwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -477,11 +474,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "ServicioService.cs",
-              "DocumentMoniker": "D:\\HotelSOL\\HotelSOL.DataAccess\\Service\\ServicioService.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\HotelSOL.DataAccess\\Service\\ServicioService.cs",
               "RelativeDocumentMoniker": "HotelSOL.DataAccess\\Service\\ServicioService.cs",
-              "ToolTip": "D:\\HotelSOL\\HotelSOL.DataAccess\\Service\\ServicioService.cs",
+              "ToolTip": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\HotelSOL.DataAccess\\Service\\ServicioService.cs",
               "RelativeToolTip": "HotelSOL.DataAccess\\Service\\ServicioService.cs",
               "ViewState": "AQIAAAkAAAAAAAAAAAAAACIAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -489,11 +486,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "PagoService.cs",
-              "DocumentMoniker": "D:\\HotelSOL\\HotelSOL.DataAccess\\Service\\PagoService.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\HotelSOL.DataAccess\\Service\\PagoService.cs",
               "RelativeDocumentMoniker": "HotelSOL.DataAccess\\Service\\PagoService.cs",
-              "ToolTip": "D:\\HotelSOL\\HotelSOL.DataAccess\\Service\\PagoService.cs",
+              "ToolTip": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\HotelSOL.DataAccess\\Service\\PagoService.cs",
               "RelativeToolTip": "HotelSOL.DataAccess\\Service\\PagoService.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -501,11 +498,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 24,
               "Title": "ReservaService.cs",
-              "DocumentMoniker": "D:\\HotelSOL\\HotelSOL.DataAccess\\Service\\ReservaService.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\HotelSOL.DataAccess\\Service\\ReservaService.cs",
               "RelativeDocumentMoniker": "HotelSOL.DataAccess\\Service\\ReservaService.cs",
-              "ToolTip": "D:\\HotelSOL\\HotelSOL.DataAccess\\Service\\ReservaService.cs",
+              "ToolTip": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\HotelSOL.DataAccess\\Service\\ReservaService.cs",
               "RelativeToolTip": "HotelSOL.DataAccess\\Service\\ReservaService.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -513,11 +510,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 26,
               "Title": "UsarioService.cs",
-              "DocumentMoniker": "D:\\HotelSOL\\HotelSOL.DataAccess\\Service\\UsarioService.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\HotelSOL.DataAccess\\Service\\UsarioService.cs",
               "RelativeDocumentMoniker": "HotelSOL.DataAccess\\Service\\UsarioService.cs",
-              "ToolTip": "D:\\HotelSOL\\HotelSOL.DataAccess\\Service\\UsarioService.cs",
+              "ToolTip": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\HotelSOL.DataAccess\\Service\\UsarioService.cs",
               "RelativeToolTip": "HotelSOL.DataAccess\\Service\\UsarioService.cs",
               "ViewState": "AQIAABgAAAAAAAAAAAAYwEsAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -525,11 +522,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 25,
               "Title": "FacturaService.cs",
-              "DocumentMoniker": "D:\\HotelSOL\\HotelSOL.DataAccess\\Service\\FacturaService.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\HotelSOL.DataAccess\\Service\\FacturaService.cs",
               "RelativeDocumentMoniker": "HotelSOL.DataAccess\\Service\\FacturaService.cs",
-              "ToolTip": "D:\\HotelSOL\\HotelSOL.DataAccess\\Service\\FacturaService.cs",
+              "ToolTip": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\HotelSOL.DataAccess\\Service\\FacturaService.cs",
               "RelativeToolTip": "HotelSOL.DataAccess\\Service\\FacturaService.cs",
               "ViewState": "AQIAAAYAAAAAAAAAAAAAAHQAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -537,11 +534,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 27,
               "Title": "Incidencia.cs",
-              "DocumentMoniker": "D:\\HotelSOL\\HotelSOL.DataAccess\\Models\\Incidencia.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\HotelSOL.DataAccess\\Models\\Incidencia.cs",
               "RelativeDocumentMoniker": "HotelSOL.DataAccess\\Models\\Incidencia.cs",
-              "ToolTip": "D:\\HotelSOL\\HotelSOL.DataAccess\\Models\\Incidencia.cs",
+              "ToolTip": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\HotelSOL.DataAccess\\Models\\Incidencia.cs",
               "RelativeToolTip": "HotelSOL.DataAccess\\Models\\Incidencia.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -549,11 +546,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 28,
               "Title": "Factura.cs",
-              "DocumentMoniker": "D:\\HotelSOL\\HotelSOL.DataAccess\\Models\\Factura.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\HotelSOL.DataAccess\\Models\\Factura.cs",
               "RelativeDocumentMoniker": "HotelSOL.DataAccess\\Models\\Factura.cs",
-              "ToolTip": "D:\\HotelSOL\\HotelSOL.DataAccess\\Models\\Factura.cs",
+              "ToolTip": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\HotelSOL.DataAccess\\Models\\Factura.cs",
               "RelativeToolTip": "HotelSOL.DataAccess\\Models\\Factura.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -561,11 +558,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 29,
               "Title": "HotelSolContext.cs",
-              "DocumentMoniker": "D:\\HotelSOL\\HotelSOL.DataAccess\\DbContext\\HotelSolContext.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\HotelSOL.DataAccess\\DbContext\\HotelSolContext.cs",
               "RelativeDocumentMoniker": "HotelSOL.DataAccess\\DbContext\\HotelSolContext.cs",
-              "ToolTip": "D:\\HotelSOL\\HotelSOL.DataAccess\\DbContext\\HotelSolContext.cs",
+              "ToolTip": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\HotelSOL.DataAccess\\DbContext\\HotelSolContext.cs",
               "RelativeToolTip": "HotelSOL.DataAccess\\DbContext\\HotelSolContext.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -573,114 +570,105 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 30,
               "Title": "MenuPrincipalForm.cs",
-              "DocumentMoniker": "D:\\HotelSOL\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\MenuPrincipalForm.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\MenuPrincipalForm.cs",
               "RelativeDocumentMoniker": "HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\MenuPrincipalForm.cs",
-              "ToolTip": "D:\\HotelSOL\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\MenuPrincipalForm.cs",
+              "ToolTip": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\MenuPrincipalForm.cs",
               "RelativeToolTip": "HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\MenuPrincipalForm.cs",
               "ViewState": "AQIAAKMAAAAAAAAAAAAwwLcAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T15:32:15.583Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "VerReservasForm.Designer.cs",
-              "DocumentMoniker": "D:\\HotelSOL\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\VerReservasForm.Designer.cs",
-              "RelativeDocumentMoniker": "HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\VerReservasForm.Designer.cs",
-              "ToolTip": "D:\\HotelSOL\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\VerReservasForm.Designer.cs",
-              "RelativeToolTip": "HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\VerReservasForm.Designer.cs",
-              "ViewState": "AQIAACoAAAAAAAAAAAAYwDUAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T21:39:55.067Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T15:32:15.583Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 31,
-              "Title": "VerReservasForm.cs",
-              "DocumentMoniker": "D:\\HotelSOL\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\VerReservasForm.cs",
-              "RelativeDocumentMoniker": "HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\VerReservasForm.cs",
-              "ToolTip": "D:\\HotelSOL\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\VerReservasForm.cs",
-              "RelativeToolTip": "HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\VerReservasForm.cs",
-              "ViewState": "AQIAACoAAAAAAAAAAAAYwD0AAAAAAAAA",
+              "Title": "VerReservasForm.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\VerReservasForm.Designer.cs",
+              "RelativeDocumentMoniker": "HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\VerReservasForm.Designer.cs",
+              "ToolTip": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\VerReservasForm.Designer.cs",
+              "RelativeToolTip": "HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\VerReservasForm.Designer.cs",
+              "ViewState": "AQIAACoAAAAAAAAAAAAYwDUAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T21:39:36.63Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T21:39:55.067Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 32,
-              "Title": "RegistrarUsuarioForm.Designer.cs",
-              "DocumentMoniker": "D:\\HotelSOL\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\RegistrarUsuarioForm.Designer.cs",
-              "RelativeDocumentMoniker": "HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\RegistrarUsuarioForm.Designer.cs",
-              "ToolTip": "D:\\HotelSOL\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\RegistrarUsuarioForm.Designer.cs",
-              "RelativeToolTip": "HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\RegistrarUsuarioForm.Designer.cs",
-              "ViewState": "AQIAAEIAAAAAAAAAAAAYwFgAAAAAAAAA",
+              "Title": "VerReservasForm.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\VerReservasForm.cs",
+              "RelativeDocumentMoniker": "HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\VerReservasForm.cs",
+              "ToolTip": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\VerReservasForm.cs",
+              "RelativeToolTip": "HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\VerReservasForm.cs",
+              "ViewState": "AQIAACoAAAAAAAAAAAAYwD0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T21:38:52.61Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T21:39:36.63Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 33,
-              "Title": "RegistrarUsuarioForm.cs",
-              "DocumentMoniker": "D:\\HotelSOL\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\RegistrarUsuarioForm.cs",
-              "RelativeDocumentMoniker": "HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\RegistrarUsuarioForm.cs",
-              "ToolTip": "D:\\HotelSOL\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\RegistrarUsuarioForm.cs",
-              "RelativeToolTip": "HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\RegistrarUsuarioForm.cs",
-              "ViewState": "AQIAACoAAAAAAAAAAAAYwDsAAAABAAAA",
+              "Title": "RegistrarUsuarioForm.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\RegistrarUsuarioForm.Designer.cs",
+              "RelativeDocumentMoniker": "HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\RegistrarUsuarioForm.Designer.cs",
+              "ToolTip": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\RegistrarUsuarioForm.Designer.cs",
+              "RelativeToolTip": "HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\RegistrarUsuarioForm.Designer.cs",
+              "ViewState": "AQIAAEIAAAAAAAAAAAAYwFgAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T21:38:36.66Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T21:38:52.61Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 34,
-              "Title": "RegistrarClienteForm.cs",
-              "DocumentMoniker": "D:\\HotelSOL\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\RegistrarClienteForm.cs",
-              "RelativeDocumentMoniker": "HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\RegistrarClienteForm.cs",
-              "ToolTip": "D:\\HotelSOL\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\RegistrarClienteForm.cs",
-              "RelativeToolTip": "HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\RegistrarClienteForm.cs",
-              "ViewState": "AQIAAEgAAAAAAAAAAAAYwFYAAAAAAAAA",
+              "Title": "RegistrarUsuarioForm.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\RegistrarUsuarioForm.cs",
+              "RelativeDocumentMoniker": "HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\RegistrarUsuarioForm.cs",
+              "ToolTip": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\RegistrarUsuarioForm.cs",
+              "RelativeToolTip": "HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\RegistrarUsuarioForm.cs",
+              "ViewState": "AQIAACoAAAAAAAAAAAAYwDsAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T21:36:04.671Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 36,
-              "Title": "RegistrarClienteForm.cs [Dise\u00F1o]",
-              "DocumentMoniker": "D:\\HotelSOL\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\RegistrarClienteForm.cs",
-              "RelativeDocumentMoniker": "HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\RegistrarClienteForm.cs",
-              "ToolTip": "D:\\HotelSOL\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\RegistrarClienteForm.cs [Dise\u00F1o]",
-              "RelativeToolTip": "HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\RegistrarClienteForm.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T21:36:02.797Z",
-              "EditorCaption": " [Dise\u00F1o]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 39,
-              "Title": "LoginForm.Designer.cs",
-              "DocumentMoniker": "D:\\HotelSOL\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\LoginForm.Designer.cs",
-              "RelativeDocumentMoniker": "HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\LoginForm.Designer.cs",
-              "ToolTip": "D:\\HotelSOL\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\LoginForm.Designer.cs",
-              "RelativeToolTip": "HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\LoginForm.Designer.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T14:29:40.305Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T21:38:36.66Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 35,
+              "Title": "RegistrarClienteForm.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\RegistrarClienteForm.cs",
+              "RelativeDocumentMoniker": "HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\RegistrarClienteForm.cs",
+              "ToolTip": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\RegistrarClienteForm.cs",
+              "RelativeToolTip": "HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\RegistrarClienteForm.cs",
+              "ViewState": "AQIAAEgAAAAAAAAAAAAYwFYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T21:36:04.671Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "RegistrarClienteForm.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\RegistrarClienteForm.cs",
+              "RelativeDocumentMoniker": "HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\RegistrarClienteForm.cs",
+              "ToolTip": "D:\\HotelSOL\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\RegistrarClienteForm.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T21:36:02.797Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "LoginForm.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\LoginForm.Designer.cs",
+              "RelativeDocumentMoniker": "HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\LoginForm.Designer.cs",
+              "ToolTip": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\LoginForm.Designer.cs",
+              "RelativeToolTip": "HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\LoginForm.Designer.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T14:29:40.305Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
               "Title": "PagoForm.Designer.cs",
-              "DocumentMoniker": "D:\\HotelSOL\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\PagoForm.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\PagoForm.Designer.cs",
               "RelativeDocumentMoniker": "HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\PagoForm.Designer.cs",
-              "ToolTip": "D:\\HotelSOL\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\PagoForm.Designer.cs",
+              "ToolTip": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\PagoForm.Designer.cs",
               "RelativeToolTip": "HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\PagoForm.Designer.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -688,33 +676,32 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 41,
               "Title": "LoginForm.cs [Dise\u00F1o]",
-              "DocumentMoniker": "D:\\HotelSOL\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\LoginForm.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\LoginForm.cs",
               "RelativeDocumentMoniker": "HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\LoginForm.cs",
               "ToolTip": "D:\\HotelSOL\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\LoginForm.cs [Dise\u00F1o]",
-              "RelativeToolTip": "HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\LoginForm.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T21:34:16.342Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "WhenOpened": "2025-05-20T21:34:16.342Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 39,
               "Title": "PagoForm.cs [Dise\u00F1o]",
-              "DocumentMoniker": "D:\\HotelSOL\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\PagoForm.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\PagoForm.cs",
               "RelativeDocumentMoniker": "HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\PagoForm.cs",
               "ToolTip": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\HotelSOL\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\PagoForm.cs [Dise\u00F1o]",
+              "RelativeToolTip": "..\\HotelSOL\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\PagoForm.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-20T15:30:49.716Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 38,
               "Title": "PagoForm.cs",
-              "DocumentMoniker": "D:\\HotelSOL\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\PagoForm.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\PagoForm.cs",
               "RelativeDocumentMoniker": "HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\PagoForm.cs",
-              "ToolTip": "D:\\HotelSOL\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\PagoForm.cs",
+              "ToolTip": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\PagoForm.cs",
               "RelativeToolTip": "HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\PagoForm.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -722,64 +709,56 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 42,
               "Title": "GenerarFacturaForm.Designer.cs",
-              "DocumentMoniker": "D:\\HotelSOL\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\GenerarFacturaForm.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\GenerarFacturaForm.Designer.cs",
               "RelativeDocumentMoniker": "HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\GenerarFacturaForm.Designer.cs",
-              "ToolTip": "D:\\HotelSOL\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\GenerarFacturaForm.Designer.cs",
+              "ToolTip": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\GenerarFacturaForm.Designer.cs",
               "RelativeToolTip": "HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\GenerarFacturaForm.Designer.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-19T18:14:10.507Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 43,
-              "Title": "RegistrarUsuarioForm.cs [Dise\u00F1o]",
-              "DocumentMoniker": "D:\\HotelSOL\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\RegistrarUsuarioForm.cs",
-              "RelativeDocumentMoniker": "HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\RegistrarUsuarioForm.cs",
-              "ToolTip": "D:\\HotelSOL\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\RegistrarUsuarioForm.cs [Dise\u00F1o]",
-              "RelativeToolTip": "HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\RegistrarUsuarioForm.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T15:32:27.526Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "WhenOpened": "2025-05-19T18:14:10.507Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 44,
-              "Title": "VerReservasForm.cs [Dise\u00F1o]",
-              "DocumentMoniker": "D:\\HotelSOL\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\VerReservasForm.cs",
-              "RelativeDocumentMoniker": "HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\VerReservasForm.cs",
-              "ToolTip": "D:\\HotelSOL\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\VerReservasForm.cs [Dise\u00F1o]",
-              "RelativeToolTip": "HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\VerReservasForm.cs [Dise\u00F1o]",
+              "Title": "RegistrarUsuarioForm.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\RegistrarUsuarioForm.cs",
+              "RelativeDocumentMoniker": "HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\RegistrarUsuarioForm.cs",
+              "ToolTip": "D:\\HotelSOL\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\RegistrarUsuarioForm.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T15:32:25.486Z",
-              "EditorCaption": " [Dise\u00F1o]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 42,
-              "Title": "MenuPrincipalForm.cs [Dise\u00F1o]",
-              "DocumentMoniker": "D:\\HotelSOL\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\MenuPrincipalForm.cs",
-              "RelativeDocumentMoniker": "HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\MenuPrincipalForm.cs",
-              "ToolTip": "D:\\HotelSOL\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\MenuPrincipalForm.cs [Dise\u00F1o]",
-              "RelativeToolTip": "HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\MenuPrincipalForm.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T15:32:13.884Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "WhenOpened": "2025-05-20T15:32:27.526Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 45,
+              "Title": "VerReservasForm.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\VerReservasForm.cs",
+              "RelativeDocumentMoniker": "HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\VerReservasForm.cs",
+              "ToolTip": "D:\\HotelSOL\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\VerReservasForm.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T15:32:25.486Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "MenuPrincipalForm.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\MenuPrincipalForm.cs",
+              "RelativeDocumentMoniker": "HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\MenuPrincipalForm.cs",
+              "ToolTip": "D:\\HotelSOL\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\MenuPrincipalForm.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T15:32:13.884Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
               "Title": "GenerarFacturaForm.resx",
-              "DocumentMoniker": "D:\\HotelSOL\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\GenerarFacturaForm.resx",
+              "DocumentMoniker": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\GenerarFacturaForm.resx",
               "RelativeDocumentMoniker": "HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\GenerarFacturaForm.resx",
-              "ToolTip": "D:\\HotelSOL\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\GenerarFacturaForm.resx",
+              "ToolTip": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\GenerarFacturaForm.resx",
               "RelativeToolTip": "HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\GenerarFacturaForm.resx",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
-              "WhenOpened": "2025-05-20T14:32:42.743Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T14:32:42.743Z"
             }
           ]
         }

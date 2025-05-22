@@ -48,15 +48,15 @@ namespace HotelSOL1.FormsAPP
             try
             {
                 var factura = facturaService.GenerarFactura(reserva.Id, 0);
-
                 lblMonto.Text = "Monto Total: $" + factura.MontoTotal.ToString("0.00");
-                MessageBox.Show("✅ Factura generada exitosamente!");
+                MessageBox.Show("Factura generada exitosamente!", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("❌ Error generando la factura: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Error generando la factura: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
 
         private void lblFechaEntrada_Click(object sender, EventArgs e)

@@ -137,7 +137,7 @@ namespace HotelSOL1.FormsAPP
             var habitacionService = new HabitacionService(Program.DbContext);
             var reservaService = new ReservaService(Program.DbContext);
 
-            var form = new CrearReservaFrom(clienteService, habitacionService, reservaService);
+            var form = new CrearReservaForm(clienteService, habitacionService, reservaService);
             form.ShowDialog();
         }
 
@@ -151,24 +151,38 @@ namespace HotelSOL1.FormsAPP
 
         private void btnGenerarFactura_Click(object sender, EventArgs e)
         {
-            var facturaService = new FacturaService(Program.DbContext);
             var reservaService = new ReservaService(Program.DbContext);
+            var facturaService = new FacturaService(Program.DbContext);
 
-            // 🔹 Aquí obtienes una reserva específica (puedes obtener el ID desde un TextBox o selección)
-            int reservaId = 1; // Reemplázalo con la lógica para obtener el ID dinámicamente
-            var reserva = reservaService.ObtenerReservaPorId(reservaId); // Método para buscar la reserva
+            // Abre el formulario de reservas para que el usuario elija una
+            var formReservas = new VerReservasForm(reservaService);
+            formReservas.ShowDialog();
 
-            if (reserva == null)
+            if (formReservas.ReservaSeleccionada != null) // Asumiendo que este formulario permite seleccionar una reserva
             {
-                MessageBox.Show("❌ La reserva no existe.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                var reserva = formReservas.ReservaSeleccionada;
+                var formFactura = new GenerarFacturaForm(reserva, facturaService);
+                formFactura.ShowDialog();
             }
-
-            var form = new GenerarFacturaForm(reserva, facturaService); // ✅ Ahora pasamos una reserva válida
-            form.ShowDialog();
+            else
+            {
+                MessageBox.Show("Seleccione una reserva antes de generar la factura.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
-       
+        public HabitacionForm(HabitacionService habitacionService)
+        {
+            InitializeComponent();
+            this.habitacionService = habitacionService;
+
+            // Obtener tipos de habitación desde la base de datos
+            var tiposHabitacion = habitacionService.ObtenerTiposHabitacion()
+                .Select(t => t.Nombre)
+                .ToArray();
+            cmbTipo.Items.AddRange(tiposHabitacion);
+        }
+
+
 
         private void btnExportarOdoo_Click(object sender, EventArgs e)
         {

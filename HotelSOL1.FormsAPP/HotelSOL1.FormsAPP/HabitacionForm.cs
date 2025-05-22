@@ -14,24 +14,35 @@ namespace HotelSOL1.FormsAPP
         {
             InitializeComponent();
             this.habitacionService = habitacionService;
-            cmbTipo.Items.AddRange(new string[] { "Suite", "Doble", "Individual" });
+
+            // Cargar opciones de tipo de habitación desde la base de datos
+            var tiposHabitacion = habitacionService.ObtenerHabitacionesDisponibles()
+                .Select(h => h.TipoHabitacion.Nombre)
+                .Distinct()
+                .ToArray();
+            cmbTipo.Items.AddRange(tiposHabitacion);
         }
 
         private void CargarHabitacion(int habitacionId)
         {
-            habitacionActual = habitacionService.ObtenerHabitacionPorId(habitacionId);
-            if (habitacionActual != null)
+            try
             {
-                cmbTipo.SelectedItem = habitacionActual.TipoHabitacion.Nombre;
-                numCapacidad.Value = habitacionActual.Capacidad;
-                txtPrecio.Text = habitacionActual.TipoHabitacion.PrecioBase.ToString("F2");
-                chkDisponible.Checked = habitacionActual.Disponible;
-                dtpInicio.Value = habitacionActual.FechaInicio;
-                dtpFin.Value = habitacionActual.FechaFin;
+                habitacionActual = habitacionService.ObtenerHabitacionPorId(habitacionId);
+                if (habitacionActual != null)
+                {
+                    cmbTipo.SelectedItem = habitacionActual.TipoHabitacion.Nombre;
+                    numCapacidad.Value = habitacionActual.Capacidad;
+                    chkDisponible.Checked = habitacionActual.Disponible;
+                }
+                else
+                {
+                    LimpiarFormulario();
+                    MessageBox.Show("No se encontró la habitación.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("No se encontró la habitación.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show($"Error al cargar la habitación: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -42,24 +53,31 @@ namespace HotelSOL1.FormsAPP
                 MessageBox.Show("Seleccione un tipo de habitación.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            var tipoHabitacion = habitacionService.ObtenerTipoHabitacionPorNombre(cmbTipo.SelectedItem.ToString());
-            if (tipoHabitacion == null)
+
+            try
             {
-                MessageBox.Show("Tipo de habitación no válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                var tipoHabitacion = habitacionService.ObtenerTipoHabitacionPorNombre(cmbTipo.SelectedItem.ToString());
+                if (tipoHabitacion == null)
+                {
+                    MessageBox.Show("Tipo de habitación no válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                var nuevaHabitacion = new Habitacion
+                {
+                    TipoId = tipoHabitacion.Id,
+                    Capacidad = (int)numCapacidad.Value,
+                    Disponible = chkDisponible.Checked
+                };
+
+                habitacionService.AgregarHabitacion(nuevaHabitacion);
+                MessageBox.Show("Habitación registrada correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LimpiarFormulario();
             }
-            var nuevaHabitacion = new Habitacion
+            catch (Exception ex)
             {
-                TipoId = tipoHabitacion.Id, // Asigna el ID correcto
-                Capacidad = (int)numCapacidad.Value,
-                Disponible = chkDisponible.Checked,
-                FechaInicio = dtpInicio.Value,
-                FechaFin = dtpFin.Value
-                // Se pueden asignar otras propiedades como Número, etc.
-            };
-            habitacionService.AgregarHabitacion(nuevaHabitacion);
-            MessageBox.Show("Habitación registrada correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            this.Close();
+                MessageBox.Show($"Error al guardar la habitación: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
@@ -69,8 +87,23 @@ namespace HotelSOL1.FormsAPP
                 MessageBox.Show("Seleccione una habitación para modificar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            bool resultado = habitacionService.ModificarHabitacion(habitacionActual.Id, cmbTipo.SelectedItem.ToString(), chkDisponible.Checked);
-            MessageBox.Show(resultado ? "Habitación modificada correctamente." : "Error al modificar la habitación.");
+
+            try
+            {
+                var tipoHabitacion = habitacionService.ObtenerTipoHabitacionPorNombre(cmbTipo.SelectedItem.ToString());
+                if (tipoHabitacion == null)
+                {
+                    MessageBox.Show("Tipo de habitación no válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                bool resultado = habitacionService.ModificarHabitacion(habitacionActual.Id, tipoHabitacion.Nombre, chkDisponible.Checked);
+                MessageBox.Show(resultado ? "Habitación modificada correctamente." : "Error al modificar la habitación.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al modificar la habitación: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -80,8 +113,23 @@ namespace HotelSOL1.FormsAPP
                 MessageBox.Show("Seleccione una habitación para eliminar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            bool resultado = habitacionService.EliminarHabitacion(habitacionActual.Id);
-            MessageBox.Show(resultado ? "Habitación eliminada correctamente." : "No se puede eliminar esta habitación.");
+
+            try
+            {
+                bool resultado = habitacionService.EliminarHabitacion(habitacionActual.Id);
+                MessageBox.Show(resultado ? "Habitación eliminada correctamente." : "No se puede eliminar esta habitación.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al eliminar la habitación: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void LimpiarFormulario()
+        {
+            cmbTipo.SelectedIndex = -1;
+            numCapacidad.Value = 1;
+            chkDisponible.Checked = false;
         }
     }
 }
