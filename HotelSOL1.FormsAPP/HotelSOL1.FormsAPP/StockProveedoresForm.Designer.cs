@@ -98,6 +98,7 @@
             btnVolverProv.Size = new Size(220, 50);
             btnVolverProv.TabIndex = 8;
             btnVolverProv.Text = "Volver";
+            btnVolverProv.Click += btnVolverProv_Click;
             // 
             // StockProveedoresForm
             // 
