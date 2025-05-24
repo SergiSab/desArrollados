@@ -9,7 +9,7 @@ namespace HotelSOL1.FormsAPP
     {
         private readonly FacturaService facturaService;
         private readonly Reserva reserva;
-        private Usuario usuarioAutenticado;
+        private readonly Usuario usuarioAutenticado;
 
         public GenerarFacturaForm(Reserva reserva , FacturaService facturaService)
         {

@@ -10,6 +10,7 @@ namespace HotelSOL1.FormsAPP
     internal static class Program
     {
         public static HotelSolContext DbContext { get; private set; } = null!;
+        public static Usuario UsuarioAutenticado{ get; private set; } = null!;
 
 
         /// <summary>
