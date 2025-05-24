@@ -19,3 +19,4 @@ namespace HotelSOL.DataAccess.Models
         public ICollection<FacturaProveedor> FacturasProveedores { get; set; } = new List<FacturaProveedor>();
     }
 
+}

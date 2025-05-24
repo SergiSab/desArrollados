@@ -194,5 +194,18 @@ namespace HotelSOL1.FormsAPP
         {
             Application.Exit();
         }
+
+        private void btnContabilidad_Click(object sender, EventArgs e)
+        {
+            var form = new ContabilidadForm();
+            form.ShowDialog();
+        }
+
+        private void btnStockProveedores_Click(object sender, EventArgs e)
+        {
+            
+            var form = new StockProveedoresForm();
+            form.ShowDialog();
+        }
     }
 }

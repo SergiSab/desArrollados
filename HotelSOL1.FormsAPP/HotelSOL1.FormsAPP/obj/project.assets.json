@@ -5004,23 +5004,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Administrator\\.nuget\\packages\\": {},
+    "C:\\Users\\sergi\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\desArrollados\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj",
+      "projectUniqueName": "D:\\HotelSOL\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj",
       "projectName": "HotelSOL1.FormsAPP",
-      "projectPath": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\desArrollados\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj",
-      "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\desArrollados\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\obj\\",
+      "projectPath": "D:\\HotelSOL\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj",
+      "packagesPath": "C:\\Users\\sergi\\.nuget\\packages\\",
+      "outputPath": "D:\\HotelSOL\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\sergi\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -5029,15 +5029,14 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
           "projectReferences": {
-            "C:\\Users\\Administrator\\OneDrive\\Escritorio\\desArrollados\\HotelSOL.DataAccess\\HotelSOL.DataAccess.csproj": {
-              "projectPath": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\desArrollados\\HotelSOL.DataAccess\\HotelSOL.DataAccess.csproj"
+            "D:\\HotelSOL\\HotelSOL.DataAccess\\HotelSOL.DataAccess.csproj": {
+              "projectPath": "D:\\HotelSOL\\HotelSOL.DataAccess\\HotelSOL.DataAccess.csproj"
             }
           }
         }
@@ -5051,7 +5050,8 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      }
+      },
+      "SdkAnalysisLevel": "9.0.300"
     },
     "frameworks": {
       "net8.0-windows7.0": {
@@ -5091,7 +5091,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

@@ -30,11 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StockProveedoresForm));
             pbLogo = new PictureBox();
-            btnRegistrarUsuario = new Button();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
-            button4 = new Button();
+            btnVerStock = new Button();
+            btnVerProveedores = new Button();
+            btnPedidos = new Button();
+            btnAlbaranes = new Button();
+            btnFacturasProveedores = new Button();
             btnVolverProv = new Button();
             ((System.ComponentModel.ISupportInitialize)pbLogo).BeginInit();
             SuspendLayout();
@@ -50,45 +50,46 @@
             pbLogo.TabIndex = 2;
             pbLogo.TabStop = false;
             // 
-            // btnRegistrarUsuario
+            // btnVerStock
             // 
-            btnRegistrarUsuario.Location = new Point(96, 217);
-            btnRegistrarUsuario.Name = "btnRegistrarUsuario";
-            btnRegistrarUsuario.Size = new Size(220, 50);
-            btnRegistrarUsuario.TabIndex = 3;
-            btnRegistrarUsuario.Text = "Ver Stock";
+            btnVerStock.Location = new Point(96, 217);
+            btnVerStock.Name = "btnVerStock";
+            btnVerStock.Size = new Size(220, 50);
+            btnVerStock.TabIndex = 3;
+            btnVerStock.Text = "Ver Stock";
+            btnVerStock.Click += btnVerStock_Click;
             // 
-            // button1
+            // btnVerProveedores
             // 
-            button1.Location = new Point(612, 217);
-            button1.Name = "button1";
-            button1.Size = new Size(220, 50);
-            button1.TabIndex = 4;
-            button1.Text = "Ver proveedores";
+            btnVerProveedores.Location = new Point(612, 217);
+            btnVerProveedores.Name = "btnVerProveedores";
+            btnVerProveedores.Size = new Size(220, 50);
+            btnVerProveedores.TabIndex = 4;
+            btnVerProveedores.Text = "Ver proveedores";
             // 
-            // button2
+            // btnPedidos
             // 
-            button2.Location = new Point(96, 295);
-            button2.Name = "button2";
-            button2.Size = new Size(220, 50);
-            button2.TabIndex = 5;
-            button2.Text = "Pedidos";
+            btnPedidos.Location = new Point(96, 295);
+            btnPedidos.Name = "btnPedidos";
+            btnPedidos.Size = new Size(220, 50);
+            btnPedidos.TabIndex = 5;
+            btnPedidos.Text = "Pedidos";
             // 
-            // button3
+            // btnAlbaranes
             // 
-            button3.Location = new Point(612, 295);
-            button3.Name = "button3";
-            button3.Size = new Size(220, 50);
-            button3.TabIndex = 6;
-            button3.Text = "Albaranes";
+            btnAlbaranes.Location = new Point(612, 295);
+            btnAlbaranes.Name = "btnAlbaranes";
+            btnAlbaranes.Size = new Size(220, 50);
+            btnAlbaranes.TabIndex = 6;
+            btnAlbaranes.Text = "Albaranes";
             // 
-            // button4
+            // btnFacturasProveedores
             // 
-            button4.Location = new Point(96, 375);
-            button4.Name = "button4";
-            button4.Size = new Size(220, 50);
-            button4.TabIndex = 7;
-            button4.Text = "Facturas Proveedores";
+            btnFacturasProveedores.Location = new Point(96, 375);
+            btnFacturasProveedores.Name = "btnFacturasProveedores";
+            btnFacturasProveedores.Size = new Size(220, 50);
+            btnFacturasProveedores.TabIndex = 7;
+            btnFacturasProveedores.Text = "Facturas Proveedores";
             // 
             // btnVolverProv
             // 
@@ -106,11 +107,11 @@
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(911, 531);
             Controls.Add(btnVolverProv);
-            Controls.Add(button4);
-            Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(button1);
-            Controls.Add(btnRegistrarUsuario);
+            Controls.Add(btnFacturasProveedores);
+            Controls.Add(btnAlbaranes);
+            Controls.Add(btnPedidos);
+            Controls.Add(btnVerProveedores);
+            Controls.Add(btnVerStock);
             Controls.Add(pbLogo);
             Name = "StockProveedoresForm";
             Text = "StockProveedoresForm";
@@ -121,11 +122,11 @@
         #endregion
 
         private PictureBox pbLogo;
-        private Button btnRegistrarUsuario;
-        private Button button1;
-        private Button button2;
-        private Button button3;
-        private Button button4;
+        private Button btnVerStock;
+        private Button btnVerProveedores;
+        private Button btnPedidos;
+        private Button btnAlbaranes;
+        private Button btnFacturasProveedores;
         private Button btnVolverProv;
     }
 }

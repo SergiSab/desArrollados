@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace HotelSOL1.FormsAPP
 {
-    public partial class StockProveedoresForm : Form
+    public partial class PedidosForm : Form
     {
-        public StockProveedoresForm()
+        public PedidosForm()
         {
             InitializeComponent();
-        }
-
-        private void btnVerStock_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
