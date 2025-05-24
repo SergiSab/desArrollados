@@ -1,9 +1,6 @@
 # Visual Studio
 .vs/
-*.suo
-*.user
-*.userosscache
-*.sln.docstates
+
 
 # Caches de compilación/IDE
 **/DesignTimeBuild/
@@ -11,7 +8,7 @@
 **/*.vsixdb
 **/*.futdcache.v2
 
-# DocumentLayout (auxiliares de VS Designer)
+
 **/DocumentLayout*.json
 
 *.mdf
