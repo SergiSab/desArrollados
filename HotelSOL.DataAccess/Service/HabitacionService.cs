@@ -31,6 +31,10 @@ namespace HotelSOL.DataAccess.Services
         {
             return _context.TiposHabitaciones.FirstOrDefault(t => t.Nombre == nombreTipo);
         }
+        public List<TipoHabitacion> ObtenerTiposHabitacion()
+        {
+            return _context.TiposHabitaciones.ToList();
+        }
 
 
         // 🔹 Agregar una nueva habitación asignando el tipo correctamente

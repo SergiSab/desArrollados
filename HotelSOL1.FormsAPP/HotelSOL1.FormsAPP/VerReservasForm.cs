@@ -9,6 +9,7 @@ namespace HotelSOL1.FormsAPP
     public partial class VerReservasForm : Form
     {
         private readonly ReservaService _reservaService;
+        public Reserva ReservaSeleccionada { get; private set; }
 
         public VerReservasForm(ReservaService reservaService)
         {
@@ -54,8 +55,18 @@ namespace HotelSOL1.FormsAPP
         // Este es el evento para el botón Ver Detalles
         private void btnVerDetalles_Click(object sender, EventArgs e)
         {
-            // Aquí va el código para mostrar los detalles
-            MessageBox.Show("Mostrando detalles de la reserva...");
+            if (dgvReservas.SelectedRows.Count > 0)
+            {
+                int reservaId = Convert.ToInt32(dgvReservas.SelectedRows[0].Cells["Id"].Value);
+                ReservaSeleccionada = _reservaService.ObtenerReservaPorId(reservaId);
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Seleccione una reserva de la lista.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
+
     }
 }

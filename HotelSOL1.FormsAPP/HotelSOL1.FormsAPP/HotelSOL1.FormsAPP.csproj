@@ -29,7 +29,7 @@
 
   <ItemGroup>
 	  <ProjectReference Include="..\..\HotelSOL.DataAccess\HotelSOL.DataAccess.csproj" />
-	  <ProjectReference Include="D:\HotelSOL\HotelSOL.DataAccess\HotelSOL.DataAccess.csproj" />
+	  <ProjectReference Include="C:\Users\Administrator\OneDrive\Escritorio\desArrollados\HotelSOL.DataAccess\HotelSOL.DataAccess.csproj" />
   </ItemGroup>
 
 </Project>

@@ -5010,11 +5010,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj",
+      "projectUniqueName": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\desArrollados\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj",
       "projectName": "HotelSOL1.FormsAPP",
-      "projectPath": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj",
+      "projectPath": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\desArrollados\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj",
       "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\obj\\",
+      "outputPath": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\desArrollados\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -5036,11 +5036,8 @@
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
           "projectReferences": {
-            "C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\HotelSOL.DataAccess\\HotelSOL.DataAccess.csproj": {
-              "projectPath": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\HotelSOL.DataAccess\\HotelSOL.DataAccess.csproj"
-            },
-            "D:\\HotelSOL\\HotelSOL.DataAccess\\HotelSOL.DataAccess.csproj": {
-              "projectPath": "D:\\HotelSOL\\HotelSOL.DataAccess\\HotelSOL.DataAccess.csproj"
+            "C:\\Users\\Administrator\\OneDrive\\Escritorio\\desArrollados\\HotelSOL.DataAccess\\HotelSOL.DataAccess.csproj": {
+              "projectPath": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\desArrollados\\HotelSOL.DataAccess\\HotelSOL.DataAccess.csproj"
             }
           }
         }

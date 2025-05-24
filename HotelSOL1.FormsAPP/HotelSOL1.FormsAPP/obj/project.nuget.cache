@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Ubd9/SUOsWfijvqt4kxIr35hcLG5HhPMb5W0tuTfD9BWJ2tYe1OAtFMjRbpzB6YqWp6dpquZnNbGNCNB9iTY3Q==",
+  "dgSpecHash": "r2xkbQ8qQOX1Z0aLo33OkPbppKRX+ccJKQzN+zOGEFB0DIovm41kS1F1mMwIwmYhOAq23pW6r0DeWQcmhQlbYA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\desArrollados\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj",
+  "projectFilePath": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\desArrollados\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP\\HotelSOL1.FormsAPP.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Administrator\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

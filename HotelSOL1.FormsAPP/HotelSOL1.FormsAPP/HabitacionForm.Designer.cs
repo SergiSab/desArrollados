@@ -13,10 +13,6 @@
         private System.Windows.Forms.TextBox txtPrecio;
         private System.Windows.Forms.Label lblDisponible;
         private System.Windows.Forms.CheckBox chkDisponible;
-        private System.Windows.Forms.Label lblFechaInicio;
-        private System.Windows.Forms.DateTimePicker dtpInicio;
-        private System.Windows.Forms.Label lblFechaFin;
-        private System.Windows.Forms.DateTimePicker dtpFin;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnEliminar;
@@ -40,10 +36,6 @@
             this.txtPrecio = new System.Windows.Forms.TextBox();
             this.lblDisponible = new System.Windows.Forms.Label();
             this.chkDisponible = new System.Windows.Forms.CheckBox();
-            this.lblFechaInicio = new System.Windows.Forms.Label();
-            this.dtpInicio = new System.Windows.Forms.DateTimePicker();
-            this.lblFechaFin = new System.Windows.Forms.Label();
-            this.dtpFin = new System.Windows.Forms.DateTimePicker();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
@@ -110,28 +102,6 @@
             this.chkDisponible.Location = new System.Drawing.Point(120, 180);
             this.chkDisponible.Size = new System.Drawing.Size(20, 20);
             // 
-            // lblFechaInicio
-            // 
-            this.lblFechaInicio.Text = "Fecha Inicio:";
-            this.lblFechaInicio.Location = new System.Drawing.Point(20, 220);
-            this.lblFechaInicio.Size = new System.Drawing.Size(80, 23);
-            // 
-            // dtpInicio
-            // 
-            this.dtpInicio.Location = new System.Drawing.Point(120, 220);
-            this.dtpInicio.Size = new System.Drawing.Size(200, 23);
-            // 
-            // lblFechaFin
-            // 
-            this.lblFechaFin.Text = "Fecha Fin:";
-            this.lblFechaFin.Location = new System.Drawing.Point(20, 260);
-            this.lblFechaFin.Size = new System.Drawing.Size(80, 23);
-            // 
-            // dtpFin
-            // 
-            this.dtpFin.Location = new System.Drawing.Point(120, 260);
-            this.dtpFin.Size = new System.Drawing.Size(200, 23);
-            // 
             // picHabitacion
             // 
             this.picHabitacion.Location = new System.Drawing.Point(350, 20);
@@ -172,10 +142,6 @@
             this.Controls.Add(this.txtPrecio);
             this.Controls.Add(this.lblDisponible);
             this.Controls.Add(this.chkDisponible);
-            this.Controls.Add(this.lblFechaInicio);
-            this.Controls.Add(this.dtpInicio);
-            this.Controls.Add(this.lblFechaFin);
-            this.Controls.Add(this.dtpFin);
             this.Controls.Add(this.picHabitacion);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnModificar);

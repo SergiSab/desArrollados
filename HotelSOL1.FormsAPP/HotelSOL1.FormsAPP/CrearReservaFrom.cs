@@ -18,28 +18,22 @@ namespace HotelSOL1.FormsAPP
             InitializeComponent();
             this.clienteService = clienteService;
             this.habitacionService = habitacionService;
-            this.reservaService = reservaService;
-        }
-
-        private void CrearReservaForm_Load(object sender, EventArgs e)
-        {
+   
             try
             {
-                // Cargar clientes
                 var clientes = clienteService.ListarClientes();
+                MessageBox.Show($"Clientes cargados: {clientes.Count}"); // Depuración
                 cmbClientes.DataSource = clientes;
                 cmbClientes.DisplayMember = "Nombre";
                 cmbClientes.ValueMember = "ClienteId";
+                cmbClientes.Visible = true;
 
-                // Cargar habitaciones disponibles
-                var habitaciones = habitacionService.ObtenerHabitacionesDisponibles();
-                clbHabitaciones.Items.Clear();
-                foreach (var habitacion in habitaciones)
-                {
-                    clbHabitaciones.Items.Add(habitacion);
-                }
-                // Suponiendo que la clase Habitacion tiene una propiedad pública "Tipo" para mostrar
-                clbHabitaciones.DisplayMember = "Tipo";
+                var tiposHabitacion = habitacionService.ObtenerTiposHabitacion();
+                MessageBox.Show($"Tipos de habitación cargados: {tiposHabitacion.Count}"); // Depuración
+                cmbTipo.Items.AddRange(tiposHabitacion.Select(t => t.Nombre).ToArray());
+                cmbTipo.Visible = true;
+
+
             }
             catch (Exception ex)
             {

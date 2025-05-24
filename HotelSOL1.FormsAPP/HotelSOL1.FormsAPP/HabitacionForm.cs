@@ -15,15 +15,19 @@ namespace HotelSOL1.FormsAPP
             InitializeComponent();
             this.habitacionService = habitacionService;
 
-            // Cargar opciones de tipo de habitación desde la base de datos
-            var tiposHabitacion = habitacionService.ObtenerHabitacionesDisponibles()
-                .Select(h => h.TipoHabitacion.Nombre)
-                .Distinct()
+            // 🔹 Obtener todos los tipos de habitación correctamente
+            var tiposHabitacion = habitacionService.ObtenerTiposHabitacion()
+                .Select(t => t.Nombre)
                 .ToArray();
+            MessageBox.Show($"Tipos de habitación cargados: {tiposHabitacion.Length}");
             cmbTipo.Items.AddRange(tiposHabitacion);
+
         }
 
+
+
         private void CargarHabitacion(int habitacionId)
+
         {
             try
             {

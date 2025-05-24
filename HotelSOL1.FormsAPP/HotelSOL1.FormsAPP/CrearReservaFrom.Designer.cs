@@ -1,22 +1,16 @@
-﻿namespace HotelSOL1.FormsAPP
+﻿using System.Windows.Forms;
+
+namespace HotelSOL1.FormsAPP
 {
     partial class CrearReservaForm
     {
         private System.ComponentModel.IContainer components = null;
-        private System.Windows.Forms.Label lblCliente;
-        private System.Windows.Forms.Label lblHabitaciones;
-        private System.Windows.Forms.Label lblPersonas;
-        private System.Windows.Forms.Label lblEntrada;
-        private System.Windows.Forms.Label lblSalida;
-        protected System.Windows.Forms.ComboBox cmbClientes;
-        protected System.Windows.Forms.CheckedListBox clbHabitaciones;
-        protected System.Windows.Forms.NumericUpDown numPersonas;
-        protected System.Windows.Forms.DateTimePicker dtpEntrada;
-        protected System.Windows.Forms.DateTimePicker dtpSalida;
-        protected System.Windows.Forms.Button btnBuscarHabitaciones;
-        protected System.Windows.Forms.Button btnSugerirCombinaciones;
-        protected System.Windows.Forms.Button btnGuardarReserva;
-        protected System.Windows.Forms.Button btnCancelar;
+        private Label lblCliente, lblHabitaciones, lblPersonas, lblEntrada, lblSalida, lblTipoHabitacion;
+        protected ComboBox cmbClientes, cmbTipo;
+        protected CheckedListBox clbHabitaciones;
+        protected NumericUpDown numPersonas;
+        protected DateTimePicker dtpEntrada, dtpSalida;
+        protected Button btnBuscarHabitaciones, btnSugerirCombinaciones, btnGuardarReserva, btnCancelar;
 
         protected override void Dispose(bool disposing)
         {
@@ -24,125 +18,45 @@
                 components.Dispose();
             base.Dispose(disposing);
         }
+
         private void InitializeComponent()
         {
-            this.lblCliente = new System.Windows.Forms.Label();
-            this.cmbClientes = new System.Windows.Forms.ComboBox();
-            this.lblHabitaciones = new System.Windows.Forms.Label();
-            this.clbHabitaciones = new System.Windows.Forms.CheckedListBox();
-            this.lblPersonas = new System.Windows.Forms.Label();
-            this.numPersonas = new System.Windows.Forms.NumericUpDown();
-            this.btnBuscarHabitaciones = new System.Windows.Forms.Button();
-            this.btnSugerirCombinaciones = new System.Windows.Forms.Button();
-            this.lblEntrada = new System.Windows.Forms.Label();
-            this.dtpEntrada = new System.Windows.Forms.DateTimePicker();
-            this.lblSalida = new System.Windows.Forms.Label();
-            this.dtpSalida = new System.Windows.Forms.DateTimePicker();
-            this.btnGuardarReserva = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.numPersonas)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lblCliente
-            // 
-            this.lblCliente.Text = "Seleccione Cliente:";
-            this.lblCliente.Location = new System.Drawing.Point(20, 20);
-            // 
-            // cmbClientes
-            // 
-            this.cmbClientes.Location = new System.Drawing.Point(150, 20);
-            this.cmbClientes.Size = new System.Drawing.Size(200, 23);
-            // 
-            // lblHabitaciones
-            // 
-            this.lblHabitaciones.Text = "Habitaciones Disponibles:";
-            this.lblHabitaciones.Location = new System.Drawing.Point(20, 60);
-            // 
-            // clbHabitaciones
-            // 
-            this.clbHabitaciones.Location = new System.Drawing.Point(150, 60);
-            this.clbHabitaciones.Size = new System.Drawing.Size(250, 100);
-            // 
-            // lblPersonas
-            // 
-            this.lblPersonas.Text = "Cantidad de Personas:";
-            this.lblPersonas.Location = new System.Drawing.Point(20, 180);
-            // 
-            // numPersonas
-            // 
-            this.numPersonas.Location = new System.Drawing.Point(150, 180);
-            this.numPersonas.Size = new System.Drawing.Size(80, 23);
-            this.numPersonas.Minimum = 1;
-            this.numPersonas.Maximum = 10;
-            // 
-            // btnBuscarHabitaciones
-            // 
-            this.btnBuscarHabitaciones.Text = "Buscar Habitaciones";
-            this.btnBuscarHabitaciones.Location = new System.Drawing.Point(250, 180);
-            this.btnBuscarHabitaciones.Size = new System.Drawing.Size(150, 30);
-            this.btnBuscarHabitaciones.Click += new System.EventHandler(this.btnBuscarHabitaciones_Click);
-            // 
-            // btnSugerirCombinaciones
-            // 
-            this.btnSugerirCombinaciones.Text = "Sugerir Combinación";
-            this.btnSugerirCombinaciones.Location = new System.Drawing.Point(250, 220);
-            this.btnSugerirCombinaciones.Size = new System.Drawing.Size(150, 30);
-            this.btnSugerirCombinaciones.Click += new System.EventHandler(this.btnSugerirCombinaciones_Click);
-            // 
-            // lblEntrada
-            // 
-            this.lblEntrada.Text = "Fecha Entrada:";
-            this.lblEntrada.Location = new System.Drawing.Point(20, 260);
-            // 
-            // dtpEntrada
-            // 
-            this.dtpEntrada.Location = new System.Drawing.Point(150, 260);
-            this.dtpEntrada.Size = new System.Drawing.Size(200, 23);
-            // 
-            // lblSalida
-            // 
-            this.lblSalida.Text = "Fecha Salida:";
-            this.lblSalida.Location = new System.Drawing.Point(20, 300);
-            // 
-            // dtpSalida
-            // 
-            this.dtpSalida.Location = new System.Drawing.Point(150, 300);
-            this.dtpSalida.Size = new System.Drawing.Size(200, 23);
-            // 
-            // btnGuardarReserva
-            // 
-            this.btnGuardarReserva.Text = "Guardar Reserva";
-            this.btnGuardarReserva.Location = new System.Drawing.Point(150, 350);
-            this.btnGuardarReserva.Size = new System.Drawing.Size(150, 30);
-            this.btnGuardarReserva.Click += new System.EventHandler(this.btnGuardarReserva_Click);
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.Location = new System.Drawing.Point(320, 350);
-            this.btnCancelar.Size = new System.Drawing.Size(150, 30);
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
-            // CrearReservaForm
-            // 
+
+            // Definición de etiquetas
+            this.lblCliente = new Label() { Text = "Seleccione Cliente:", Location = new System.Drawing.Point(20, 20) };
+            this.lblTipoHabitacion = new Label() { Text = "Tipo de Habitación:", Location = new System.Drawing.Point(20, 60) };
+            this.lblHabitaciones = new Label() { Text = "Habitaciones Disponibles:", Location = new System.Drawing.Point(20, 100) };
+            this.lblPersonas = new Label() { Text = "Cantidad de Personas:", Location = new System.Drawing.Point(20, 220) };
+            this.lblEntrada = new Label() { Text = "Fecha Entrada:", Location = new System.Drawing.Point(20, 260) };
+            this.lblSalida = new Label() { Text = "Fecha Salida:", Location = new System.Drawing.Point(20, 300) };
+
+            // Definición de controles
+            this.cmbClientes = new ComboBox() { Location = new System.Drawing.Point(150, 20), Size = new System.Drawing.Size(200, 23), DropDownStyle = ComboBoxStyle.DropDownList };
+            this.cmbTipo = new ComboBox() { Location = new System.Drawing.Point(150, 60), Size = new System.Drawing.Size(200, 23), DropDownStyle = ComboBoxStyle.DropDownList };
+            this.clbHabitaciones = new CheckedListBox() { Location = new System.Drawing.Point(150, 100), Size = new System.Drawing.Size(250, 100) };
+            this.numPersonas = new NumericUpDown() { Location = new System.Drawing.Point(150, 220), Size = new System.Drawing.Size(80, 23), Minimum = 1, Maximum = 10 };
+            this.dtpEntrada = new DateTimePicker() { Location = new System.Drawing.Point(150, 260), Size = new System.Drawing.Size(200, 23), Format = DateTimePickerFormat.Short };
+            this.dtpSalida = new DateTimePicker() { Location = new System.Drawing.Point(150, 300), Size = new System.Drawing.Size(200, 23), Format = DateTimePickerFormat.Short };
+
+            // Definición de botones
+            this.btnBuscarHabitaciones = new Button() { Text = "Buscar Habitaciones", Location = new System.Drawing.Point(400, 100), Size = new System.Drawing.Size(150, 30) };
+            this.btnSugerirCombinaciones = new Button() { Text = "Sugerir Combinación", Location = new System.Drawing.Point(400, 140), Size = new System.Drawing.Size(150, 30) };
+            this.btnGuardarReserva = new Button() { Text = "Guardar Reserva", Location = new System.Drawing.Point(150, 350), Size = new System.Drawing.Size(150, 30) };
+            this.btnCancelar = new Button() { Text = "Cancelar", Location = new System.Drawing.Point(320, 350), Size = new System.Drawing.Size(150, 30) };
+
+            // Agregar controles al formulario
+            this.Controls.AddRange(new Control[]
+            {
+                lblCliente, cmbClientes, lblTipoHabitacion, cmbTipo, lblHabitaciones, clbHabitaciones, lblPersonas, numPersonas,
+                lblEntrada, dtpEntrada, lblSalida, dtpSalida, btnBuscarHabitaciones, btnSugerirCombinaciones, btnGuardarReserva, btnCancelar
+            });
+
+            // Configuración del formulario
             this.ClientSize = new System.Drawing.Size(600, 400);
-            this.Controls.Add(this.lblCliente);
-            this.Controls.Add(this.cmbClientes);
-            this.Controls.Add(this.lblHabitaciones);
-            this.Controls.Add(this.clbHabitaciones);
-            this.Controls.Add(this.lblPersonas);
-            this.Controls.Add(this.numPersonas);
-            this.Controls.Add(this.btnBuscarHabitaciones);
-            this.Controls.Add(this.btnSugerirCombinaciones);
-            this.Controls.Add(this.lblEntrada);
-            this.Controls.Add(this.dtpEntrada);
-            this.Controls.Add(this.lblSalida);
-            this.Controls.Add(this.dtpSalida);
-            this.Controls.Add(this.btnGuardarReserva);
-            this.Controls.Add(this.btnCancelar);
             this.Text = "Gestor de Reservas";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            ((System.ComponentModel.ISupportInitialize)(this.numPersonas)).EndInit();
+            this.StartPosition = FormStartPosition.CenterScreen;
+
             this.ResumeLayout(false);
             this.PerformLayout();
         }

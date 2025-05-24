@@ -41,6 +41,7 @@ namespace HotelSOL1.FormsAPP
                     btnGenerarFactura.Visible = true;
                     btnExportarOdoo.Visible = true;
                     btnRegistrarUsuario.Visible = true;
+                    btnGestionHabitaciones.Visible = true;
 
                     break;
 
@@ -51,6 +52,7 @@ namespace HotelSOL1.FormsAPP
                     btnGenerarFactura.Visible = false;
                     btnExportarOdoo.Visible = true;
                     btnRegistrarUsuario.Visible = false;// 🔹 Acceso a gestión de proveedores y pedidos
+                    btnGestionHabitaciones.Visible = false;
                     break;
 
                 case "Recepcionista":
@@ -60,6 +62,7 @@ namespace HotelSOL1.FormsAPP
                     btnGenerarFactura.Visible = true;
                     btnExportarOdoo.Visible = false;
                     btnRegistrarUsuario.Visible = false;
+                    btnGestionHabitaciones.Visible = false;
                     break;
 
                 case "Cliente":
@@ -69,6 +72,7 @@ namespace HotelSOL1.FormsAPP
                     btnGenerarFactura.Visible = true;
                     btnExportarOdoo.Visible = false;
                     btnRegistrarUsuario.Visible = false;
+                    btnGestionHabitaciones.Visible = false;
                     break;
 
                 case "Contable":
@@ -78,6 +82,7 @@ namespace HotelSOL1.FormsAPP
                     btnGenerarFactura.Visible = true; // 🔹 Solo consulta facturas y análisis financiero
                     btnExportarOdoo.Visible = true;
                     btnRegistrarUsuario.Visible = false;
+                    btnGestionHabitaciones.Visible = false;
                     break;
 
                 case "Personal Limpieza":
@@ -87,6 +92,7 @@ namespace HotelSOL1.FormsAPP
                     btnGenerarFactura.Visible = false;
                     btnExportarOdoo.Visible = false;
                     btnRegistrarUsuario.Visible = false;
+                    btnGestionHabitaciones.Visible = false;
                     MessageBox.Show("🔹 Acceso a habitaciones por limpiar.");
                     break;
 
@@ -97,6 +103,7 @@ namespace HotelSOL1.FormsAPP
                     btnGenerarFactura.Visible = false;
                     btnExportarOdoo.Visible = false;
                     btnRegistrarUsuario.Visible = false;
+                    btnGestionHabitaciones.Visible = false;
                     MessageBox.Show("🔹 Acceso a pedidos de clientes.");
                     break;
 
@@ -107,6 +114,7 @@ namespace HotelSOL1.FormsAPP
                     btnGenerarFactura.Visible = false;
                     btnExportarOdoo.Visible = true; // 🔹 Acceso a gestión de redes y descuentos VIP
                     btnRegistrarUsuario.Visible = false;
+                    btnGestionHabitaciones.Visible = false;
                     break;
 
                 default:
@@ -169,20 +177,12 @@ namespace HotelSOL1.FormsAPP
                 MessageBox.Show("Seleccione una reserva antes de generar la factura.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        public HabitacionForm(HabitacionService habitacionService)
+        private void btnGestionHabitaciones_Click(object sender, EventArgs e)
         {
-            InitializeComponent();
-            this.habitacionService = habitacionService;
-
-            // Obtener tipos de habitación desde la base de datos
-            var tiposHabitacion = habitacionService.ObtenerTiposHabitacion()
-                .Select(t => t.Nombre)
-                .ToArray();
-            cmbTipo.Items.AddRange(tiposHabitacion);
+            var habitacionService = new HabitacionService(Program.DbContext);
+            var form = new HabitacionForm(habitacionService);
+            form.ShowDialog();
         }
-
-
 
         private void btnExportarOdoo_Click(object sender, EventArgs e)
         {
