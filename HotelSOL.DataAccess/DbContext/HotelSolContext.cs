@@ -16,8 +16,6 @@ namespace HotelSOL.DataAccess
         public DbSet<Incidencia> Incidencias { get; set; }
         public DbSet<TipoHabitacion> TiposHabitaciones { get; set; }
         public DbSet<Pago> Pagos { get; set; }
-
-        // Nuevas tablas
         public DbSet<Proveedor> Proveedores { get; set; }
         public DbSet<Stock> Stock { get; set; }
         public DbSet<Pedido> Pedidos { get; set; }
@@ -71,7 +69,7 @@ namespace HotelSOL.DataAccess
 
             // --- Configuración de Stock ---
             modelBuilder.Entity<Stock>()
-                .HasKey(s => s.Id);
+                .HasKey(s => s.id);
 
             // --- Configuración de Pedido (Pedidos) ---
             modelBuilder.Entity<Pedido>()

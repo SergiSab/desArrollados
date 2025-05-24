@@ -583,3 +583,4 @@ D:\HotelSOL\HotelSOL1.FormsAPP\HotelSOL1.FormsAPP\obj\Debug\net8.0-windows\Hotel
 D:\HotelSOL\HotelSOL1.FormsAPP\HotelSOL1.FormsAPP\obj\Debug\net8.0-windows\HotelSOL.52844BC6.Up2Date
 D:\HotelSOL\HotelSOL1.FormsAPP\HotelSOL1.FormsAPP\obj\Debug\net8.0-windows\HotelSOL1.FormsAPP.genruntimeconfig.cache
 D:\HotelSOL\HotelSOL1.FormsAPP\HotelSOL1.FormsAPP\obj\Debug\net8.0-windows\ref\HotelSOL1.FormsAPP.dll
+D:\HotelSOL\HotelSOL1.FormsAPP\HotelSOL1.FormsAPP\obj\Debug\net8.0-windows\HotelSOL1.FormsAPP.StockDialogForm.resources
