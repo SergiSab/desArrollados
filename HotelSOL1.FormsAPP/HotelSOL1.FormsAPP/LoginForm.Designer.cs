@@ -17,7 +17,7 @@ namespace HotelSOL1.FormsAPP
             this.SuspendLayout();
 
             // 📌 Configuración del formulario
-            this.ClientSize = new System.Drawing.Size(800, 500);
+            this.ClientSize = new System.Drawing.Size(900, 600);
             this.StartPosition = FormStartPosition.CenterScreen;
             this.Text = "Iniciar sesión";
             this.BackColor = Color.White;

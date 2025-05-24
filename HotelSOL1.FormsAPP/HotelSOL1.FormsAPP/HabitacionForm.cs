@@ -70,6 +70,7 @@ namespace HotelSOL1.FormsAPP
                 var nuevaHabitacion = new Habitacion
                 {
                     TipoId = tipoHabitacion.Id,
+                    Numero = txtNumero.Text.Trim(),
                     Capacidad = (int)numCapacidad.Value,
                     Disponible = chkDisponible.Checked
                 };
