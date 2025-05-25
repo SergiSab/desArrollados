@@ -1032,7 +1032,10 @@
           "Microsoft.Extensions.Configuration.Json": "9.0.3"
         },
         "runtime": {
-          "HotelSOL.DataAccess.dll": {}
+          "HotelSOL.DataAccess.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }

@@ -1,0 +1,15 @@
+# Visual Studio
+.vs/
+
+
+# Caches de compilación/IDE
+**/DesignTimeBuild/
+**/FileContentIndex/
+**/*.vsixdb
+**/*.futdcache.v2
+
+
+**/DocumentLayout*.json
+
+*.mdf
+*.ldf
