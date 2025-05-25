@@ -16,12 +16,17 @@ namespace HotelSOL.DataAccess
         public DbSet<Incidencia> Incidencias { get; set; }
         public DbSet<TipoHabitacion> TiposHabitaciones { get; set; }
         public DbSet<Pago> Pagos { get; set; }
+
+        // Nótese que la tabla real se llama singular “Proveedor”
         public DbSet<Proveedor> Proveedores { get; set; }
+
         public DbSet<Stock> Stock { get; set; }
         public DbSet<Pedido> Pedidos { get; set; }
         public DbSet<Albaran> Albaranes { get; set; }
         public DbSet<FacturaProveedor> FacturasProveedores { get; set; }
-        public DbSet<TipoServicioEntity> TipoServicio { get; set; } // Cambia de 'TipoServicios' a 'TipoServicio'
+
+        // Mapeo del nuevo TipoServicioEntity
+        public DbSet<TipoServicioEntity> TipoServicio { get; set; }
 
         public HotelSolContext(DbContextOptions<HotelSolContext> options)
             : base(options)
@@ -30,12 +35,37 @@ namespace HotelSOL.DataAccess
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            // --- Relaciones ya existentes ---
+            // ================================
+            //  Configuración global de tablas
+            // ================================
+            modelBuilder.Entity<Proveedor>()
+                            .HasKey(p => p.IdProveedor);
+            modelBuilder.Entity<Proveedor>()
+                .ToTable("Proveedor");
+
+            modelBuilder.Entity<Stock>()
+                        .ToTable("Stock");         
+
+            modelBuilder.Entity<Pedido>()
+                        .ToTable("Pedidos");        
+
+            modelBuilder.Entity<Albaran>()
+                        .ToTable("Albaranes");
+
+            modelBuilder.Entity<FacturaProveedor>()
+                        .ToTable("FacturasProveedores");
+
+            modelBuilder.Entity<TipoServicioEntity>()
+                        .ToTable("TipoServicio");    
+
+            // ================================
+            //  Relaciones existentes…
+            // ================================
             modelBuilder.Entity<Servicio>()
-                .HasOne(s => s.TipoServicio)  // 🔹 Servicio tiene un TipoServicio
-                .WithMany()  // 🔹 Un TipoServicio puede ser usado en muchos Servicios
-                .HasForeignKey(s => s.TipoServicioId) // 🔹 La clave foránea es TipoServicioId
-                .OnDelete(DeleteBehavior.Restrict); // 🔹 Evita la eliminación en cascada
+                .HasOne(s => s.TipoServicio)
+                .WithMany()
+                .HasForeignKey(s => s.TipoServicioId)
+                .OnDelete(DeleteBehavior.Restrict);
 
             modelBuilder.Entity<Cliente>()
                 .HasKey(c => c.ClienteId);
@@ -70,15 +100,9 @@ namespace HotelSOL.DataAccess
                 .Property(r => r.Estado)
                 .HasConversion<int>();
 
-            // --- Configuración de Proveedor ---
-            modelBuilder.Entity<Proveedor>()
-                .HasKey(p => p.IdProveedor);
-
-            // --- Configuración de Stock ---
-            modelBuilder.Entity<Stock>()
-                .HasKey(s => s.id);
-
-            // --- Configuración de Pedido (Pedidos) ---
+            // ================================
+            //  Proveedor → Pedidos
+            // ================================
             modelBuilder.Entity<Pedido>()
                 .HasKey(p => p.Id);
 
@@ -88,7 +112,9 @@ namespace HotelSOL.DataAccess
                 .HasForeignKey(p => p.IdProveedor)
                 .OnDelete(DeleteBehavior.Restrict);
 
-            // --- Configuración de Albarán (Albaranes) ---
+            // ================================
+            //  Albaranes
+            // ================================
             modelBuilder.Entity<Albaran>()
                 .HasKey(a => a.Id);
 
@@ -104,7 +130,9 @@ namespace HotelSOL.DataAccess
                 .HasForeignKey(a => a.IdPedido)
                 .OnDelete(DeleteBehavior.Cascade);
 
-            // --- Configuración de FacturaProveedor (FacturasProveedores) ---
+            // ================================
+            //  FacturasProveedores
+            // ================================
             modelBuilder.Entity<FacturaProveedor>()
                 .HasKey(fp => fp.Id);
 
