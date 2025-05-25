@@ -74,6 +74,7 @@
             btnPedidos.Size = new Size(220, 50);
             btnPedidos.TabIndex = 5;
             btnPedidos.Text = "Pedidos";
+            btnPedidos.Click += btnPedidos_Click;
             // 
             // btnAlbaranes
             // 

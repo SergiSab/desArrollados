@@ -24,7 +24,12 @@ namespace HotelSOL1.FormsAPP
             var form = new StockForm(stockService);
             form.ShowDialog();
         }
-
+        private void btnPedidos_Click(object sender, EventArgs e)
+        {
+            var pedidoService = new PedidoService(Program.DbContext);
+            var form = new PedidosForm(pedidoService);
+            form.ShowDialog();
+        }
         private void btnVolverProv_Click(object sender, EventArgs e)
         {
             this.Close();
