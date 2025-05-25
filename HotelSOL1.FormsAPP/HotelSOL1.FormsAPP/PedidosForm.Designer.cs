@@ -28,33 +28,37 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PedidosForm));
-            dataGridView1 = new DataGridView();
-            btnVerPedido = new Button();
+            dgvPedidos = new DataGridView();
             btnCrearPedido = new Button();
             btnEliminarPedido = new Button();
             btnVolver = new Button();
             labelPedidos = new Label();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            pedidoBindingSource = new BindingSource(components);
+            idDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            idProveedorDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            precioTotalDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            albaranDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            facturaDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            proveedorDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            albaranesDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            facturasProveedoresDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)dgvPedidos).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pedidoBindingSource).BeginInit();
             SuspendLayout();
             // 
-            // dataGridView1
+            // dgvPedidos
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(68, 127);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(505, 242);
-            dataGridView1.TabIndex = 0;
-            // 
-            // btnVerPedido
-            // 
-            btnVerPedido.Location = new Point(599, 127);
-            btnVerPedido.Name = "btnVerPedido";
-            btnVerPedido.Size = new Size(158, 43);
-            btnVerPedido.TabIndex = 1;
-            btnVerPedido.Text = "Ver Pedido";
-            btnVerPedido.UseVisualStyleBackColor = true;
+            dgvPedidos.AutoGenerateColumns = false;
+            dgvPedidos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvPedidos.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, idProveedorDataGridViewTextBoxColumn, precioTotalDataGridViewTextBoxColumn, albaranDataGridViewTextBoxColumn, facturaDataGridViewTextBoxColumn, proveedorDataGridViewTextBoxColumn, albaranesDataGridViewTextBoxColumn, facturasProveedoresDataGridViewTextBoxColumn });
+            dgvPedidos.DataSource = pedidoBindingSource;
+            dgvPedidos.Location = new Point(68, 127);
+            dgvPedidos.Name = "dgvPedidos";
+            dgvPedidos.RowHeadersWidth = 51;
+            dgvPedidos.Size = new Size(505, 242);
+            dgvPedidos.TabIndex = 0;
             // 
             // btnCrearPedido
             // 
@@ -96,6 +100,74 @@
             labelPedidos.TabIndex = 5;
             labelPedidos.Text = "Pedidos";
             // 
+            // pedidoBindingSource
+            // 
+            pedidoBindingSource.DataSource = typeof(HotelSOL.DataAccess.Models.Pedido);
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            idDataGridViewTextBoxColumn.HeaderText = "Id";
+            idDataGridViewTextBoxColumn.MinimumWidth = 6;
+            idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            idDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // idProveedorDataGridViewTextBoxColumn
+            // 
+            idProveedorDataGridViewTextBoxColumn.DataPropertyName = "IdProveedor";
+            idProveedorDataGridViewTextBoxColumn.HeaderText = "IdProveedor";
+            idProveedorDataGridViewTextBoxColumn.MinimumWidth = 6;
+            idProveedorDataGridViewTextBoxColumn.Name = "idProveedorDataGridViewTextBoxColumn";
+            idProveedorDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // precioTotalDataGridViewTextBoxColumn
+            // 
+            precioTotalDataGridViewTextBoxColumn.DataPropertyName = "PrecioTotal";
+            precioTotalDataGridViewTextBoxColumn.HeaderText = "PrecioTotal";
+            precioTotalDataGridViewTextBoxColumn.MinimumWidth = 6;
+            precioTotalDataGridViewTextBoxColumn.Name = "precioTotalDataGridViewTextBoxColumn";
+            precioTotalDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // albaranDataGridViewTextBoxColumn
+            // 
+            albaranDataGridViewTextBoxColumn.DataPropertyName = "Albaran";
+            albaranDataGridViewTextBoxColumn.HeaderText = "Albaran";
+            albaranDataGridViewTextBoxColumn.MinimumWidth = 6;
+            albaranDataGridViewTextBoxColumn.Name = "albaranDataGridViewTextBoxColumn";
+            albaranDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // facturaDataGridViewTextBoxColumn
+            // 
+            facturaDataGridViewTextBoxColumn.DataPropertyName = "Factura";
+            facturaDataGridViewTextBoxColumn.HeaderText = "Factura";
+            facturaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            facturaDataGridViewTextBoxColumn.Name = "facturaDataGridViewTextBoxColumn";
+            facturaDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // proveedorDataGridViewTextBoxColumn
+            // 
+            proveedorDataGridViewTextBoxColumn.DataPropertyName = "Proveedor";
+            proveedorDataGridViewTextBoxColumn.HeaderText = "Proveedor";
+            proveedorDataGridViewTextBoxColumn.MinimumWidth = 6;
+            proveedorDataGridViewTextBoxColumn.Name = "proveedorDataGridViewTextBoxColumn";
+            proveedorDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // albaranesDataGridViewTextBoxColumn
+            // 
+            albaranesDataGridViewTextBoxColumn.DataPropertyName = "Albaranes";
+            albaranesDataGridViewTextBoxColumn.HeaderText = "Albaranes";
+            albaranesDataGridViewTextBoxColumn.MinimumWidth = 6;
+            albaranesDataGridViewTextBoxColumn.Name = "albaranesDataGridViewTextBoxColumn";
+            albaranesDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // facturasProveedoresDataGridViewTextBoxColumn
+            // 
+            facturasProveedoresDataGridViewTextBoxColumn.DataPropertyName = "FacturasProveedores";
+            facturasProveedoresDataGridViewTextBoxColumn.HeaderText = "FacturasProveedores";
+            facturasProveedoresDataGridViewTextBoxColumn.MinimumWidth = 6;
+            facturasProveedoresDataGridViewTextBoxColumn.Name = "facturasProveedoresDataGridViewTextBoxColumn";
+            facturasProveedoresDataGridViewTextBoxColumn.Width = 125;
+            // 
             // PedidosForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -107,22 +179,30 @@
             Controls.Add(btnVolver);
             Controls.Add(btnEliminarPedido);
             Controls.Add(btnCrearPedido);
-            Controls.Add(btnVerPedido);
-            Controls.Add(dataGridView1);
+            Controls.Add(dgvPedidos);
             Name = "PedidosForm";
             Text = "PedidosForm";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvPedidos).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pedidoBindingSource).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private DataGridView dataGridView1;
-        private Button btnVerPedido;
+        private DataGridView dgvPedidos;
         private Button btnCrearPedido;
         private Button btnEliminarPedido;
         private Button btnVolver;
         private Label labelPedidos;
+        private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn idProveedorDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn precioTotalDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn albaranDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn facturaDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn proveedorDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn albaranesDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn facturasProveedoresDataGridViewTextBoxColumn;
+        private BindingSource pedidoBindingSource;
     }
 }

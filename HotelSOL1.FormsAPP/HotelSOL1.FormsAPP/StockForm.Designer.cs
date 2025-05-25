@@ -27,7 +27,6 @@
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StockForm));
             dgvStock = new DataGridView();
-            idDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             nombreProductoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             familiaDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             cantidadRestanteDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
@@ -45,21 +44,13 @@
             // 
             dgvStock.AutoGenerateColumns = false;
             dgvStock.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvStock.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, nombreProductoDataGridViewTextBoxColumn, familiaDataGridViewTextBoxColumn, cantidadRestanteDataGridViewTextBoxColumn, pvpDataGridViewTextBoxColumn });
+            dgvStock.Columns.AddRange(new DataGridViewColumn[] { nombreProductoDataGridViewTextBoxColumn, familiaDataGridViewTextBoxColumn, cantidadRestanteDataGridViewTextBoxColumn, pvpDataGridViewTextBoxColumn });
             dgvStock.DataSource = stockBindingSource;
             dgvStock.Location = new Point(21, 100);
             dgvStock.Name = "dgvStock";
             dgvStock.RowHeadersWidth = 51;
             dgvStock.Size = new Size(679, 385);
             dgvStock.TabIndex = 0;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            idDataGridViewTextBoxColumn.HeaderText = "Id";
-            idDataGridViewTextBoxColumn.MinimumWidth = 6;
-            idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            idDataGridViewTextBoxColumn.Width = 125;
             // 
             // nombreProductoDataGridViewTextBoxColumn
             // 
