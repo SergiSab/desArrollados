@@ -14,6 +14,9 @@
         private System.Windows.Forms.Label lblMontoTotal;
         private System.Windows.Forms.Label lblEstado;
         private System.Windows.Forms.Label lblFecha;
+        private System.Windows.Forms.Label lblAlojamiento;
+        private System.Windows.Forms.DataGridView dgvDetalleFactura;
+
 
         protected override void Dispose(bool disposing)
         {
@@ -95,6 +98,26 @@
             this.ClientSize = new System.Drawing.Size(950, 650);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Generar Factura";
+
+            lblAlojamiento = new System.Windows.Forms.Label()
+            {
+                Text = "🏨 Tipo de alojamiento: --",
+                Location = new System.Drawing.Point(20, 200),
+                Font = new System.Drawing.Font("Arial", 12, System.Drawing.FontStyle.Bold),
+                ForeColor = System.Drawing.Color.DarkBlue,
+                AutoSize = true
+            };
+
+            dgvDetalleFactura = new System.Windows.Forms.DataGridView();
+            dgvDetalleFactura.Location = new System.Drawing.Point(20, 240);
+            dgvDetalleFactura.Size = new System.Drawing.Size(650, 150);
+            dgvDetalleFactura.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dgvDetalleFactura.AllowUserToAddRows = false;
+            dgvDetalleFactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+
+            // 📌 Agregar controles al formulario
+            pnlFactura.Controls.Add(lblAlojamiento);
+            pnlFactura.Controls.Add(dgvDetalleFactura);
 
             this.ResumeLayout(false);
 

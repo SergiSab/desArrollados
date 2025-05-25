@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HotelSOL.DataAccess")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c725e2dd4545581d7db125ef68139cfdc1a423c1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+41dc690b5a5c9fb8d748c38bc4e7073be18829d7")]
 [assembly: System.Reflection.AssemblyProductAttribute("HotelSOL.DataAccess")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HotelSOL.DataAccess")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

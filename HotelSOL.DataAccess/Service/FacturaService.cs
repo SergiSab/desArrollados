@@ -31,14 +31,13 @@ namespace HotelSOL.DataAccess.Services
 
             Console.WriteLine($"✅ Reserva encontrada: ID={reserva.Id}, ClienteID={reserva.ClienteId}");
 
-            var factura = _context.Facturas.FirstOrDefault(f => f.ReservaId == reservaId); // ✅ Definimos `factura`
+            var factura = _context.Facturas.FirstOrDefault(f => f.ReservaId == reservaId); // ✅ Buscar factura existente
 
             var serviciosConsumidos = _context.Servicios
-               .Include(s => s.TipoServicio) // 🔹 Cargar detalles del TipoServicio
-               .Where(s => s.ReservaId == reservaId)
-               .ToList();
+                .Include(s => s.TipoServicio) // 🔹 Cargar detalles del TipoServicio
+                .Where(s => s.ReservaId == reservaId)
+                .ToList();
 
-            // 🔹 Ahora usamos `TipoServicio.Precio` en lugar de `s.Precio`
             decimal montoServicios = serviciosConsumidos.Sum(s => s.Precio); // ✅ Usar el precio almacenado en `Servicio`
             decimal montoBase = CalcularMontoBase(reserva);
             decimal montoImpuestos = CalcularImpuesto(montoBase + montoServicios, impuestoPorcentaje);
@@ -54,7 +53,7 @@ namespace HotelSOL.DataAccess.Services
             }
             else
             {
-                // 📌 Si no existe una factura previa, crear una nueva
+                // 📌 Crear una nueva factura ANTES de asignarla a los servicios
                 factura = new Factura
                 {
                     ReservaId = reservaId,
@@ -67,12 +66,17 @@ namespace HotelSOL.DataAccess.Services
                 };
 
                 _context.Facturas.Add(factura);
+                _context.SaveChanges(); // ✅ Guardar la factura primero
                 Console.WriteLine($"✅ Nueva factura generada: ID={factura.Id}");
 
+                // 📌 Ahora que la factura está guardada, asignarla a los servicios
                 foreach (var servicio in serviciosConsumidos)
                 {
                     servicio.FacturaId = factura.Id;
+                    _context.Update(servicio);
                 }
+
+                _context.SaveChanges(); // ✅ Guardar todos los cambios de los servicios en una sola operación
             }
 
             _context.SaveChanges();

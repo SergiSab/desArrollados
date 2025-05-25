@@ -184,13 +184,13 @@ namespace HotelSOL1.FormsAPP
             // Abre el formulario de reservas para que el usuario elija una
             var formReservas = new VerReservasForm(reservaService);
             formReservas.ShowDialog();
-
-            if (formReservas.ReservaSeleccionada != null) // Asumiendo que este formulario permite seleccionar una reserva
+            if (formReservas.ReservaSeleccionada != null)
             {
                 var reserva = formReservas.ReservaSeleccionada;
-                var formFactura = new GenerarFacturaForm(reserva, facturaService, usuarioAutenticado);
+                var formFactura = new GenerarFacturaForm(reserva, facturaService, usuarioAutenticado, Program.DbContext); // ✅ Agregar `Program.DbContext`
                 formFactura.ShowDialog();
             }
+
             else
             {
                 MessageBox.Show("Seleccione una reserva antes de generar la factura.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
