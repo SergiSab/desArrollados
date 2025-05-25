@@ -162,7 +162,7 @@ namespace HotelSOL1.FormsAPP
 
 
 
-
+        //Botones
         private void btnVerReservas_Click(object sender, EventArgs e)
         {
             var reservaService = new ReservaService(Program.DbContext);
@@ -188,7 +188,7 @@ namespace HotelSOL1.FormsAPP
             if (formReservas.ReservaSeleccionada != null) // Asumiendo que este formulario permite seleccionar una reserva
             {
                 var reserva = formReservas.ReservaSeleccionada;
-                var formFactura = new GenerarFacturaForm(reserva, facturaService, usuarioAutenticado );
+                var formFactura = new GenerarFacturaForm(reserva, facturaService, usuarioAutenticado);
                 formFactura.ShowDialog();
             }
             else
@@ -222,9 +222,11 @@ namespace HotelSOL1.FormsAPP
 
         private void btnStockProveedores_Click(object sender, EventArgs e)
         {
-            
+
             var form = new StockProveedoresForm();
             form.ShowDialog();
         }
+
+       
     }
 }
