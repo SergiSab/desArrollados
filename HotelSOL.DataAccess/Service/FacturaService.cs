@@ -39,7 +39,7 @@ namespace HotelSOL.DataAccess.Services
                .ToList();
 
             // 🔹 Ahora usamos `TipoServicio.Precio` en lugar de `s.Precio`
-            decimal montoServicios = serviciosConsumidos.Sum(s => s.TipoServicio.Precio);
+            decimal montoServicios = serviciosConsumidos.Sum(s => s.Precio); // ✅ Usar el precio almacenado en `Servicio`
             decimal montoBase = CalcularMontoBase(reserva);
             decimal montoImpuestos = CalcularImpuesto(montoBase + montoServicios, impuestoPorcentaje);
             decimal montoTotal = montoBase + montoServicios + montoImpuestos;

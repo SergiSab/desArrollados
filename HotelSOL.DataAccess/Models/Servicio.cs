@@ -20,6 +20,7 @@ public class Servicio
     public int? FacturaId { get; set; }
     public Factura? Factura { get; set; }
 
+    public bool DescuentoAplicado { get; set; } = false;
 
-    public bool DescuentoAplicado { get; set; } = false; // 🔹 Nuevo campo para descuentos
+    public decimal Precio { get; set; } // ✅ Nuevo campo para guardar el precio del servicio
 }
