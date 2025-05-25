@@ -15,6 +15,8 @@ namespace HotelSOL1.FormsAPP
         {
             InitializeComponent();
             _reservaService = reservaService;
+            this.Load += new EventHandler(this.VerReservasForm_Load);
+
         }
 
         private void VerReservasForm_Load(object sender, EventArgs e)
@@ -59,14 +61,49 @@ namespace HotelSOL1.FormsAPP
             {
                 int reservaId = Convert.ToInt32(dgvReservas.SelectedRows[0].Cells["Id"].Value);
                 ReservaSeleccionada = _reservaService.ObtenerReservaPorId(reservaId);
-                this.DialogResult = DialogResult.OK;
-                this.Close();
+
+                if (ReservaSeleccionada != null)
+                {
+                    this.DialogResult = DialogResult.OK; // ✅ Indicar que la selección fue exitosa
+                    this.Close(); // ✅ Cerrar el formulario de reservas
+
+                    // 📌 Abrir automáticamente la factura después de seleccionar la reserva
+                    var facturaService = new FacturaService(Program.DbContext);
+                    var usuarioAutenticado = Program.UsuarioAutenticado; // ✅ Obtener usuario autenticado
+
+                    var formFactura = new GenerarFacturaForm(ReservaSeleccionada, facturaService, usuarioAutenticado, Program.DbContext);
+                    formFactura.ShowDialog(); // ✅ Abrir factura después de seleccionar la reserva
+                }
             }
             else
             {
                 MessageBox.Show("Seleccione una reserva de la lista.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
+        private void btnGenerarFactura_Click(object sender, EventArgs e)
+        {
+            if (dgvReservas.SelectedRows.Count > 0)
+            {
+                int reservaId = Convert.ToInt32(dgvReservas.SelectedRows[0].Cells["Id"].Value);
+                Reserva reservaSeleccionada = _reservaService.ObtenerReservaPorId(reservaId);
+
+                if (reservaSeleccionada != null)
+                {
+                    var facturaService = new FacturaService(Program.DbContext);
+                    var usuarioAutenticado = Program.UsuarioAutenticado; // ✅ Obtener usuario autenticado
+
+                    var formFactura = new GenerarFacturaForm(reservaSeleccionada, facturaService, usuarioAutenticado, Program.DbContext);
+                    formFactura.ShowDialog(); // ✅ Abrir factura
+                }
+            }
+            else
+            {
+                MessageBox.Show("Seleccione una reserva antes de generar la factura.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
 
     }
 }

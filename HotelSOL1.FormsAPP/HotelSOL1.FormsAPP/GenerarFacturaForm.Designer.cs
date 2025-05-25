@@ -15,6 +15,12 @@
         private System.Windows.Forms.Label lblEstado;
         private System.Windows.Forms.Label lblFecha;
         private System.Windows.Forms.Label lblAlojamiento;
+        private System.Windows.Forms.Label lblFechaInicio;
+        private System.Windows.Forms.Label lblFechaFin;
+        private System.Windows.Forms.Label lblDuracionEstadia;
+        private System.Windows.Forms.Label lblTemporada;
+        private System.Windows.Forms.Label lblPrecioBase;
+        private System.Windows.Forms.Label lblPrecioFinal;
         private System.Windows.Forms.DataGridView dgvDetalleFactura;
 
 
@@ -30,10 +36,10 @@
             this.SuspendLayout();
 
             // 📌 Configuración del formulario
-            this.ClientSize = new System.Drawing.Size(900, 600);  // 🔹 Tamaño correcto
-            this.StartPosition = FormStartPosition.CenterScreen;  // 🔹 Centrar el formulario
-            this.Text = "Generar Factura";  // 🔹 Título de la ventana
-            this.BackColor = Color.White;  // 🔹 Fondo blanco para que la imagen se vea bien
+            this.ClientSize = new System.Drawing.Size(950, 700);  // ✅ Ajustamos tamaño
+            this.StartPosition = FormStartPosition.CenterScreen;
+            this.Text = "Generar Factura";
+            this.BackColor = Color.White;
 
             // 🎨 Fondo de imagen
             this.BackgroundImage = System.Drawing.Image.FromFile(@"C:\Users\Administrator\OneDrive\Escritorio\desArrollados\Imagenes\Fondo.jpg");
@@ -49,79 +55,76 @@
 
             // 📌 Panel para la factura
             pnlFactura = new System.Windows.Forms.Panel();
-            pnlFactura.Size = new System.Drawing.Size(700, 450);
-            pnlFactura.Location = new System.Drawing.Point((this.ClientSize.Width - pnlFactura.Width) / 2, 150);
+            pnlFactura.Size = new System.Drawing.Size(750, 500);
+            pnlFactura.Location = new System.Drawing.Point((this.ClientSize.Width - pnlFactura.Width) / 2, 140);
             pnlFactura.BackColor = System.Drawing.Color.FromArgb(220, 240, 240, 240);
-            pnlFactura.Padding = new System.Windows.Forms.Padding(20, 20, 20, 20);
+            pnlFactura.Padding = new System.Windows.Forms.Padding(20);
 
             // 📌 Título
             lblTitulo = new System.Windows.Forms.Label()
             {
                 Text = "Detalles de la Factura",
-                Location = new System.Drawing.Point(250, 10),
-                Font = new System.Drawing.Font("Arial", 14, System.Drawing.FontStyle.Bold),
+                Location = new System.Drawing.Point(290, 10),
+                Font = new System.Drawing.Font("Arial", 16, System.Drawing.FontStyle.Bold),
                 ForeColor = System.Drawing.Color.DarkBlue,
                 AutoSize = true
             };
 
-            // 📌 Etiquetas para mostrar detalles de la factura
+            // 📌 Detalles de la Factura
             lblFacturaId = new System.Windows.Forms.Label() { Text = "Factura ID: --", Location = new System.Drawing.Point(20, 50), AutoSize = true };
             lblClienteId = new System.Windows.Forms.Label() { Text = "Cliente ID: --", Location = new System.Drawing.Point(20, 80), AutoSize = true };
             lblMontoTotal = new System.Windows.Forms.Label() { Text = "Total: $0.00", Location = new System.Drawing.Point(20, 110), Font = new System.Drawing.Font("Arial", 12, System.Drawing.FontStyle.Bold), ForeColor = System.Drawing.Color.DarkBlue, AutoSize = true };
             lblEstado = new System.Windows.Forms.Label() { Text = "Estado: --", Location = new System.Drawing.Point(20, 140), AutoSize = true };
-            lblFecha = new System.Windows.Forms.Label() { Text = "Fecha: --", Location = new System.Drawing.Point(20, 170), AutoSize = true };
+            lblFecha = new System.Windows.Forms.Label() { Text = "Fecha Emisión: --", Location = new System.Drawing.Point(20, 170), AutoSize = true };
 
-            // 📌 DATAGRIDVIEW - Tabla de Facturas
-            dgvFacturas = new System.Windows.Forms.DataGridView();
-            dgvFacturas.Location = new System.Drawing.Point(20, 210);
-            dgvFacturas.Size = new System.Drawing.Size(650, 150);
-            dgvFacturas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dgvFacturas.AllowUserToAddRows = false;
-            dgvFacturas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            // 📌 Detalles de la Reserva
+            lblFechaInicio = new System.Windows.Forms.Label() { Text = "Fecha Inicio: --", Location = new System.Drawing.Point(400, 50), AutoSize = true };
+            lblFechaFin = new System.Windows.Forms.Label() { Text = "Fecha Fin: --", Location = new System.Drawing.Point(400, 80), AutoSize = true };
+            lblDuracionEstadia = new System.Windows.Forms.Label() { Text = "Duración: -- días", Location = new System.Drawing.Point(400, 110), AutoSize = true };
+            lblTemporada = new System.Windows.Forms.Label() { Text = "Temporada: --", Location = new System.Drawing.Point(400, 140), AutoSize = true };
 
-            // 📌 BOTÓN - Generar Factura
-            btnGenerarFactura = new System.Windows.Forms.Button() { Text = "Generar Factura", Location = new System.Drawing.Point(20, 380), Size = new System.Drawing.Size(150, 40), BackColor = System.Drawing.Color.LightGreen };
-            btnGenerarFactura.Click += new System.EventHandler(this.btnGenerarFactura_Click);
+            // 📌 Detalles de Alojamiento
+            lblAlojamiento = new System.Windows.Forms.Label() { Text = "🏨 Tipo de alojamiento: --", Location = new System.Drawing.Point(20, 200), Font = new System.Drawing.Font("Arial", 12, System.Drawing.FontStyle.Bold), ForeColor = System.Drawing.Color.DarkBlue, AutoSize = true };
+            lblPrecioBase = new System.Windows.Forms.Label() { Text = "Precio Base: --", Location = new System.Drawing.Point(400, 200), AutoSize = true };
+            lblPrecioFinal = new System.Windows.Forms.Label() { Text = "Precio Final: --", Location = new System.Drawing.Point(400, 230), AutoSize = true };
 
-            // 📌 BOTÓN - Cerrar
-            btnCerrar = new System.Windows.Forms.Button() { Text = "Cerrar", Location = new System.Drawing.Point(520, 380), Size = new System.Drawing.Size(150, 40), BackColor = System.Drawing.Color.LightCoral };
-            btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            // 📌 Tabla de Servicios
+            dgvDetalleFactura = new System.Windows.Forms.DataGridView();
+            dgvDetalleFactura.Location = new System.Drawing.Point(20, 260);
+            dgvDetalleFactura.Size = new System.Drawing.Size(700, 150);
+            dgvDetalleFactura.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dgvDetalleFactura.AllowUserToAddRows = false;
+            dgvDetalleFactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+
+            // 📌 Botones
+            btnGenerarFactura = new System.Windows.Forms.Button() { Text = "Generar Factura", Location = new System.Drawing.Point(20, 430), Size = new System.Drawing.Size(180, 45), BackColor = System.Drawing.Color.LightGreen };
+            btnCerrar = new System.Windows.Forms.Button() { Text = "Cerrar", Location = new System.Drawing.Point(540, 430), Size = new System.Drawing.Size(180, 45), BackColor = System.Drawing.Color.LightCoral };
 
             // 📌 Agregar controles al panel
-            pnlFactura.Controls.AddRange(new System.Windows.Forms.Control[] { lblTitulo, lblFacturaId, lblClienteId, lblMontoTotal, lblEstado, lblFecha, dgvFacturas, btnGenerarFactura, btnCerrar });
+            pnlFactura.Controls.AddRange(new System.Windows.Forms.Control[] { lblTitulo, lblFacturaId, lblClienteId, lblMontoTotal, lblEstado, lblFecha, lblFechaInicio, lblFechaFin, lblDuracionEstadia, lblTemporada, lblAlojamiento, lblPrecioBase, lblPrecioFinal, dgvDetalleFactura, btnGenerarFactura, btnCerrar });
 
             // 📌 Agregar elementos al formulario
             this.Controls.Add(pbLogo);
             this.Controls.Add(pnlFactura);
             pnlFactura.BringToFront();
 
-            this.ClientSize = new System.Drawing.Size(950, 650);
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Generar Factura";
+            // 📌 Tabla de Facturas
+            dgvFacturas = new System.Windows.Forms.DataGridView();
+            dgvFacturas.Location = new System.Drawing.Point(20, 480);
+            dgvFacturas.Size = new System.Drawing.Size(700, 120);
+            dgvFacturas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dgvFacturas.AllowUserToAddRows = false;
+            dgvFacturas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 
-            lblAlojamiento = new System.Windows.Forms.Label()
-            {
-                Text = "🏨 Tipo de alojamiento: --",
-                Location = new System.Drawing.Point(20, 200),
-                Font = new System.Drawing.Font("Arial", 12, System.Drawing.FontStyle.Bold),
-                ForeColor = System.Drawing.Color.DarkBlue,
-                AutoSize = true
-            };
+            // 📌 Agregar `dgvFacturas` al panel
+            pnlFactura.Controls.Add(dgvFacturas);
+            btnGenerarFactura.Click += new System.EventHandler(this.btnGenerarFactura_Click);
+            btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            pnlFactura.Controls.Add(btnGenerarFactura);
+            pnlFactura.Controls.Add(btnCerrar);
 
-            dgvDetalleFactura = new System.Windows.Forms.DataGridView();
-            dgvDetalleFactura.Location = new System.Drawing.Point(20, 240);
-            dgvDetalleFactura.Size = new System.Drawing.Size(650, 150);
-            dgvDetalleFactura.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dgvDetalleFactura.AllowUserToAddRows = false;
-            dgvDetalleFactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-
-            // 📌 Agregar controles al formulario
-            pnlFactura.Controls.Add(lblAlojamiento);
-            pnlFactura.Controls.Add(dgvDetalleFactura);
 
             this.ResumeLayout(false);
-
-
         }
     }
 }

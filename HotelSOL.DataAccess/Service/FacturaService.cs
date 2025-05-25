@@ -21,8 +21,8 @@ namespace HotelSOL.DataAccess.Services
             using var transaction = _context.Database.BeginTransaction(); // ✅ Iniciar transacción
 
             var reserva = _context.Reservas
-                .Include(r => r.Cliente)
-                .FirstOrDefault(r => r.Id == reservaId);
+              .Include(r => r.Cliente)
+              .FirstOrDefault(r => r.Id == reservaId);
 
             if (reserva == null)
             {
@@ -31,21 +31,23 @@ namespace HotelSOL.DataAccess.Services
 
             Console.WriteLine($"✅ Reserva encontrada: ID={reserva.Id}, ClienteID={reserva.ClienteId}");
 
-            var factura = _context.Facturas.FirstOrDefault(f => f.ReservaId == reservaId); // ✅ Buscar factura existente
-
             var serviciosConsumidos = _context.Servicios
-                .Include(s => s.TipoServicio) // 🔹 Cargar detalles del TipoServicio
+                .Include(s => s.TipoServicio)
                 .Where(s => s.ReservaId == reservaId)
                 .ToList();
 
-            decimal montoServicios = serviciosConsumidos.Sum(s => s.Precio); // ✅ Usar el precio almacenado en `Servicio`
-            decimal montoBase = CalcularMontoBase(reserva);
+            // ✅ Calcular costos
+            decimal montoBase = CalcularMontoBase(reserva); // ✅ Llamar el método directamente
+            decimal montoServicios = serviciosConsumidos.Sum(s => s.Precio);
             decimal montoImpuestos = CalcularImpuesto(montoBase + montoServicios, impuestoPorcentaje);
             decimal montoTotal = montoBase + montoServicios + montoImpuestos;
 
+
+            // 📌 Ahora, usa estos valores en la factura
+            var factura = _context.Facturas.FirstOrDefault(f => f.ReservaId == reservaId);
+
             if (factura != null)
             {
-                // 📌 Si ya existe una factura, actualizar el monto incluyendo nuevos servicios
                 factura.MontoTotal = montoTotal;
                 factura.MontoImpuestos = montoImpuestos;
                 _context.Update(factura);
@@ -53,7 +55,6 @@ namespace HotelSOL.DataAccess.Services
             }
             else
             {
-                // 📌 Crear una nueva factura ANTES de asignarla a los servicios
                 factura = new Factura
                 {
                     ReservaId = reservaId,
@@ -66,30 +67,23 @@ namespace HotelSOL.DataAccess.Services
                 };
 
                 _context.Facturas.Add(factura);
-                _context.SaveChanges(); // ✅ Guardar la factura primero
+                _context.SaveChanges();
                 Console.WriteLine($"✅ Nueva factura generada: ID={factura.Id}");
-
-                // 📌 Ahora que la factura está guardada, asignarla a los servicios
-                foreach (var servicio in serviciosConsumidos)
-                {
-                    servicio.FacturaId = factura.Id;
-                    _context.Update(servicio);
-                }
-
-                _context.SaveChanges(); // ✅ Guardar todos los cambios de los servicios en una sola operación
             }
 
+            // ✅ Guardar cambios y cerrar la transacción
             _context.SaveChanges();
-            transaction.Commit(); // ✅ Confirmar los cambios
-
-            return factura; // ✅ Ahora `factura` está definida en todo el método
+            transaction.Commit();
+            return factura;
         }
 
 
 
 
+
         // 🔹 Calcular el costo base de la reserva
-        private decimal CalcularMontoBase(Reserva reserva)
+        public decimal CalcularMontoBase(Reserva reserva)
+
         {
             int diasReservados = (reserva.FechaFin - reserva.FechaInicio).Days;
             decimal tarifaDiaria = _context.ReservaHabitaciones
@@ -117,7 +111,7 @@ namespace HotelSOL.DataAccess.Services
         }
 
         // 🔹 Verificar si es temporada alta
-        private bool EsTemporadaAlta(DateTime inicio, DateTime fin)
+        public bool EsTemporadaAlta(DateTime inicio, DateTime fin)
         {
             var temporadaAlta = new List<(int mesInicio, int mesFin)>
             {
@@ -129,7 +123,7 @@ namespace HotelSOL.DataAccess.Services
         }
 
         // 🔹 Calcular impuestos
-        private const decimal IMPUESTO_POR_DEFECTO = 10m;
+        public const decimal IMPUESTO_POR_DEFECTO = 10m;
 
         public decimal CalcularImpuesto(decimal monto, decimal? porcentaje = null)
         {

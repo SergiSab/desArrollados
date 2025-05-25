@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HotelSOL1.FormsAPP")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+41dc690b5a5c9fb8d748c38bc4e7073be18829d7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c759d0a6a3ac757022a22fb8fe9602da7d41920b")]
 [assembly: System.Reflection.AssemblyProductAttribute("HotelSOL1.FormsAPP")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HotelSOL1.FormsAPP")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
