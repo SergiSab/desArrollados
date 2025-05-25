@@ -11,7 +11,7 @@
         private System.Windows.Forms.Button btnGenerarFactura;
         private System.Windows.Forms.Button btnExportarOdoo;
         private System.Windows.Forms.Button btnGestionHabitaciones; // 🔹 Nuevo botón
-        private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.Button btnSalir, btnPagos; 
 
         protected override void Dispose(bool disposing)
         {
@@ -33,6 +33,7 @@
             this.btnExportarOdoo = new System.Windows.Forms.Button();
             this.btnGestionHabitaciones = new System.Windows.Forms.Button(); // 🔹 Botón nuevo
             this.btnSalir = new System.Windows.Forms.Button();
+            this.btnPagos = new System.Windows.Forms.Button();
 
             // lblUsuario
             this.lblUsuario.AutoSize = true;
@@ -90,6 +91,8 @@
             this.btnGestionHabitaciones.Text = "Gestión de Habitaciones";
             this.btnGestionHabitaciones.Click += new System.EventHandler(this.btnGestionHabitaciones_Click);
             this.Controls.Add(this.btnGestionHabitaciones); // 🔹 Agregado al formulario
+
+
 
             // btnSalir
             this.btnSalir.Location = new System.Drawing.Point(114, 60 + 7 * espaciado);

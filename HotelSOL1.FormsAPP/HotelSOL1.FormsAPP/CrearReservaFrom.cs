@@ -1,5 +1,8 @@
-﻿using HotelSOL.DataAccess.Models;
+﻿using HotelSOL.DataAccess;
+using HotelSOL.DataAccess.Models;
+using HotelSOL.DataAccess.Service;
 using HotelSOL.DataAccess.Services;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -15,15 +18,25 @@ namespace HotelSOL1.FormsAPP
         private readonly ReservaService reservaService;
         private readonly Usuario usuarioAutenticado;
         private readonly FacturaService facturaService;
+        private readonly HotelSolContext _context; // 🔹 Definir la variable para almacenar la reserva creada
+        private ServicioService servicioService; // 🔹 Declarar la variable
 
-        public CrearReservaForm(Usuario usuarioAutenticado, ClienteService clienteService, HabitacionService habitacionService, ReservaService reservaService, FacturaService facturaService)
+
+        public CrearReservaForm(HotelSolContext context, Usuario usuarioAutenticado, ClienteService clienteService,
+                         HabitacionService habitacionService, ReservaService reservaService,
+                         FacturaService facturaService, ServicioService servicioService) // ✅ Añadir `servicioService`
         {
             InitializeComponent();
+            _context = context;
             this.usuarioAutenticado = usuarioAutenticado;
             this.clienteService = clienteService;
             this.habitacionService = habitacionService;
             this.reservaService = reservaService;
             this.facturaService = facturaService;
+            this.servicioService = servicioService; // ✅ Asignar `servicioService`
+
+        
+
 
             // 🔹 Si el usuario autenticado es un cliente, solo puede reservar a su nombre
             if (usuarioAutenticado.Rol == "Cliente")
@@ -107,6 +120,7 @@ namespace HotelSOL1.FormsAPP
             }
         }
 
+        private Reserva reserva; // ✅ Declarar la variable
 
         private void btnGuardarReserva_Click(object sender, EventArgs e)
         {
@@ -116,7 +130,7 @@ namespace HotelSOL1.FormsAPP
 
                 if (usuarioAutenticado.Rol == "Cliente")
                 {
-                    clienteId = usuarioAutenticado.Id;
+                    clienteId = usuarioAutenticado.ClienteId.GetValueOrDefault();
                 }
                 else
                 {
@@ -136,6 +150,7 @@ namespace HotelSOL1.FormsAPP
 
                 string tipoSeleccionado = cmbTipo.SelectedItem.ToString().Split('-')[0].Trim();
                 var tipoHabitacion = habitacionService.ObtenerTipoHabitacionPorNombre(tipoSeleccionado);
+
                 if (tipoHabitacion == null)
                 {
                     MessageBox.Show("Error: No se encontró el tipo de habitación seleccionado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -146,7 +161,11 @@ namespace HotelSOL1.FormsAPP
                 List<int> habitacionesSeleccionadas = new List<int>();
 
                 var habitacionesDisponibles = habitacionService.ObtenerHabitacionesDisponibles()
-                    .Where(h => h.TipoHabitacion.Id == tipoHabitacion.Id)
+                    .Where(h => h.TipoId == tipoHabitacion.Id)
+                    .Where(h => !_context.ReservaHabitaciones.Any(rh => rh.HabitacionId == h.Id &&
+                        _context.Reservas.Any(r => rh.ReservaId == r.Id &&
+                            ((dtpEntrada.Value >= r.FechaInicio && dtpEntrada.Value < r.FechaFin) ||
+                            (dtpSalida.Value > r.FechaInicio && dtpSalida.Value <= r.FechaFin)))))
                     .OrderBy(h => h.Capacidad)
                     .ToList();
 
@@ -170,8 +189,8 @@ namespace HotelSOL1.FormsAPP
                     return;
                 }
 
-                // 🔹 1. Guardar la reserva en la base de datos primero
-                var reserva = new Reserva
+                // ✅ CREAR LA RESERVA SIN GENERAR FACTURA AUTOMÁTICAMENTE
+                reserva = new Reserva
                 {
                     ClienteId = clienteId,
                     FechaInicio = dtpEntrada.Value,
@@ -189,32 +208,36 @@ namespace HotelSOL1.FormsAPP
                     });
                 }
 
-
                 reservaService.RegistrarReserva(reserva, habitacionesSeleccionadas);
 
-                // 🔹 2. Verificar que la reserva se guardó correctamente
                 if (reserva.Id == 0)
                 {
-                    MessageBox.Show("Error: La reserva no se guardó correctamente en la base de datos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error: La reserva no se guardó correctamente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
-                // 🔹 3. Ahora la reserva tiene un `Id`, podemos generar la factura correctamente
-                var factura = facturaService.GenerarFactura(reserva.Id, 10);
-
-                // 🔹 4. Asociar la factura a la reserva y actualizarla en la base de datos
-                reserva.Factura = factura;
-                reservaService.ActualizarReserva(reserva);
-
-                MessageBox.Show("Reserva creada correctamente con factura asignada.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Close();
+                MessageBox.Show("Reserva creada correctamente. La factura se podrá generar más adelante.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error al guardar la reserva:\n{ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Error al guardar la reserva:\n{ex.Message}\nDetalles internos: {ex.InnerException?.Message}",
+                                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
+
+
+        private void btnServiciosExtra_Click(object sender, EventArgs e)
+        {
+            if (reserva == null || reserva.Id == 0)
+            {
+                MessageBox.Show("❌ Primero debes guardar la reserva antes de agregar servicios extra.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            var servicioForm = new ServicioForm(reserva.Id, servicioService, reservaService, facturaService);
+            servicioForm.ShowDialog();
+        }
 
 
 

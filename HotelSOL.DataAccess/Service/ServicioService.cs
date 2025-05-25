@@ -30,6 +30,10 @@ namespace HotelSOL.DataAccess.Service
             _context.Servicios.Add(servicio);
             _context.SaveChanges();
         }
+        public List<Servicio> ObtenerServiciosPorReserva(int reservaId)
+        {
+            return _context.Servicios.Where(s => s.ReservaId == reservaId).ToList();
+        }
 
     }
 }

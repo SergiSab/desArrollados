@@ -16,34 +16,54 @@ namespace HotelSOL.DataAccess.Services
         }
 
         // 🔹 Registrar un pago parcial o completo de una factura
-        public void RegistrarPago(int facturaId, decimal monto, string metodoPago)
+        public void RegistrarPago(int facturaId, string metodoPago)
         {
-            var factura = _context.Facturas.Include(f => f.Pagos).FirstOrDefault(f => f.Id == facturaId);
+            using var transaction = _context.Database.BeginTransaction(); // ✅ Iniciar transacción
+
+            var factura = ObtenerFacturaPorId(facturaId);
             if (factura == null) throw new ArgumentException("Factura no encontrada.");
+
+            decimal montoTotal = factura.MontoTotal;
 
             var pago = new Pago
             {
                 FacturaId = facturaId,
-                Monto = monto,
+                Monto = montoTotal, // ✅ Tomar directamente el monto de la factura
                 MetodoPago = metodoPago,
                 FechaPago = DateTime.Now
             };
 
-            factura.Pagos.Add(pago);
+            _context.Pagos.Add(pago); // ✅ Agregar pago explícitamente a la base de datos
             _context.SaveChanges();
 
-            // 🔹 Marcar factura como pagada si el total cubre el monto total
-            decimal totalPagado = factura.Pagos.Sum(p => p.Monto);
+            // 🔹 Verificar si el pago cubre el total y marcar la factura como pagada
+            decimal totalPagado = _context.Pagos.Where(p => p.FacturaId == facturaId).Sum(p => p.Monto);
             if (totalPagado >= factura.MontoTotal)
+            {
                 factura.Pagada = true;
+                _context.Update(factura); // ✅ Asegurar que la factura se actualiza
+                _context.SaveChanges();
+            }
 
-            _context.SaveChanges();
+            transaction.Commit(); // ✅ Confirmar la transacción si todo salió bien
         }
+
+
 
         // 🔹 Obtener pagos de una factura específica
         public List<Pago> ObtenerPagosPorFactura(int facturaId)
         {
             return _context.Pagos.Where(p => p.FacturaId == facturaId).ToList();
         }
+
+        public Factura ObtenerFacturaPorId(int facturaId)
+        {
+            return _context.Facturas
+                .Include(f => f.Pagos)
+                .Include(f => f.Reserva)
+                .Include(f => f.Servicios) // ✅ Cargar servicios asociados
+                .FirstOrDefault(f => f.Id == facturaId);
+        }
+
     }
 }     

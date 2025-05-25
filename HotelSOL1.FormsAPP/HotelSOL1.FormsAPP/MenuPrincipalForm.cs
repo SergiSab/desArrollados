@@ -4,6 +4,7 @@ using System;
 using System.Windows.Forms;
 using Microsoft.EntityFrameworkCore;
 using HotelSOL.DataAccess.Service;
+using HotelSOL.DataAccess;
 
 namespace HotelSOL1.FormsAPP
 {
@@ -141,21 +142,24 @@ namespace HotelSOL1.FormsAPP
 
         private void btnCrearReserva_Click(object sender, EventArgs e)
         {
-            var clienteService = new ClienteService(Program.DbContext);
-            var habitacionService = new HabitacionService(Program.DbContext);
-            var reservaService = new ReservaService(Program.DbContext);
-            var facturaService = new FacturaService(Program.DbContext);
+            var context = Program.DbContext; // 🔹 Obtén la instancia del contexto de base de datos
+            var servicioService = new ServicioService(context); // ✅ Agregar esta línea
+            var clienteService = new ClienteService(context);
+            var habitacionService = new HabitacionService(context);
+            var reservaService = new ReservaService(context);
+            var facturaService = new FacturaService(context);
 
-            var usuarioAutenticado = Program.UsuarioAutenticado; // Asegúrate de que este objeto existe y tiene la información del usuario
-            if (Program.UsuarioAutenticado == null)
+            var usuarioAutenticado = Program.UsuarioAutenticado; // 🔹 Asegura que el usuario está autenticado
+            if (usuarioAutenticado == null)
             {
                 MessageBox.Show("Error: No hay usuario autenticado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            var form = new CrearReservaForm(usuarioAutenticado, clienteService, habitacionService, reservaService, facturaService);
+            var form = new CrearReservaForm(context, usuarioAutenticado, clienteService, habitacionService, reservaService, facturaService, servicioService);
             form.ShowDialog();
         }
+
 
 
 
@@ -170,6 +174,12 @@ namespace HotelSOL1.FormsAPP
         {
             var reservaService = new ReservaService(Program.DbContext);
             var facturaService = new FacturaService(Program.DbContext);
+            var usuarioAutenticado = Program.UsuarioAutenticado; // 🔹 Asegura que el usuario está autenticado
+            if (usuarioAutenticado == null)
+            {
+                MessageBox.Show("Error: No hay usuario autenticado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             // Abre el formulario de reservas para que el usuario elija una
             var formReservas = new VerReservasForm(reservaService);
@@ -178,7 +188,7 @@ namespace HotelSOL1.FormsAPP
             if (formReservas.ReservaSeleccionada != null) // Asumiendo que este formulario permite seleccionar una reserva
             {
                 var reserva = formReservas.ReservaSeleccionada;
-                var formFactura = new GenerarFacturaForm(reserva, facturaService);
+                var formFactura = new GenerarFacturaForm(reserva, facturaService, usuarioAutenticado );
                 formFactura.ShowDialog();
             }
             else

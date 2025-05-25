@@ -421,3 +421,4 @@ C:\Users\Administrator\OneDrive\Escritorio\desArrollados\HotelSOL1.FormsAPP\Hote
 C:\Users\Administrator\OneDrive\Escritorio\desArrollados\HotelSOL1.FormsAPP\HotelSOL1.FormsAPP\obj\Debug\net8.0-windows\HotelSOL1.FormsAPP.pdb
 C:\Users\Administrator\OneDrive\Escritorio\desArrollados\HotelSOL1.FormsAPP\HotelSOL1.FormsAPP\obj\Debug\net8.0-windows\HotelSOL1.FormsAPP.genruntimeconfig.cache
 C:\Users\Administrator\OneDrive\Escritorio\desArrollados\HotelSOL1.FormsAPP\HotelSOL1.FormsAPP\obj\Debug\net8.0-windows\ref\HotelSOL1.FormsAPP.dll
+C:\Users\Administrator\OneDrive\Escritorio\desArrollados\HotelSOL1.FormsAPP\HotelSOL1.FormsAPP\obj\Debug\net8.0-windows\HotelSOL1.FormsAPP.ServicioForm.resources

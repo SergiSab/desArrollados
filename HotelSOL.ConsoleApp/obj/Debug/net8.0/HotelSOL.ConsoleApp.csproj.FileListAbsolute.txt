@@ -481,3 +481,12 @@ C:\Users\Administrator\OneDrive\Escritorio\uni\producto2CapaDatos(P59)_DiazRisso
 C:\Users\Administrator\OneDrive\Escritorio\uni\producto2CapaDatos(P59)_DiazRisso_Ingrid\HotelSOL\HotelSOL.ConsoleApp\obj\Debug\net8.0\HotelSOL.ConsoleApp.pdb
 C:\Users\Administrator\OneDrive\Escritorio\uni\producto2CapaDatos(P59)_DiazRisso_Ingrid\HotelSOL\HotelSOL.ConsoleApp\obj\Debug\net8.0\HotelSOL.ConsoleApp.genruntimeconfig.cache
 C:\Users\Administrator\OneDrive\Escritorio\uni\producto2CapaDatos(P59)_DiazRisso_Ingrid\HotelSOL\HotelSOL.ConsoleApp\obj\Debug\net8.0\ref\HotelSOL.ConsoleApp.dll
+C:\Users\Administrator\OneDrive\Escritorio\desArrollados\HotelSOL.ConsoleApp\obj\Debug\net8.0\HotelSOL.ConsoleApp.csproj.AssemblyReference.cache
+C:\Users\Administrator\OneDrive\Escritorio\desArrollados\HotelSOL.ConsoleApp\obj\Debug\net8.0\HotelSOL.ConsoleApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Administrator\OneDrive\Escritorio\desArrollados\HotelSOL.ConsoleApp\obj\Debug\net8.0\HotelSOL.ConsoleApp.AssemblyInfoInputs.cache
+C:\Users\Administrator\OneDrive\Escritorio\desArrollados\HotelSOL.ConsoleApp\obj\Debug\net8.0\HotelSOL.ConsoleApp.AssemblyInfo.cs
+C:\Users\Administrator\OneDrive\Escritorio\desArrollados\HotelSOL.ConsoleApp\obj\Debug\net8.0\HotelSOL.ConsoleApp.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\OneDrive\Escritorio\desArrollados\HotelSOL.ConsoleApp\obj\Debug\net8.0\HotelSOL.ConsoleApp.sourcelink.json
+C:\Users\Administrator\OneDrive\Escritorio\desArrollados\HotelSOL.ConsoleApp\obj\Debug\net8.0\HotelSOL.ConsoleApp.dll
+C:\Users\Administrator\OneDrive\Escritorio\desArrollados\HotelSOL.ConsoleApp\obj\Debug\net8.0\refint\HotelSOL.ConsoleApp.dll
+C:\Users\Administrator\OneDrive\Escritorio\desArrollados\HotelSOL.ConsoleApp\obj\Debug\net8.0\HotelSOL.ConsoleApp.pdb

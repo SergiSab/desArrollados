@@ -17,9 +17,11 @@ namespace HotelSOL.DataAccess.Models
         public decimal MontoImpuestos { get; set; }
         public DateTime FechaEmision { get; set; } = DateTime.Now;
         public bool Pagada { get; set; } = false;
-        public bool DescuentoAplicado { get; set; } = false; // Nuevo campo para descuentos
+        public decimal DescuentoAplicado { get; set; } = 0; // Nuevo campo para descuentos
 
         public ICollection<Pago> Pagos { get; set; } = new List<Pago>();
+        public ICollection<Servicio> Servicios { get; set; } = new List<Servicio>();
+
     }
 
 }

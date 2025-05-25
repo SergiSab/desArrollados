@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "QfiC/O9U00E/pbqrZJccOexYZHCag8A2UHt4Y10Yeq7evJNHhmsdH8iBvg76wuKOI/CuOkwqOh0BLNZ3Cewu/A==",
+  "dgSpecHash": "3+6FTmy46v06ypFHh9FqtJkjxl0RO4S0THGyFE+BjKWTo4HGO5kkXb64EQbVh8EZNbCNjtQVmmwry1b8vezCOw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\uni\\producto2CapaDatos(P59)_DiazRisso_Ingrid\\HotelSOL\\HotelSOL.ConsoleApp\\HotelSOL.ConsoleApp.csproj",
+  "projectFilePath": "C:\\Users\\Administrator\\OneDrive\\Escritorio\\desArrollados\\HotelSOL.ConsoleApp\\HotelSOL.ConsoleApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Administrator\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

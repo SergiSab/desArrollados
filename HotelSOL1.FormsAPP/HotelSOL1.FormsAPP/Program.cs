@@ -32,9 +32,8 @@ namespace HotelSOL1.FormsAPP
             {
                 throw new InvalidOperationException("La cadena de conexión no puede ser nula.");
             }
-
             var options = new DbContextOptionsBuilder<HotelSolContext>()
-                .UseSqlServer(connectionString, options => options.EnableRetryOnFailure())
+                .UseSqlServer(connectionString)
                 .Options;
 
             DbContext = new HotelSolContext(options);

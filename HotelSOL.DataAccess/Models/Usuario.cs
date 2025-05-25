@@ -7,7 +7,9 @@
         public string Email { get; set; }
         public string Contraseña { get; set; } // 🔒 Considera encriptarla
         public string Rol { get; set; }
-        public Cliente Cliente { get; set; } // 🔹 Propiedad de navegación
+        public int? ClienteId { get; set; }
+
+        public Cliente Cliente { get; set; } // 🔹 Relación con Cliente
     }
 
 }

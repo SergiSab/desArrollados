@@ -2,76 +2,103 @@
 {
     partial class GenerarFacturaForm
     {
+        private System.ComponentModel.IContainer components = null;
+        private System.Windows.Forms.PictureBox pbLogo;
+        private System.Windows.Forms.Panel pnlFactura;
         private System.Windows.Forms.DataGridView dgvFacturas;
         private System.Windows.Forms.Button btnGenerarFactura;
-        private System.Windows.Forms.Label lblMonto;
-        private System.Windows.Forms.TextBox txtReservaId;
-        private System.Windows.Forms.Label lblReservaId;
         private System.Windows.Forms.Button btnCerrar;
+        private System.Windows.Forms.Label lblTitulo;
+        private System.Windows.Forms.Label lblFacturaId;
+        private System.Windows.Forms.Label lblClienteId;
+        private System.Windows.Forms.Label lblMontoTotal;
+        private System.Windows.Forms.Label lblEstado;
+        private System.Windows.Forms.Label lblFecha;
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+                components.Dispose();
+            base.Dispose(disposing);
+        }
 
         private void InitializeComponent()
         {
-            this.dgvFacturas = new System.Windows.Forms.DataGridView();
-            this.btnGenerarFactura = new System.Windows.Forms.Button();
-            this.lblMonto = new System.Windows.Forms.Label();
-            this.txtReservaId = new System.Windows.Forms.TextBox();
-            this.lblReservaId = new System.Windows.Forms.Label();
-            this.btnCerrar = new System.Windows.Forms.Button();
+            this.SuspendLayout();
 
-            // 
-            // dgvFacturas
-            // 
-            this.dgvFacturas.Location = new System.Drawing.Point(20, 20);
-            this.dgvFacturas.Size = new System.Drawing.Size(500, 200);
-            this.dgvFacturas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            // 📌 Configuración del formulario
+            this.ClientSize = new System.Drawing.Size(900, 600);  // 🔹 Tamaño correcto
+            this.StartPosition = FormStartPosition.CenterScreen;  // 🔹 Centrar el formulario
+            this.Text = "Generar Factura";  // 🔹 Título de la ventana
+            this.BackColor = Color.White;  // 🔹 Fondo blanco para que la imagen se vea bien
 
-            // 
-            // lblReservaId
-            // 
-            this.lblReservaId.Text = "ID de Reserva:";
-            this.lblReservaId.Location = new System.Drawing.Point(20, 240);
+            // 🎨 Fondo de imagen
+            this.BackgroundImage = System.Drawing.Image.FromFile(@"C:\Users\Administrator\OneDrive\Escritorio\desArrollados\Imagenes\Fondo.jpg");
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
 
-            // 
-            // txtReservaId
-            // 
-            this.txtReservaId.Location = new System.Drawing.Point(120, 240);
-            this.txtReservaId.Size = new System.Drawing.Size(100, 22);
+            // 📌 Logo centrado
+            pbLogo = new System.Windows.Forms.PictureBox();
+            pbLogo.Image = System.Drawing.Image.FromFile(@"C:\Users\Administrator\OneDrive\Escritorio\desArrollados\Imagenes\Logo.png");
+            pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            pbLogo.Size = new System.Drawing.Size(120, 120);
+            pbLogo.BackColor = System.Drawing.Color.Transparent;
+            pbLogo.Location = new System.Drawing.Point((this.ClientSize.Width - pbLogo.Width) / 2, 10);
 
-            // 
-            // btnGenerarFactura
-            // 
-            this.btnGenerarFactura.Text = "Generar Factura";
-            this.btnGenerarFactura.Location = new System.Drawing.Point(250, 240);
-            this.btnGenerarFactura.Click += new System.EventHandler(this.btnGenerarFactura_Click);
+            // 📌 Panel para la factura
+            pnlFactura = new System.Windows.Forms.Panel();
+            pnlFactura.Size = new System.Drawing.Size(700, 450);
+            pnlFactura.Location = new System.Drawing.Point((this.ClientSize.Width - pnlFactura.Width) / 2, 150);
+            pnlFactura.BackColor = System.Drawing.Color.FromArgb(220, 240, 240, 240);
+            pnlFactura.Padding = new System.Windows.Forms.Padding(20, 20, 20, 20);
 
-            // 
-            // lblMonto
-            // 
-            this.lblMonto.Text = "Monto Total: $0.00";
-            this.lblMonto.Location = new System.Drawing.Point(20, 280);
-            this.lblMonto.AutoSize = true;
+            // 📌 Título
+            lblTitulo = new System.Windows.Forms.Label()
+            {
+                Text = "Detalles de la Factura",
+                Location = new System.Drawing.Point(250, 10),
+                Font = new System.Drawing.Font("Arial", 14, System.Drawing.FontStyle.Bold),
+                ForeColor = System.Drawing.Color.DarkBlue,
+                AutoSize = true
+            };
 
-            // 
-            // btnCerrar
-            // 
-            this.btnCerrar.Text = "Cerrar";
-            this.btnCerrar.Location = new System.Drawing.Point(420, 240);
-            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            // 📌 Etiquetas para mostrar detalles de la factura
+            lblFacturaId = new System.Windows.Forms.Label() { Text = "Factura ID: --", Location = new System.Drawing.Point(20, 50), AutoSize = true };
+            lblClienteId = new System.Windows.Forms.Label() { Text = "Cliente ID: --", Location = new System.Drawing.Point(20, 80), AutoSize = true };
+            lblMontoTotal = new System.Windows.Forms.Label() { Text = "Total: $0.00", Location = new System.Drawing.Point(20, 110), Font = new System.Drawing.Font("Arial", 12, System.Drawing.FontStyle.Bold), ForeColor = System.Drawing.Color.DarkBlue, AutoSize = true };
+            lblEstado = new System.Windows.Forms.Label() { Text = "Estado: --", Location = new System.Drawing.Point(20, 140), AutoSize = true };
+            lblFecha = new System.Windows.Forms.Label() { Text = "Fecha: --", Location = new System.Drawing.Point(20, 170), AutoSize = true };
 
-            // 
-            // GenerarFacturaForm
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(550, 320);
-            this.Controls.Add(this.dgvFacturas);
-            this.Controls.Add(this.lblReservaId);
-            this.Controls.Add(this.txtReservaId);
-            this.Controls.Add(this.btnGenerarFactura);
-            this.Controls.Add(this.lblMonto);
-            this.Controls.Add(this.btnCerrar);
+            // 📌 DATAGRIDVIEW - Tabla de Facturas
+            dgvFacturas = new System.Windows.Forms.DataGridView();
+            dgvFacturas.Location = new System.Drawing.Point(20, 210);
+            dgvFacturas.Size = new System.Drawing.Size(650, 150);
+            dgvFacturas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dgvFacturas.AllowUserToAddRows = false;
+            dgvFacturas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+
+            // 📌 BOTÓN - Generar Factura
+            btnGenerarFactura = new System.Windows.Forms.Button() { Text = "Generar Factura", Location = new System.Drawing.Point(20, 380), Size = new System.Drawing.Size(150, 40), BackColor = System.Drawing.Color.LightGreen };
+            btnGenerarFactura.Click += new System.EventHandler(this.btnGenerarFactura_Click);
+
+            // 📌 BOTÓN - Cerrar
+            btnCerrar = new System.Windows.Forms.Button() { Text = "Cerrar", Location = new System.Drawing.Point(520, 380), Size = new System.Drawing.Size(150, 40), BackColor = System.Drawing.Color.LightCoral };
+            btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+
+            // 📌 Agregar controles al panel
+            pnlFactura.Controls.AddRange(new System.Windows.Forms.Control[] { lblTitulo, lblFacturaId, lblClienteId, lblMontoTotal, lblEstado, lblFecha, dgvFacturas, btnGenerarFactura, btnCerrar });
+
+            // 📌 Agregar elementos al formulario
+            this.Controls.Add(pbLogo);
+            this.Controls.Add(pnlFactura);
+            pnlFactura.BringToFront();
+
+            this.ClientSize = new System.Drawing.Size(950, 650);
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Generar Factura";
+
+            this.ResumeLayout(false);
+
+
         }
     }
 }
-

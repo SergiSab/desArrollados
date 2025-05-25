@@ -16,6 +16,7 @@ namespace HotelSOL1.FormsAPP
         private PictureBox pbLogo, picHabitacion;
         private Panel pnlReserva;
         protected TextBox txtPrecio;
+        private Button btnServiciosExtra; // 🔹 Declaramos el botón como variable de la clase
 
         protected override void Dispose(bool disposing)
         {
@@ -55,6 +56,14 @@ namespace HotelSOL1.FormsAPP
             );
             pnlReserva.BackColor = Color.FromArgb(220, 240, 240, 240);
             pnlReserva.Padding = new Padding(20, 40, 20, 20);
+            btnServiciosExtra = new Button() { Text = "Seleccionar Servicios Extra", Location = new Point(380, 450), Size = new Size(200, 30), BackColor = Color.LightBlue };
+            pnlReserva.Controls.Add(btnServiciosExtra);
+
+            btnServiciosExtra.Click += new EventHandler(btnServiciosExtra_Click);
+            btnServiciosExtra = new Button() { Text = "Seleccionar Servicios Extra", Location = new Point(380, 450), Size = new Size(200, 30), BackColor = Color.LightBlue };
+            pnlReserva.Controls.Add(btnServiciosExtra);
+            btnServiciosExtra.Click += new EventHandler(btnServiciosExtra_Click);
+
 
             this.Controls.Add(pnlReserva);
             this.Controls.Add(pbLogo);

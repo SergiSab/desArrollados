@@ -28,6 +28,9 @@
     <Compile Update="RegistrarUsuarioForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="ServicioForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="VerReservasForm.cs">
       <SubType>Form</SubType>
     </Compile>

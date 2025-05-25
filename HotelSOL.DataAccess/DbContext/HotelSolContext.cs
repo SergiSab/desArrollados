@@ -37,7 +37,8 @@ namespace HotelSOL.DataAccess
             modelBuilder.Entity<ReservaHabitaciones>()
                 .HasOne(rh => rh.Habitacion)
                 .WithMany(h => h.ReservaHabitaciones)
-                .HasForeignKey(rh => rh.HabitacionId);
+                .HasForeignKey(rh => rh.HabitacionId)
+                .OnDelete(DeleteBehavior.Restrict);  // 🔹 Evita eliminaciones en cascada accidentales
 
 
             modelBuilder.Entity<Reserva>()
@@ -56,12 +57,51 @@ namespace HotelSOL.DataAccess
 
             modelBuilder.Entity<Habitacion>()
                 .HasOne(h => h.TipoHabitacion)
-                .WithMany(t => t.Habitaciones)
-                .HasForeignKey(h => h.TipoId);
+                .WithMany(th => th.Habitaciones)
+                .HasForeignKey(h => h.TipoId)
+                .OnDelete(DeleteBehavior.Restrict); // 🔹 Evita eliminaciones en cascada accidentales
 
             modelBuilder.Entity<Reserva>()
                 .Property(r => r.Estado)
                 .HasConversion<int>();
+
+            modelBuilder.Entity<Reserva>()
+                .HasKey(r => r.Id); // ✅ Verificar que la clave primaria sea `Id`
+
+            modelBuilder.Entity<Factura>()
+                .HasKey(f => f.Id); // ✅ Usa `Id` en lugar de `FacturaId`
+
+            modelBuilder.Entity<Reserva>()
+                .HasOne(r => r.Cliente)
+                .WithMany(c => c.Reservas)
+                .HasForeignKey(r => r.ClienteId);
+
+            modelBuilder.Entity<Usuario>()
+                .HasOne(u => u.Cliente)
+                .WithOne(c => c.Usuario)
+                .HasForeignKey<Usuario>(u => u.ClienteId)
+                .OnDelete(DeleteBehavior.SetNull); // Permitir que un usuario no tenga cliente
+
+            modelBuilder.Entity<Factura>()
+                .HasOne(f => f.Cliente)
+                .WithMany(c => c.Facturas)
+                .HasForeignKey(f => f.ClienteId)
+                .OnDelete(DeleteBehavior.Restrict); // No permitir eliminación automática de clientes
+
+            modelBuilder.Entity<Factura>()
+                .HasOne(f => f.Reserva)
+                .WithOne(r => r.Factura)
+                .HasForeignKey<Factura>(f => f.ReservaId); // ✅ Especificando la entidad correcta
+
+            modelBuilder.Entity<Servicio>()
+                .Property(s => s.Tipo)
+                .HasConversion<int>(); // 🔹 Indicar que el enum se guarda como int
+
+            modelBuilder.Entity<Servicio>()
+                .HasOne(s => s.Factura)
+                .WithMany(f => f.Servicios)
+                .HasForeignKey(s => s.FacturaId)
+                .OnDelete(DeleteBehavior.Restrict);
 
 
             base.OnModelCreating(modelBuilder);

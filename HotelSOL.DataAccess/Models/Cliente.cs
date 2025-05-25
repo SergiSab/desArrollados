@@ -21,6 +21,8 @@ namespace HotelSOL.DataAccess.Models
 
         // Relación con Reservas
         public ICollection<Reserva> Reservas { get; set; } = new List<Reserva>();
+        public ICollection<Factura> Facturas { get; set; } // ✅ Relación con Factura
+    
         public Usuario Usuario { get; set; }
     }
 }
