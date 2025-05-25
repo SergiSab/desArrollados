@@ -1,16 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using HotelSOL.DataAccess;
+using HotelSOL.DataAccess.Models;
+using HotelSOL.DataAccess.Service;
 
 namespace HotelSOL1.FormsAPP
 {
     public partial class PedidosForm : Form
+
     {
         public PedidosForm()
         {
