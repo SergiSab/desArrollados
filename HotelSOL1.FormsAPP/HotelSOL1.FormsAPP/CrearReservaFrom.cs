@@ -2,6 +2,7 @@
 using HotelSOL.DataAccess.Services;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -12,107 +13,200 @@ namespace HotelSOL1.FormsAPP
         private readonly ClienteService clienteService;
         private readonly HabitacionService habitacionService;
         private readonly ReservaService reservaService;
+        private readonly Usuario usuarioAutenticado;
+        private readonly FacturaService facturaService;
 
-        public CrearReservaForm(ClienteService clienteService, HabitacionService habitacionService, ReservaService reservaService)
+        public CrearReservaForm(Usuario usuarioAutenticado, ClienteService clienteService, HabitacionService habitacionService, ReservaService reservaService, FacturaService facturaService)
         {
             InitializeComponent();
+            this.usuarioAutenticado = usuarioAutenticado;
             this.clienteService = clienteService;
             this.habitacionService = habitacionService;
-   
-            try
+            this.reservaService = reservaService;
+            this.facturaService = facturaService;
+
+            // 🔹 Si el usuario autenticado es un cliente, solo puede reservar a su nombre
+            if (usuarioAutenticado.Rol == "Cliente")
+            {
+                cmbClientes.Items.Add(usuarioAutenticado.Nombre);
+                cmbClientes.SelectedIndex = 0;
+                cmbClientes.Enabled = false;
+            }
+            else
             {
                 var clientes = clienteService.ListarClientes();
-                MessageBox.Show($"Clientes cargados: {clientes.Count}"); // Depuración
                 cmbClientes.DataSource = clientes;
                 cmbClientes.DisplayMember = "Nombre";
                 cmbClientes.ValueMember = "ClienteId";
-                cmbClientes.Visible = true;
-
-                var tiposHabitacion = habitacionService.ObtenerTiposHabitacion();
-                MessageBox.Show($"Tipos de habitación cargados: {tiposHabitacion.Count}"); // Depuración
-                cmbTipo.Items.AddRange(tiposHabitacion.Select(t => t.Nombre).ToArray());
-                cmbTipo.Visible = true;
-
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error al cargar datos:\n{ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void btnBuscarHabitaciones_Click(object sender, EventArgs e)
         {
-            try
+            if (dtpEntrada.Value.Date >= dtpSalida.Value.Date)
             {
-                int cantidadPersonas = (int)numPersonas.Value;
-                var habitacionesDisponibles = habitacionService.ObtenerHabitacionesDisponibles()
-                    .Where(h => h.Capacidad >= cantidadPersonas)
-                    .ToList();
-                clbHabitaciones.Items.Clear();
-
-                if (!habitacionesDisponibles.Any())
-                {
-                    MessageBox.Show("No hay habitaciones disponibles.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return;
-                }
-                foreach (var habitacion in habitacionesDisponibles)
-                {
-                    clbHabitaciones.Items.Add(habitacion, false);
-                }
-                MessageBox.Show("Habitaciones disponibles filtradas.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("La fecha de entrada debe ser antes de la fecha de salida.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
-            catch (Exception ex)
+
+            int cantidadPersonas = (int)numPersonas.Value;
+
+            // 🔹 Buscar habitaciones con capacidad suficiente Y disponibles en el rango de fechas seleccionado
+            var habitacionesDisponibles = habitacionService.ObtenerHabitacionesDisponiblesEnFechas(cantidadPersonas, dtpEntrada.Value, dtpSalida.Value);
+
+            var tiposDisponibles = habitacionesDisponibles
+                .Select(h => h.TipoHabitacion)
+                .Distinct()
+                .ToList();
+
+            cmbTipo.Items.Clear();
+
+            if (!tiposDisponibles.Any())
             {
-                MessageBox.Show($"Error:\n{ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("No hay tipos de habitaciones disponibles para estas fechas.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            // 🔹 Mostrar nombre, capacidad (desde habitaciones) y precio en `cmbTipo`
+            foreach (var tipo in tiposDisponibles)
+            {
+                int capacidad = habitacionesDisponibles.FirstOrDefault(h => h.TipoHabitacion.Id == tipo.Id)?.Capacidad ?? 0;
+                cmbTipo.Items.Add($"{tipo.Nombre} - Capacidad: {capacidad} - Precio: {tipo.PrecioBase:C}");
             }
         }
 
-        private void btnSugerirCombinaciones_Click(object sender, EventArgs e)
+
+
+
+        private void CmbTipo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            MessageBox.Show("Funcionalidad aún no implementada.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (cmbTipo.SelectedItem != null)
+            {
+                var tipoNombre = cmbTipo.SelectedItem.ToString().Split('-')[0].Trim();
+                var tipoSeleccionado = habitacionService.ObtenerTipoHabitacionPorNombre(tipoNombre);
+
+                if (tipoSeleccionado != null)
+                {
+                    if (!string.IsNullOrEmpty(tipoSeleccionado.RutaImagen) && File.Exists(tipoSeleccionado.RutaImagen))
+                    {
+                        picHabitacion.Image = Image.FromFile(tipoSeleccionado.RutaImagen);
+                    }
+                    else
+                    {
+                        picHabitacion.Image = null; // 🔹 Vacía el campo en lugar de usar una imagen por defecto
+                    }
+
+                    txtPrecio.Text = tipoSeleccionado.PrecioBase.ToString("C");
+                    txtPrecio.ReadOnly = true;
+                }
+                else
+                {
+                    picHabitacion.Image = null;
+                    txtPrecio.Text = "";
+                }
+            }
         }
+
 
         private void btnGuardarReserva_Click(object sender, EventArgs e)
         {
             try
             {
-                if (cmbClientes.SelectedValue == null)
+                int clienteId;
+
+                if (usuarioAutenticado.Rol == "Cliente")
                 {
-                    MessageBox.Show("Por favor, seleccione un cliente.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    clienteId = usuarioAutenticado.Id;
+                }
+                else
+                {
+                    if (cmbClientes.SelectedValue == null)
+                    {
+                        MessageBox.Show("Por favor, seleccione un cliente.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                    clienteId = (int)cmbClientes.SelectedValue;
+                }
+
+                if (cmbTipo.SelectedItem == null)
+                {
+                    MessageBox.Show("Debe seleccionar un tipo de habitación.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
-                int clienteId = (int)cmbClientes.SelectedValue;
 
-                if (dtpEntrada.Value.Date > dtpSalida.Value.Date)
+                string tipoSeleccionado = cmbTipo.SelectedItem.ToString().Split('-')[0].Trim();
+                var tipoHabitacion = habitacionService.ObtenerTipoHabitacionPorNombre(tipoSeleccionado);
+                if (tipoHabitacion == null)
                 {
-                    MessageBox.Show("La fecha de entrada debe ser anterior a la fecha de salida.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Error: No se encontró el tipo de habitación seleccionado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
+                int cantidadPersonas = (int)numPersonas.Value;
                 List<int> habitacionesSeleccionadas = new List<int>();
-                foreach (var item in clbHabitaciones.CheckedItems)
+
+                var habitacionesDisponibles = habitacionService.ObtenerHabitacionesDisponibles()
+                    .Where(h => h.TipoHabitacion.Id == tipoHabitacion.Id)
+                    .OrderBy(h => h.Capacidad)
+                    .ToList();
+
+                if (!habitacionesDisponibles.Any())
                 {
-                    habitacionesSeleccionadas.Add(((Habitacion)item).Id);
-                }
-                if (!habitacionesSeleccionadas.Any())
-                {
-                    MessageBox.Show("Debe seleccionar al menos una habitación.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("No hay habitaciones disponibles de este tipo.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
-                // Se utiliza el enum 'EstadoReserva' en vez de una cadena literal.
+                foreach (var habitacion in habitacionesDisponibles)
+                {
+                    habitacionesSeleccionadas.Add(habitacion.Id);
+                    cantidadPersonas -= habitacion.Capacidad;
+
+                    if (cantidadPersonas <= 0) break;
+                }
+
+                if (cantidadPersonas > 0)
+                {
+                    MessageBox.Show("No hay suficientes habitaciones disponibles para cubrir la cantidad de personas.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                // 🔹 1. Guardar la reserva en la base de datos primero
                 var reserva = new Reserva
                 {
                     ClienteId = clienteId,
                     FechaInicio = dtpEntrada.Value,
                     FechaFin = dtpSalida.Value,
-                    Estado = EstadoReserva.Pendiente
-                    // Si existen propiedades adicionales, agrégalas aquí (ej. TipoAlojamiento o Temporada) 
+                    Estado = EstadoReserva.Pendiente,
+                    ReservaHabitaciones = new List<ReservaHabitaciones>()
                 };
 
+                foreach (var habitacionId in habitacionesSeleccionadas)
+                {
+                    reserva.ReservaHabitaciones.Add(new ReservaHabitaciones
+                    {
+                        HabitacionId = habitacionId,
+                        Reserva = reserva
+                    });
+                }
+
+
                 reservaService.RegistrarReserva(reserva, habitacionesSeleccionadas);
-                MessageBox.Show("Reserva creada correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // 🔹 2. Verificar que la reserva se guardó correctamente
+                if (reserva.Id == 0)
+                {
+                    MessageBox.Show("Error: La reserva no se guardó correctamente en la base de datos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                // 🔹 3. Ahora la reserva tiene un `Id`, podemos generar la factura correctamente
+                var factura = facturaService.GenerarFactura(reserva.Id, 10);
+
+                // 🔹 4. Asociar la factura a la reserva y actualizarla en la base de datos
+                reserva.Factura = factura;
+                reservaService.ActualizarReserva(reserva);
+
+                MessageBox.Show("Reserva creada correctamente con factura asignada.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
             catch (Exception ex)
@@ -120,6 +214,9 @@ namespace HotelSOL1.FormsAPP
                 MessageBox.Show($"Error al guardar la reserva:\n{ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+
+
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {

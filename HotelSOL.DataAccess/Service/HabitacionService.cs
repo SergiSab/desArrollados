@@ -23,6 +23,16 @@ namespace HotelSOL.DataAccess.Services
                 .Where(h => h.Disponible)
                 .ToList();
         }
+        public List<Habitacion> ObtenerHabitacionesDisponiblesEnFechas(int cantidadPersonas, DateTime fechaInicio, DateTime fechaFin)
+        {
+            var habitacionesDisponibles = ObtenerHabitacionesDisponibles()
+                .Where(h => h.Capacidad >= cantidadPersonas &&
+                            !h.ReservaHabitaciones.Any(rh => rh.Reserva.FechaInicio <= fechaFin && rh.Reserva.FechaFin >= fechaInicio)) // 🔹 Filtra habitaciones sin reservas en esas fechas
+                .ToList();
+
+            return habitacionesDisponibles;
+        }
+
         public Habitacion ObtenerHabitacionPorId(int habitacionId)
         {
             return _context.Habitaciones.Include(h => h.TipoHabitacion).FirstOrDefault(h => h.Id == habitacionId);

@@ -7,14 +7,15 @@ namespace HotelSOL1.FormsAPP
     partial class CrearReservaForm
     {
         private System.ComponentModel.IContainer components = null;
-        private Label lblCliente, lblHabitaciones, lblPersonas, lblEntrada, lblSalida, lblTipoHabitacion;
+        private Label lblCliente, lblHabitaciones, lblPersonas, lblEntrada, lblSalida, lblTipoHabitacion, lblPrecioBase;
         protected ComboBox cmbClientes, cmbTipo;
         protected CheckedListBox clbHabitaciones;
         protected NumericUpDown numPersonas;
         protected DateTimePicker dtpEntrada, dtpSalida;
-        protected Button btnBuscarHabitaciones, btnSugerirCombinaciones, btnGuardarReserva, btnCancelar;
-        private PictureBox pbLogo;
+        protected Button btnBuscarHabitaciones, btnGuardarReserva, btnCancelar;
+        private PictureBox pbLogo, picHabitacion;
         private Panel pnlReserva;
+        protected TextBox txtPrecio;
 
         protected override void Dispose(bool disposing)
         {
@@ -28,7 +29,7 @@ namespace HotelSOL1.FormsAPP
             this.SuspendLayout();
 
             // 📌 Configuración del formulario
-            this.ClientSize = new Size(900, 600);
+            this.ClientSize = new Size(950, 650); // 🔹 Un poco más grande para mejor distribución
             this.StartPosition = FormStartPosition.CenterScreen;
             this.Text = "Reservar Habitación";
             this.BackColor = Color.White;
@@ -43,12 +44,11 @@ namespace HotelSOL1.FormsAPP
             pbLogo.SizeMode = PictureBoxSizeMode.Zoom;
             pbLogo.Size = new Size(120, 120);
             pbLogo.BackColor = Color.Transparent;
-            pbLogo.Location = new Point((this.ClientSize.Width - pbLogo.Width) / 2);
-
+            pbLogo.Location = new Point((this.ClientSize.Width - pbLogo.Width) / 2, 10);
 
             // 🔹 Panel transparente para el formulario
             pnlReserva = new Panel();
-            pnlReserva.Size = new Size(550, 450);
+            pnlReserva.Size = new Size(650, 500); // 🔹 Más ancho para mejor distribución
             pnlReserva.Location = new Point(
                 (this.ClientSize.Width - pnlReserva.Width) / 2,
                 (this.ClientSize.Height - pnlReserva.Height) / 2 + 40
@@ -62,31 +62,39 @@ namespace HotelSOL1.FormsAPP
 
             // 💡 Configuración de campos dentro del panel
             lblCliente = new Label() { Text = "Cliente:", Location = new Point(20, 20), ForeColor = Color.Black, AutoSize = true };
-            cmbClientes = new ComboBox() { Location = new Point(20, 50), Size = new Size(350, 30), DropDownStyle = ComboBoxStyle.DropDownList };
+            cmbClientes = new ComboBox() { Location = new Point(120, 20), Size = new Size(350, 30), DropDownStyle = ComboBoxStyle.DropDownList };
 
-            lblTipoHabitacion = new Label() { Text = "Tipo de Habitación:", Location = new Point(20, 90), ForeColor = Color.Black, AutoSize = true };
-            cmbTipo = new ComboBox() { Location = new Point(20, 120), Size = new Size(350, 30), DropDownStyle = ComboBoxStyle.DropDownList };
+            lblTipoHabitacion = new Label() { Text = "Tipo de Habitación:", Location = new Point(20, 60), ForeColor = Color.Black, AutoSize = true };
+            cmbTipo = new ComboBox() { Location = new Point(150, 60), Size = new Size(320, 30), DropDownStyle = ComboBoxStyle.DropDownList };
+            cmbTipo.SelectedIndexChanged += new EventHandler(CmbTipo_SelectedIndexChanged);
 
-            lblPersonas = new Label() { Text = "Cantidad de Personas:", Location = new Point(20, 150), ForeColor = Color.Black, AutoSize = true };
-            numPersonas = new NumericUpDown() { Location = new Point(20, 180), Size = new Size(100, 30), Minimum = 1, Maximum = 10 };
+            lblPersonas = new Label() { Text = "Cantidad de Personas:", Location = new Point(20, 100), ForeColor = Color.Black, AutoSize = true };
+            numPersonas = new NumericUpDown() { Location = new Point(180, 100), Size = new Size(100, 30), Minimum = 1, Maximum = 10 };
 
-            lblEntrada = new Label() { Text = "Fecha de Entrada:", Location = new Point(20, 220), ForeColor = Color.Black, AutoSize = true };
-            dtpEntrada = new DateTimePicker() { Location = new Point(20, 250), Size = new Size(170, 30), Format = DateTimePickerFormat.Short };
+            lblEntrada = new Label() { Text = "Fecha de Entrada:", Location = new Point(20, 140), ForeColor = Color.Black, AutoSize = true };
+            dtpEntrada = new DateTimePicker() { Location = new Point(150, 140), Size = new Size(170, 30), Format = DateTimePickerFormat.Short };
 
-            lblSalida = new Label() { Text = "Fecha de Salida:", Location = new Point(220, 220), ForeColor = Color.Black, AutoSize = true };
-            dtpSalida = new DateTimePicker() { Location = new Point(220, 250), Size = new Size(170, 30), Format = DateTimePickerFormat.Short };
+            lblSalida = new Label() { Text = "Fecha de Salida:", Location = new Point(20, 180), ForeColor = Color.Black, AutoSize = true };
+            dtpSalida = new DateTimePicker() { Location = new Point(150, 180), Size = new Size(170, 30), Format = DateTimePickerFormat.Short };
 
-            lblHabitaciones = new Label() { Text = "Habitaciones disponibles:", Location = new Point(20, 290), ForeColor = Color.Black, AutoSize = true };
-            clbHabitaciones = new CheckedListBox() { Location = new Point(20, 320), Size = new Size(370, 70) };
+            lblPrecioBase = new Label() { Text = "Precio Base:", Location = new Point(20, 330), ForeColor = Color.Black, AutoSize = true };
+            txtPrecio = new TextBox() { Location = new Point(120, 330), Size = new Size(150, 30), ReadOnly = true };
 
-            btnBuscarHabitaciones = new Button() { Text = "Buscar", Location = new Point(400, 120), Size = new Size(100, 30) };
-            btnSugerirCombinaciones = new Button() { Text = "Sugerencias", Location = new Point(400, 160), Size = new Size(100, 30) };
-            btnGuardarReserva = new Button() { Text = "Guardar", Location = new Point(20, 400), Size = new Size(150, 30) };
-            btnCancelar = new Button() { Text = "Cancelar", Location = new Point(200, 400), Size = new Size(150, 30) };
+            picHabitacion = new PictureBox() { Location = new Point(320, 220), Size = new Size(280, 180), BackColor = Color.LightGray };
+            picHabitacion.SizeMode = PictureBoxSizeMode.StretchImage; // 🔹 Ajusta al tamaño del `PictureBox`
 
-            pnlReserva.Controls.AddRange(new Control[] { lblCliente, cmbClientes, lblTipoHabitacion, cmbTipo, lblPersonas, numPersonas, lblEntrada, dtpEntrada, lblSalida, dtpSalida, lblHabitaciones, clbHabitaciones, btnBuscarHabitaciones, btnSugerirCombinaciones, btnGuardarReserva, btnCancelar });
+            btnBuscarHabitaciones = new Button() { Text = "Buscar", Location = new Point(480, 60), Size = new Size(120, 30) };
+            btnGuardarReserva = new Button() { Text = "Guardar", Location = new Point(20, 450), Size = new Size(150, 30) };
+            btnCancelar = new Button() { Text = "Cancelar", Location = new Point(200, 450), Size = new Size(150, 30) };
+
+            pnlReserva.Controls.AddRange(new Control[] { lblCliente, cmbClientes, lblTipoHabitacion, cmbTipo, lblPersonas, numPersonas, lblEntrada, dtpEntrada, lblSalida, dtpSalida,  lblPrecioBase, txtPrecio, picHabitacion, btnBuscarHabitaciones, btnGuardarReserva, btnCancelar });
+
+            btnBuscarHabitaciones.Click += new EventHandler(btnBuscarHabitaciones_Click);
+            btnGuardarReserva.Click += new EventHandler(btnGuardarReserva_Click);
+            btnCancelar.Click += new EventHandler(btnCancelar_Click);
 
             this.ResumeLayout(false);
         }
     }
 }
+

@@ -144,10 +144,19 @@ namespace HotelSOL1.FormsAPP
             var clienteService = new ClienteService(Program.DbContext);
             var habitacionService = new HabitacionService(Program.DbContext);
             var reservaService = new ReservaService(Program.DbContext);
+            var facturaService = new FacturaService(Program.DbContext);
 
-            var form = new CrearReservaForm(clienteService, habitacionService, reservaService);
+            var usuarioAutenticado = Program.UsuarioAutenticado; // Asegúrate de que este objeto existe y tiene la información del usuario
+            if (Program.UsuarioAutenticado == null)
+            {
+                MessageBox.Show("Error: No hay usuario autenticado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            var form = new CrearReservaForm(usuarioAutenticado, clienteService, habitacionService, reservaService, facturaService);
             form.ShowDialog();
         }
+
 
 
         private void btnVerReservas_Click(object sender, EventArgs e)

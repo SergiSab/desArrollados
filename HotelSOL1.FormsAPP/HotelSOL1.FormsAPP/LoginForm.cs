@@ -35,21 +35,22 @@ namespace HotelSOL1.FormsAPP
             if (usuario != null)
             {
                 UsuarioAutenticado = usuario;
+
+                // 🔹 Asignar el usuario autenticado a Program para que sea accesible globalmente
+                Program.UsuarioAutenticado = usuario;
+
                 DialogResult = DialogResult.OK;
                 Close();
             }
             else
             {
                 MessageBox.Show("No estás registrado. Se abrirá el formulario de registro.", "Registro");
-
-                // 🔹 Aquí creamos una instancia válida de ClienteService
                 var clienteService = new ClienteService(Program.DbContext);
-
-                // 🔹 Ahora pasamos clienteService correctamente a RegistrarClienteForm
                 var registroForm = new RegistrarClienteForm(clienteService);
                 registroForm.ShowDialog();
             }
         }
+
 
         private void btnRegistrarse_Click(object sender, EventArgs e)
         {

@@ -35,23 +35,45 @@ namespace HotelSOL.DataAccess.Services
         // Registrar una nueva reserva
         public void RegistrarReserva(Reserva nuevaReserva, List<int> habitacionesIds)
         {
-            if (nuevaReserva == null || habitacionesIds == null || !habitacionesIds.Any())
-                throw new ArgumentNullException(nameof(nuevaReserva), "Reserva o habitaciones no pueden estar vacías.");
-
-            _context.Reservas.Add(nuevaReserva);
-            _context.SaveChanges();
-
-            foreach (var habitacionId in habitacionesIds)
+            var strategy = _context.Database.CreateExecutionStrategy();
+            strategy.Execute(() =>
             {
-                var reservaHabitacion = new ReservaHabitaciones
+                using (var transaction = _context.Database.BeginTransaction())
                 {
-                    ReservaId = nuevaReserva.Id,
-                    HabitacionId = habitacionId
-                };
-                _context.ReservaHabitaciones.Add(reservaHabitacion);
-            }
+                    try
+                    {
+                        _context.Reservas.Add(nuevaReserva);
+                        _context.SaveChanges();
 
-            _context.SaveChanges();
+                        if (nuevaReserva.Id == 0)
+                        {
+                            throw new Exception("Error: La reserva no fue creada correctamente en la base de datos.");
+                        }
+
+                        foreach (var habitacionId in habitacionesIds)
+                        {
+                            var reservaHabitacion = new ReservaHabitaciones
+                            {
+                                ReservaId = nuevaReserva.Id,
+                                HabitacionId = habitacionId
+                            };
+                            _context.ReservaHabitaciones.Add(reservaHabitacion);
+                        }
+
+                        _context.SaveChanges();
+                        transaction.Commit();
+                    }
+                    catch (Exception ex)
+                    {
+                        transaction.Rollback();
+                        throw new Exception($"Error al guardar la reserva:\n{ex.InnerException?.Message ?? ex.Message}");
+                    }
+                 
+
+                }
+            });
+
+
         }
 
 
@@ -118,6 +140,19 @@ namespace HotelSOL.DataAccess.Services
 
             return !solapamiento;
         }
+        public void ActualizarReserva(Reserva reserva)
+        {
+            var reservaExistente = _context.Reservas.Include(r => r.Factura)
+                                                    .Include(r => r.ReservaHabitaciones)
+                                                    .FirstOrDefault(r => r.Id == reserva.Id);
+
+            if (reservaExistente != null)
+            {
+                reservaExistente.Factura = reserva.Factura; // 🔹 Asignar la factura a la reserva
+                _context.SaveChanges();
+            }
+        }
+
 
         public bool ModificarReserva(int reservaId, DateTime nuevaFechaInicio, DateTime nuevaFechaFin, EstadoReserva nuevoEstado)
         {
