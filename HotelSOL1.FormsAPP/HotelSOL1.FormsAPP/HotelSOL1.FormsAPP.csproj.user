@@ -10,6 +10,12 @@
     <Compile Update="ExportarOdooForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="FacturaProveedorDialogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FacturaProveedorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="GenerarFacturaForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -29,6 +35,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="PedidosForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ProveedorDialogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ProveedoresForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="RegistrarClienteForm.cs">

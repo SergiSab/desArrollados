@@ -33,7 +33,6 @@
             btnVerStock = new Button();
             btnVerProveedores = new Button();
             btnPedidos = new Button();
-            btnAlbaranes = new Button();
             btnFacturasProveedores = new Button();
             btnVolverProv = new Button();
             ((System.ComponentModel.ISupportInitialize)pbLogo).BeginInit();
@@ -43,7 +42,7 @@
             // 
             pbLogo.BackColor = Color.Transparent;
             pbLogo.Image = (Image)resources.GetObject("pbLogo.Image");
-            pbLogo.Location = new Point(404, 25);
+            pbLogo.Location = new Point(326, 12);
             pbLogo.Name = "pbLogo";
             pbLogo.Size = new Size(130, 130);
             pbLogo.SizeMode = PictureBoxSizeMode.Zoom;
@@ -52,7 +51,7 @@
             // 
             // btnVerStock
             // 
-            btnVerStock.Location = new Point(96, 217);
+            btnVerStock.Location = new Point(119, 149);
             btnVerStock.Name = "btnVerStock";
             btnVerStock.Size = new Size(220, 50);
             btnVerStock.TabIndex = 3;
@@ -61,44 +60,41 @@
             // 
             // btnVerProveedores
             // 
-            btnVerProveedores.Location = new Point(612, 217);
+            btnVerProveedores.Location = new Point(446, 149);
             btnVerProveedores.Name = "btnVerProveedores";
             btnVerProveedores.Size = new Size(220, 50);
             btnVerProveedores.TabIndex = 4;
             btnVerProveedores.Text = "Ver proveedores";
+            btnVerProveedores.Click += btnVerProveedores_Click;
             // 
             // btnPedidos
             // 
-            btnPedidos.Location = new Point(96, 295);
+            btnPedidos.Location = new Point(119, 239);
             btnPedidos.Name = "btnPedidos";
             btnPedidos.Size = new Size(220, 50);
             btnPedidos.TabIndex = 5;
             btnPedidos.Text = "Pedidos";
             btnPedidos.Click += btnPedidos_Click;
             // 
-            // btnAlbaranes
-            // 
-            btnAlbaranes.Location = new Point(612, 295);
-            btnAlbaranes.Name = "btnAlbaranes";
-            btnAlbaranes.Size = new Size(220, 50);
-            btnAlbaranes.TabIndex = 6;
-            btnAlbaranes.Text = "Albaranes";
-            // 
             // btnFacturasProveedores
             // 
-            btnFacturasProveedores.Location = new Point(96, 375);
+            btnFacturasProveedores.Location = new Point(446, 239);
             btnFacturasProveedores.Name = "btnFacturasProveedores";
             btnFacturasProveedores.Size = new Size(220, 50);
             btnFacturasProveedores.TabIndex = 7;
             btnFacturasProveedores.Text = "Facturas Proveedores";
+            btnFacturasProveedores.Click += btnFacturasProveedores_Click;
             // 
             // btnVolverProv
             // 
-            btnVolverProv.Location = new Point(612, 375);
+            btnVolverProv.BackColor = Color.FromArgb(255, 128, 128);
+            btnVolverProv.ForeColor = Color.FromArgb(255, 255, 128);
+            btnVolverProv.Location = new Point(280, 331);
             btnVolverProv.Name = "btnVolverProv";
             btnVolverProv.Size = new Size(220, 50);
             btnVolverProv.TabIndex = 8;
             btnVolverProv.Text = "Volver";
+            btnVolverProv.UseVisualStyleBackColor = false;
             btnVolverProv.Click += btnVolverProv_Click;
             // 
             // StockProveedoresForm
@@ -107,10 +103,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(911, 531);
+            ClientSize = new Size(763, 419);
             Controls.Add(btnVolverProv);
             Controls.Add(btnFacturasProveedores);
-            Controls.Add(btnAlbaranes);
             Controls.Add(btnPedidos);
             Controls.Add(btnVerProveedores);
             Controls.Add(btnVerStock);
@@ -127,7 +122,6 @@
         private Button btnVerStock;
         private Button btnVerProveedores;
         private Button btnPedidos;
-        private Button btnAlbaranes;
         private Button btnFacturasProveedores;
         private Button btnVolverProv;
     }
