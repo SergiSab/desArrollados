@@ -34,10 +34,12 @@ namespace HotelSOL.DataAccess.Services
             var factura = _context.Facturas.FirstOrDefault(f => f.ReservaId == reservaId); // ✅ Definimos `factura`
 
             var serviciosConsumidos = _context.Servicios
-                .Where(s => s.ReservaId == reservaId)
-                .ToList();
+               .Include(s => s.TipoServicio) // 🔹 Cargar detalles del TipoServicio
+               .Where(s => s.ReservaId == reservaId)
+               .ToList();
 
-            decimal montoServicios = serviciosConsumidos.Sum(s => s.Precio);
+            // 🔹 Ahora usamos `TipoServicio.Precio` en lugar de `s.Precio`
+            decimal montoServicios = serviciosConsumidos.Sum(s => s.TipoServicio.Precio);
             decimal montoBase = CalcularMontoBase(reserva);
             decimal montoImpuestos = CalcularImpuesto(montoBase + montoServicios, impuestoPorcentaje);
             decimal montoTotal = montoBase + montoServicios + montoImpuestos;

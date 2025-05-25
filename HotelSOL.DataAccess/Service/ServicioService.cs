@@ -16,24 +16,43 @@ namespace HotelSOL.DataAccess.Service
         {
             _context = context ?? throw new ArgumentNullException(nameof(context));
         }
-        public void RegistrarServicio(int reservaId, TipoServicio tipo, string descripcion, decimal precio, bool aplicarDescuento)
+        public void RegistrarServicio(int reservaId, int tipoServicioId, bool aplicarDescuento)
         {
+            var tipoServicio = _context.TipoServicio.Find(tipoServicioId);
+
+            if (tipoServicio == null)
+            {
+                throw new Exception($"❌ Error: No existe el TipoServicio con ID {tipoServicioId}.");
+            }
             var servicio = new Servicio
             {
                 ReservaId = reservaId,
-                Tipo = tipo,
-                Descripcion = descripcion,
-                Precio = aplicarDescuento ? precio * 0.9m : precio, // Aplicando descuento si es VIP
-                DescuentoAplicado = aplicarDescuento
+                TipoServicioId = tipoServicioId,
+                DescuentoAplicado = aplicarDescuento,
+                FacturaId = null // ✅ Si la factura aún no se ha generado
             };
+
 
             _context.Servicios.Add(servicio);
             _context.SaveChanges();
         }
+
+
         public List<Servicio> ObtenerServiciosPorReserva(int reservaId)
         {
-            return _context.Servicios.Where(s => s.ReservaId == reservaId).ToList();
+            return _context.Servicios
+                .Include(s => s.TipoServicio) // 🔹 Cargar los detalles del tipo de servicio
+                .Where(s => s.ReservaId == reservaId)
+                .ToList();
+        }
+
+        public List<TipoServicioEntity> ObtenerTiposServicios()
+        {
+            return _context.TipoServicio.ToList(); // 🔹 Devuelve todos los tipos de servicio
         }
 
     }
+
+
+
 }

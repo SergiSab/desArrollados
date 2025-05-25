@@ -92,8 +92,6 @@
             this.btnGestionHabitaciones.Click += new System.EventHandler(this.btnGestionHabitaciones_Click);
             this.Controls.Add(this.btnGestionHabitaciones); // 🔹 Agregado al formulario
 
-
-
             // btnSalir
             this.btnSalir.Location = new System.Drawing.Point(114, 60 + 7 * espaciado);
             this.btnSalir.Size = botonSize;

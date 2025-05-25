@@ -18,70 +18,60 @@ namespace HotelSOL1.FormsAPP
         public ServicioForm(int reservaId, ServicioService servicioService, ReservaService reservaService, FacturaService facturaService)
         {
             InitializeComponent();
+
             this.reservaId = reservaId;
-            this.servicioService = servicioService;
-            this.reservaService = reservaService;
-            this.facturaService = facturaService;
+            this.servicioService = servicioService ?? throw new ArgumentNullException(nameof(servicioService));
+            this.reservaService = reservaService ?? throw new ArgumentNullException(nameof(reservaService));
+            this.facturaService = facturaService ?? throw new ArgumentNullException(nameof(facturaService));
 
-            CargarServiciosDisponibles(); // ✅ Mostrar servicios extra
-        }
-
-        private void CargarServiciosDisponibles()
-        {
-            cmbServicios.Items.Clear();
-            cmbServicios.Items.AddRange(Enum.GetNames(typeof(TipoServicio))); // 🔹 Mostrar tipos de servicio
+            CargarServiciosDisponibles();
         }
 
         private void btnAgregarServicio_Click(object sender, EventArgs e)
         {
-            try
+            if (listViewServicios.SelectedItems.Count == 0)
             {
-                if (cmbServicios.SelectedItem == null || string.IsNullOrWhiteSpace(txtDescripcion.Text) || string.IsNullOrWhiteSpace(txtPrecio.Text))
-                {
-                    MessageBox.Show("❌ Debes completar todos los campos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-
-                TipoServicio tipoServicio = (TipoServicio)Enum.Parse(typeof(TipoServicio), cmbServicios.SelectedItem.ToString());
-                string descripcion = txtDescripcion.Text;
-                decimal precio;
-
-                if (!decimal.TryParse(txtPrecio.Text, out precio))
-                {
-                    MessageBox.Show("❌ Ingresa un precio válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-
-                bool aplicarDescuento = chkDescuento.Checked; // 🔹 Aplicar descuento si el cliente es VIP
-
-                servicioService.RegistrarServicio(reservaId, tipoServicio, descripcion, precio, aplicarDescuento);
-
-                MessageBox.Show("✅ Servicio agregado correctamente!");
-                CargarServiciosSeleccionados(); // 🔹 Refrescar la lista de servicios
+                MessageBox.Show("❌ Debes seleccionar un servicio.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"❌ Error al agregar el servicio: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+
+            var servicioSeleccionado = (TipoServicioEntity)listViewServicios.SelectedItems[0].Tag;
+            servicioService.RegistrarServicio(reservaId, servicioSeleccionado.Id, chkDescuento.Checked);
+
+            MessageBox.Show($"✅ Servicio '{servicioSeleccionado.Descripcion}' agregado correctamente!");
+            ActualizarFactura();
         }
 
-        private void CargarServiciosSeleccionados()
+        private void CargarServiciosDisponibles()
         {
-            var servicios = servicioService.ObtenerServiciosPorReserva(reservaId);
+            listViewServicios.Items.Clear();
+            var servicios = servicioService.ObtenerTiposServicios();
 
-            dgvServicios.DataSource = servicios.Select(s => new
+            foreach (var servicio in servicios)
             {
-                s.Id,
-                Tipo = s.Tipo.ToString(),
-                s.Descripcion,
-                Precio = $"${s.Precio:F2}",
-                Pagado = s.FacturaId.HasValue ? "Sí" : "No"
-            }).ToList();
+                var item = new ListViewItem(servicio.Descripcion);
+                item.SubItems.Add($"${servicio.Precio:F2}");
+                item.Tag = servicio;
+                listViewServicios.Items.Add(item);
+            }
         }
 
+        private void ActualizarFactura()
+        {
+            dgvServicios.DataSource = servicioService.ObtenerServiciosPorReserva(reservaId)
+                .Select(s => new
+                {
+                    s.Id,
+                    Tipo = s.TipoServicio.Descripcion,
+                    Precio = $"${s.TipoServicio.Precio:F2}",
+                    Pagado = s.FacturaId.HasValue ? "Sí" : "No"
+                })
+                .ToList();
+        }
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
     }
 }

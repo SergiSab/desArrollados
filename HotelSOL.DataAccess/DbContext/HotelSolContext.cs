@@ -21,6 +21,7 @@ namespace HotelSOL.DataAccess
         public DbSet<Pedido> Pedidos { get; set; }
         public DbSet<Albaran> Albaranes { get; set; }
         public DbSet<FacturaProveedor> FacturasProveedores { get; set; }
+        public DbSet<TipoServicioEntity> TipoServicio { get; set; } // Cambia de 'TipoServicios' a 'TipoServicio'
 
         public HotelSolContext(DbContextOptions<HotelSolContext> options)
             : base(options)
@@ -30,6 +31,12 @@ namespace HotelSOL.DataAccess
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             // --- Relaciones ya existentes ---
+            modelBuilder.Entity<Servicio>()
+                .HasOne(s => s.TipoServicio)  // 🔹 Servicio tiene un TipoServicio
+                .WithMany()  // 🔹 Un TipoServicio puede ser usado en muchos Servicios
+                .HasForeignKey(s => s.TipoServicioId) // 🔹 La clave foránea es TipoServicioId
+                .OnDelete(DeleteBehavior.Restrict); // 🔹 Evita la eliminación en cascada
+
             modelBuilder.Entity<Cliente>()
                 .HasKey(c => c.ClienteId);
 
