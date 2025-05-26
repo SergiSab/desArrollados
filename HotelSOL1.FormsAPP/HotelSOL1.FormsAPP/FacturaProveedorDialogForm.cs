@@ -1,6 +1,4 @@
-﻿using System;
-using System.Windows.Forms;
-using HotelSOL.DataAccess.Models;
+﻿using HotelSOL.DataAccess.Models;
 using HotelSOL.DataAccess.Service;
 
 namespace HotelSOL1.FormsAPP

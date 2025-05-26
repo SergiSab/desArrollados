@@ -1,11 +1,12 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿// HotelSOL.DataAccess/HotelSolContext.cs
 using HotelSOL.DataAccess.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace HotelSOL.DataAccess
 {
     public class HotelSolContext : DbContext
     {
-        // DbSet para cada tabla en la base de datos
+        // ——— DbSets existentes ———
         public DbSet<Cliente> Clientes { get; set; }
         public DbSet<Habitacion> Habitaciones { get; set; }
         public DbSet<Reserva> Reservas { get; set; }
@@ -17,144 +18,168 @@ namespace HotelSOL.DataAccess
         public DbSet<TipoHabitacion> TiposHabitaciones { get; set; }
         public DbSet<Pago> Pagos { get; set; }
 
-        // Nótese que la tabla real se llama singular “Proveedor”
+        // ——— Módulo de compras/proveedores ———
         public DbSet<Proveedor> Proveedores { get; set; }
-
         public DbSet<Stock> Stock { get; set; }
         public DbSet<Pedido> Pedidos { get; set; }
         public DbSet<Albaran> Albaranes { get; set; }
         public DbSet<FacturaProveedor> FacturasProveedores { get; set; }
 
-        // Mapeo del nuevo TipoServicioEntity
+        // ——— Tipos de servicio ———
         public DbSet<TipoServicioEntity> TipoServicio { get; set; }
+
+        // ——— Contabilidad ———
+        public DbSet<Cuenta> Cuentas { get; set; }
+        public DbSet<AsientoContable> AsientosContables { get; set; }
+        public DbSet<LineaAsiento> LineasAsiento { get; set; }
 
         public HotelSolContext(DbContextOptions<HotelSolContext> options)
             : base(options)
         {
         }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        protected override void OnModelCreating(ModelBuilder mb)
         {
-            // ================================
-            //  Configuración global de tablas
-            // ================================
-            modelBuilder.Entity<Proveedor>()
-                            .HasKey(p => p.IdProveedor);
-            modelBuilder.Entity<Proveedor>()
-                .ToTable("Proveedor");
+            // ——————————————
+            //  M A P E O   D E   T A B L A S
+            // ——————————————
+            mb.Entity<Proveedor>()
+                .ToTable("Proveedor")
+                .HasKey(p => p.IdProveedor);
 
-            modelBuilder.Entity<Stock>()
-                        .ToTable("Stock");         
+            mb.Entity<Stock>()
+                .ToTable("Stock")
+                .HasKey(s => s.id);
 
-            modelBuilder.Entity<Pedido>()
-                        .ToTable("Pedidos");        
+            mb.Entity<Pedido>()
+                .ToTable("Pedidos")
+                .HasKey(p => p.Id);
 
-            modelBuilder.Entity<Albaran>()
-                        .ToTable("Albaranes");
+            mb.Entity<Albaran>()
+                .ToTable("Albaranes")
+                .HasKey(a => a.Id);
 
-            modelBuilder.Entity<FacturaProveedor>()
-                        .ToTable("FacturasProveedores");
+            mb.Entity<FacturaProveedor>()
+                .ToTable("FacturasProveedores")
+                .HasKey(fp => fp.Id);
 
-            modelBuilder.Entity<TipoServicioEntity>()
-                        .ToTable("TipoServicio");    
+            mb.Entity<TipoServicioEntity>()
+                .ToTable("TipoServicio")
+                .HasKey(ts => ts.Id);
 
-            // ================================
-            //  Relaciones existentes…
-            // ================================
-            modelBuilder.Entity<Servicio>()
+            // ——————————————
+            //  Relaciones varias
+            // ——————————————
+
+            // Servicio → TipoServicioEntity
+            mb.Entity<Servicio>()
                 .HasOne(s => s.TipoServicio)
                 .WithMany()
                 .HasForeignKey(s => s.TipoServicioId)
                 .OnDelete(DeleteBehavior.Restrict);
 
-            modelBuilder.Entity<Cliente>()
+            // Cliente ↔ Usuario
+            mb.Entity<Cliente>()
                 .HasKey(c => c.ClienteId);
-
-            modelBuilder.Entity<Cliente>()
+            mb.Entity<Cliente>()
                 .HasOne(c => c.Usuario)
                 .WithOne(u => u.Cliente)
                 .HasForeignKey<Cliente>(c => c.UsuarioId);
 
-            modelBuilder.Entity<ReservaHabitaciones>()
+            // ReservaHabitaciones ↔ Reserva, ↔ Habitacion
+            mb.Entity<ReservaHabitaciones>()
+                .HasKey(rh => rh.Id);
+            mb.Entity<ReservaHabitaciones>()
                 .HasOne(rh => rh.Reserva)
                 .WithMany(r => r.ReservaHabitaciones)
                 .HasForeignKey(rh => rh.ReservaId);
-
-            modelBuilder.Entity<ReservaHabitaciones>()
+            mb.Entity<ReservaHabitaciones>()
                 .HasOne(rh => rh.Habitacion)
                 .WithMany(h => h.ReservaHabitaciones)
                 .HasForeignKey(rh => rh.HabitacionId);
-
-            modelBuilder.Entity<Reserva>()
+            mb.Entity<Reserva>()
                 .HasMany(r => r.ReservaHabitaciones)
                 .WithOne(rh => rh.Reserva)
                 .HasForeignKey(rh => rh.ReservaId)
                 .OnDelete(DeleteBehavior.Cascade);
 
-            modelBuilder.Entity<Habitacion>()
+            // Habitacion → TipoHabitacion
+            mb.Entity<Habitacion>()
                 .HasOne(h => h.TipoHabitacion)
                 .WithMany(t => t.Habitaciones)
                 .HasForeignKey(h => h.TipoId);
 
-            modelBuilder.Entity<Reserva>()
+            // Reserva.Estado como int
+            mb.Entity<Reserva>()
                 .Property(r => r.Estado)
                 .HasConversion<int>();
 
-            // ================================
-            //  Proveedor → Pedidos
-            // ================================
-            modelBuilder.Entity<Pedido>()
-                .HasKey(p => p.Id);
-
-            modelBuilder.Entity<Pedido>()
+            // Proveedor → Pedidos
+            mb.Entity<Pedido>()
                 .HasOne(p => p.Proveedor)
                 .WithMany(pr => pr.Pedidos)
                 .HasForeignKey(p => p.IdProveedor)
                 .OnDelete(DeleteBehavior.Restrict);
 
-            // ================================
-            //  Albaranes
-            // ================================
-            modelBuilder.Entity<Albaran>()
-                .HasKey(a => a.Id);
-
-            modelBuilder.Entity<Albaran>()
+            // Albaranes ↔ Proveedor & Pedido
+            mb.Entity<Albaran>()
                 .HasOne(a => a.Proveedor)
                 .WithMany(pr => pr.Albaranes)
                 .HasForeignKey(a => a.IdProveedor)
                 .OnDelete(DeleteBehavior.Restrict);
-
-            modelBuilder.Entity<Albaran>()
+            mb.Entity<Albaran>()
                 .HasOne(a => a.Pedido)
                 .WithMany(p => p.Albaranes)
                 .HasForeignKey(a => a.IdPedido)
                 .OnDelete(DeleteBehavior.Cascade);
 
-            // ================================
-            //  FacturasProveedores
-            // ================================
-            modelBuilder.Entity<FacturaProveedor>()
-                .HasKey(fp => fp.Id);
-
-            modelBuilder.Entity<FacturaProveedor>()
+            // FacturasProveedores ↔ Proveedor, ↔ Pedido, ↔ Albaran
+            mb.Entity<FacturaProveedor>()
                 .HasOne(fp => fp.Proveedor)
                 .WithMany(pr => pr.FacturasProveedores)
                 .HasForeignKey(fp => fp.IdProveedor)
                 .OnDelete(DeleteBehavior.Restrict);
-
-            modelBuilder.Entity<FacturaProveedor>()
+            mb.Entity<FacturaProveedor>()
                 .HasOne(fp => fp.Pedido)
                 .WithMany(p => p.FacturasProveedores)
                 .HasForeignKey(fp => fp.IdPedido)
                 .OnDelete(DeleteBehavior.Restrict);
-
-            modelBuilder.Entity<FacturaProveedor>()
+            mb.Entity<FacturaProveedor>()
                 .HasOne(fp => fp.Albaran)
                 .WithMany(a => a.FacturasProveedores)
                 .HasForeignKey(fp => fp.IdAlbaran)
                 .OnDelete(DeleteBehavior.Restrict);
 
-            base.OnModelCreating(modelBuilder);
+            // ——————————————
+            //  Contabilidad (doble partida)
+            // ——————————————
+
+            mb.Entity<Cuenta>()
+                .ToTable("Cuenta")
+                .HasKey(c => c.Id);
+            mb.Entity<Cuenta>()
+                .HasIndex(c => c.Codigo)
+                .IsUnique();
+
+            mb.Entity<AsientoContable>()
+                .ToTable("AsientoContable")
+                .HasKey(a => a.Id);
+
+            mb.Entity<LineaAsiento>()
+                .ToTable("LineaAsiento")
+                .HasKey(l => l.Id);
+            mb.Entity<LineaAsiento>()
+                .HasOne(l => l.Asiento)
+                .WithMany(a => a.Lineas)
+                .HasForeignKey(l => l.AsientoContableId)
+                .OnDelete(DeleteBehavior.Cascade);
+            mb.Entity<LineaAsiento>()
+                .HasOne(l => l.Cuenta)
+                .WithMany(c => c.Lineas)
+                .HasForeignKey(l => l.CuentaId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            base.OnModelCreating(mb);
         }
     }
 }

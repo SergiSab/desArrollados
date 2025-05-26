@@ -1,10 +1,6 @@
-﻿using HotelSOL.DataAccess.Services;
-using HotelSOL.DataAccess.Models;
-using System;
-using System.Windows.Forms;
-using Microsoft.EntityFrameworkCore;
+﻿using HotelSOL.DataAccess.Models;
 using HotelSOL.DataAccess.Service;
-using HotelSOL.DataAccess;
+using HotelSOL.DataAccess.Services;
 
 namespace HotelSOL1.FormsAPP
 {
@@ -216,7 +212,9 @@ namespace HotelSOL1.FormsAPP
 
         private void btnContabilidad_Click(object sender, EventArgs e)
         {
-            var form = new ContabilidadForm();
+            var options = Program.DbContext;
+            var contService = new ContabilidadService(options);
+            using var form = new ContabilidadForm(contService);
             form.ShowDialog();
         }
 
@@ -227,6 +225,6 @@ namespace HotelSOL1.FormsAPP
             form.ShowDialog();
         }
 
-       
+
     }
 }

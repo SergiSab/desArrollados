@@ -1,9 +1,7 @@
-using System;
-using System.Windows.Forms;
-using Microsoft.Extensions.Configuration;
-using Microsoft.EntityFrameworkCore;
 using HotelSOL.DataAccess;
 using HotelSOL.DataAccess.Models;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 
 namespace HotelSOL1.FormsAPP
 {

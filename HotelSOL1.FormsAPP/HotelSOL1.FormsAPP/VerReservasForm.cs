@@ -1,8 +1,5 @@
 ﻿using HotelSOL.DataAccess.Models;
 using HotelSOL.DataAccess.Services;
-using System;
-using System.Collections.Generic;
-using System.Windows.Forms;
 
 namespace HotelSOL1.FormsAPP
 {

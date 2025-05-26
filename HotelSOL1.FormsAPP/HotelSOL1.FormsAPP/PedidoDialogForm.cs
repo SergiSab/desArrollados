@@ -1,7 +1,4 @@
 ﻿// HotelSOL1.FormsAPP/PedidoDialogForm.cs
-using System;
-using System.Linq;
-using System.Windows.Forms;
 using HotelSOL.DataAccess.Models;
 using HotelSOL.DataAccess.Service;
 

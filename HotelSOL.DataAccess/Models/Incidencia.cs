@@ -8,7 +8,7 @@
         public DateTime FechaInforme { get; set; }
 
         // Relación con Reserva
-        public Reserva Reserva { get; set; } = new Reserva(); 
+        public Reserva Reserva { get; set; } = new Reserva();
 
     }
 }

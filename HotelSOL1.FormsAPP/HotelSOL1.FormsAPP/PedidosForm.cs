@@ -1,10 +1,7 @@
 ﻿// HotelSOL1.FormsAPP/PedidosForm.cs
-using System;
-using System.ComponentModel;
-using System.Linq;
-using System.Windows.Forms;
 using HotelSOL.DataAccess.Models;
 using HotelSOL.DataAccess.Service;
+using System.ComponentModel;
 
 namespace HotelSOL1.FormsAPP
 {
