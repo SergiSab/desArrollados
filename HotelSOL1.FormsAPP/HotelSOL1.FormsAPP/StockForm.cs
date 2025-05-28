@@ -1,8 +1,4 @@
 ﻿// HotelSOL1.FormsAPP/StockForm.cs
-using System;
-using System.Linq;
-using System.Windows.Forms;
-using HotelSOL.DataAccess;
 using HotelSOL.DataAccess.Models;
 using HotelSOL.DataAccess.Service;
 
@@ -48,27 +44,27 @@ namespace HotelSOL1.FormsAPP
                     dgvStock.Columns["Pvp"].HeaderText = "PVP";
                 }
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
                 MessageBox.Show($"Error al cargar el stock: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-       
+
 
         private void btnAñadir_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-           
-           
+
+
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btnVolver_Click(object sender, EventArgs e)

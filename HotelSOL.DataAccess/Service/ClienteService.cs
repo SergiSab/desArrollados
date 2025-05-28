@@ -52,7 +52,7 @@ namespace HotelSOL.DataAccess.Services
         // Eliminar cliente con verificación de existencia
         public bool EliminarCliente(int id)
         {
-            var cliente = _context.Clientes.FirstOrDefault(c => c.  ClienteId == id);
+            var cliente = _context.Clientes.FirstOrDefault(c => c.ClienteId == id);
             if (cliente == null) return false;
 
             bool tieneReservasActivas = _context.Reservas.Any(r => r.ClienteId == id && r.FechaFin >= DateTime.Today);

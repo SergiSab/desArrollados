@@ -1,9 +1,4 @@
-﻿using System.Text;
-using System.Threading.Tasks;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using HotelSOL.DataAccess.Models;
+﻿using HotelSOL.DataAccess.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace HotelSOL.DataAccess.Services
@@ -71,7 +66,7 @@ namespace HotelSOL.DataAccess.Services
                         transaction.Rollback();
                         throw new Exception($"Error al guardar la reserva:\n{ex.InnerException?.Message ?? ex.Message}");
                     }
-                 
+
 
                 }
             });
@@ -166,28 +161,28 @@ namespace HotelSOL.DataAccess.Services
         public bool ModificarReserva(int reservaId, DateTime nuevaFechaInicio, DateTime nuevaFechaFin, EstadoReserva nuevoEstado)
         {
             var reserva = _context.Reservas.FirstOrDefault(r => r.Id == reservaId);
-        if (reserva == null) return false;
+            if (reserva == null) return false;
 
-        // Verificar solapamiento con otra reserva en las mismas fechas
-        bool solapamiento = _context.ReservaHabitaciones
-            .Where(rh => rh.ReservaId != reservaId)
-            .Any(rh => _context.Reservas.Any(r =>
-                rh.ReservaId == r.Id &&
-                ((nuevaFechaInicio >= r.FechaInicio && nuevaFechaInicio < r.FechaFin) ||
-                (nuevaFechaFin > r.FechaInicio && nuevaFechaFin <= r.FechaFin))
-            ));
+            // Verificar solapamiento con otra reserva en las mismas fechas
+            bool solapamiento = _context.ReservaHabitaciones
+                .Where(rh => rh.ReservaId != reservaId)
+                .Any(rh => _context.Reservas.Any(r =>
+                    rh.ReservaId == r.Id &&
+                    ((nuevaFechaInicio >= r.FechaInicio && nuevaFechaInicio < r.FechaFin) ||
+                    (nuevaFechaFin > r.FechaInicio && nuevaFechaFin <= r.FechaFin))
+                ));
 
-        if (solapamiento) return false; // No permitir modificación si hay conflicto
+            if (solapamiento) return false; // No permitir modificación si hay conflicto
 
-        reserva.FechaInicio = nuevaFechaInicio;
-        reserva.FechaFin = nuevaFechaFin;
-        reserva.Estado = nuevoEstado;
+            reserva.FechaInicio = nuevaFechaInicio;
+            reserva.FechaFin = nuevaFechaFin;
+            reserva.Estado = nuevoEstado;
 
-        _context.SaveChanges();
-        return true;
+            _context.SaveChanges();
+            return true;
 
 
-    }
+        }
         public Reserva ObtenerReservaPorId(int reservaId)
         {
             return _context.Reservas.Include(r => r.Cliente).FirstOrDefault(r => r.Id == reservaId);

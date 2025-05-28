@@ -1,10 +1,4 @@
-﻿using System;
-using System.Linq;
-using System.Windows.Forms;
-using HotelSOL.DataAccess;
-using HotelSOL.DataAccess.Models;
-using HotelSOL.DataAccess.Services;
-using Microsoft.EntityFrameworkCore;
+﻿using HotelSOL.DataAccess.Services;
 
 namespace HotelSOL1.FormsAPP
 {

@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Compile Update="CheckInCheckOutForm.cs">
+    <Compile Update="AsientoContableDialogForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="ContabilidadForm.cs">
@@ -11,6 +11,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="ExportarOdooForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FacturaProveedorDialogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FacturaProveedorForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="GenerarFacturaForm.cs">
@@ -32,6 +38,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="PedidosForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ProveedorDialogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ProveedoresForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="RegistrarClienteForm.cs">
