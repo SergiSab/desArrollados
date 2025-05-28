@@ -21,8 +21,11 @@ namespace HotelSOL.DataAccess.Services
         // Obtener todas las reservas
         public List<Reserva> ObtenerReservas()
         {
-            return _context.Reservas.ToList();
+            return _context.Reservas
+                .Include(r => r.Cliente)  // ✅ Asegurar que `Cliente` se carga correctamente
+                .ToList();
         }
+
 
         // Obtener reservas activas
         public List<Reserva> ObtenerReservasActivas()
@@ -76,6 +79,12 @@ namespace HotelSOL.DataAccess.Services
 
         }
 
+        public Cliente ObtenerClientePorId(int clienteId)
+        {
+            return _context.Clientes.FirstOrDefault(c => c.ClienteId == clienteId);
+        }
+
+
 
         // Cancelar reserva por ID
         public bool CancelarReserva(int reservaId)
@@ -91,26 +100,25 @@ namespace HotelSOL.DataAccess.Services
 
         public bool RegistrarCheckIn(int reservaId)
         {
-            var reserva = _context.Reservas.Include(r => r.ReservaHabitaciones)
-                                           .FirstOrDefault(r => r.Id == reservaId);
-
-
+            var reserva = _context.Reservas.FirstOrDefault(r => r.Id == reservaId);
             if (reserva == null || reserva.Estado != EstadoReserva.Confirmada)
-                return false; // Validar que la reserva existe y está confirmada
+                return false;
 
-            reserva.Estado = EstadoReserva.CheckIn; // En lugar de "Check-In"
+            reserva.Estado = EstadoReserva.CheckIn;
+            reserva.FechaCheckIn = DateTime.Now; // 📌 Guardar fecha y hora exacta
             _context.SaveChanges();
             return true;
         }
 
+
         public bool RegistrarCheckOut(int reservaId)
         {
-            var reserva = _context.Reservas.Include(r => r.ReservaHabitaciones)
-                                           .FirstOrDefault(r => r.Id == reservaId);
-
+            var reserva = _context.Reservas.FirstOrDefault(r => r.Id == reservaId);
             if (reserva == null || reserva.Estado != EstadoReserva.CheckIn)
-                return false; // Asegurar que el cliente hizo check-in antes de hacer check-out
+                return false;
+
             reserva.Estado = EstadoReserva.CheckOut;
+            reserva.FechaCheckOut = DateTime.Now; // 📌 Guardar fecha y hora exacta
             _context.SaveChanges();
             return true;
         }
@@ -118,12 +126,13 @@ namespace HotelSOL.DataAccess.Services
         {
             var reserva = _context.Reservas.Find(reservaId);
             if (reserva == null || reserva.Estado != EstadoReserva.Pendiente)
-                return false; // Solo se confirma si está pendiente
+                return false;
 
-            reserva.Estado = EstadoReserva.Confirmada;
+            reserva.Estado = EstadoReserva.Confirmada; // 📌 Cambiar estado correctamente
             _context.SaveChanges();
             return true;
         }
+
 
         public bool ValidarDisponibilidadHabitacion(int reservaId)
         {

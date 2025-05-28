@@ -15,16 +15,16 @@ namespace HotelSOL1.FormsAPP
         private readonly Reserva reserva;
         private readonly Usuario usuarioAutenticado;
         private readonly HotelSolContext _context;
+        private readonly ClienteService clienteService; // ✅ Agregar ClienteService
 
-
-        public GenerarFacturaForm(Reserva reserva, FacturaService facturaService, Usuario usuarioAutenticado, HotelSolContext context)
+        public GenerarFacturaForm(Reserva reserva, FacturaService facturaService, ClienteService clienteService, Usuario usuarioAutenticado, HotelSolContext context)
         {
             InitializeComponent();
             this.reserva = reserva;
             this.facturaService = facturaService;
+            this.clienteService = clienteService; // ✅ Asignarlo correctamente
             this.usuarioAutenticado = usuarioAutenticado;
             this._context = context;
-
             CargarFacturas();
             AgregarBotonPago();
         }
@@ -80,84 +80,41 @@ namespace HotelSOL1.FormsAPP
 
                 Console.WriteLine($"Factura generada: ID={factura.Id}, Cliente={factura.ClienteId}, Total={factura.MontoTotal}");
 
-                // 📌 Validar ClienteId y FechaEmision antes de asignar
+                // 📌 ID de la reserva y fechas
                 lblFacturaId.Text = $"Factura ID: {factura.Id}";
-                lblClienteId.Text = factura.ClienteId != 0 ? $"Cliente ID: {factura.ClienteId}" : "⚠ Cliente no definido";
-                lblMontoTotal.Text = $"Total: {factura.MontoTotal:C}";
-                lblEstado.Text = factura.Pagada ? "✅ Pagada" : "⚠ Pendiente";
-                lblFecha.Text = factura.FechaEmision != default ? $"Fecha Emisión: {factura.FechaEmision:dd/MM/yyyy}" : "⚠ Fecha no disponible";
-
-                // 🔹 Agregar detalles de la reserva
                 lblFechaInicio.Text = $"Fecha Inicio: {reserva.FechaInicio:dd/MM/yyyy}";
                 lblFechaFin.Text = $"Fecha Fin: {reserva.FechaFin:dd/MM/yyyy}";
                 lblDuracionEstadia.Text = $"Duración: {(reserva.FechaFin - reserva.FechaInicio).Days} días";
 
-                bool esTemporadaAlta = facturaService.EsTemporadaAlta(reserva.FechaInicio, reserva.FechaFin);
-                lblTemporada.Text = esTemporadaAlta ? "Temporada: 🌞 Alta" : "Temporada: ❄ Baja";
+                // 📌 Cliente
+                var cliente = _context.Clientes.FirstOrDefault(c => c.ClienteId == factura.ClienteId);
+                lblClienteId.Text = cliente != null ? $"Cliente: {cliente.Nombre}" : "⚠ Cliente no definido";
+                bool esVIP = cliente?.VIP ?? false;
+                lblServiciosTitulo.Text = esVIP ? "🌟 Cliente VIP - Descuento Aplicado" : "Cliente Regular";
 
-                // 🔹 Obtener detalles del alojamiento
-                var alojamiento = _context.ReservaHabitaciones
-                    .Where(rh => rh.ReservaId == factura.ReservaId)
-                    .Include(rh => rh.Habitacion)
-                    .ThenInclude(h => h.TipoHabitacion)
-                    .Select(rh => new
-                    {
-                        Tipo = (rh.Habitacion != null && rh.Habitacion.TipoHabitacion != null) ? rh.Habitacion.TipoHabitacion.Descripcion : "No definido",
-                        PrecioBase = (rh.Habitacion != null && rh.Habitacion.TipoHabitacion != null) ? rh.Habitacion.TipoHabitacion.PrecioBase : 0
-                    })
+                var reservaHabitacion = _context.ReservaHabitaciones
+                 .Where(rh => rh.ReservaId == factura.ReservaId)
+                 .Include(rh => rh.Habitacion)
+                 .ThenInclude(h => h.TipoHabitacion)
+                 .FirstOrDefault(); // ✅ Primero obtenemos el objeto validado
 
-                    .FirstOrDefault();
-
-                // 📌 Validar si el alojamiento existe
-                if (alojamiento == null || alojamiento.Tipo == "No definido")
+                if (reservaHabitacion != null && reservaHabitacion.Habitacion != null && reservaHabitacion.Habitacion.TipoHabitacion != null)
                 {
-                    lblAlojamiento.Text = "🏨 Tipo de alojamiento: ❌ No disponible";
-                    MessageBox.Show("Error: No se pudo obtener el tipo de alojamiento.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
+                    lblAlojamiento.Text = $"🏨 Tipo: {reservaHabitacion.Habitacion.TipoHabitacion.Descripcion}";
+                    lblPrecioBase.Text = $"Precio Base: {reservaHabitacion.Habitacion.TipoHabitacion.PrecioBase:C}";
+                }
+                else
+                {
+                    lblAlojamiento.Text = "🏨 Tipo: ❌ No disponible";
+                    lblPrecioBase.Text = "Precio Base: ❌ No disponible";
                 }
 
-                // ✅ Aplicar ajuste de temporada
-                decimal tarifaDiaria = alojamiento.PrecioBase;
-                if (esTemporadaAlta)
-                {
-                    tarifaDiaria *= 1.2m;
-                }
-
-                decimal costoAlojamiento = facturaService.CalcularMontoBase(reserva);
-
-                // 📌 Mostrar detalles del alojamiento y precios
-                lblAlojamiento.Text = $"🏨 Tipo: {alojamiento.Tipo}";
-                lblPrecioBase.Text = $"Precio Base: {alojamiento.PrecioBase:C}";
-                lblPrecioFinal.Text = $"Precio Final: {costoAlojamiento:C} ({tarifaDiaria:C} por día)";
-
-                // 📌 Mostrar servicios contratados
-                if (factura == null || factura.Id == 0)
-                {
-                    throw new Exception("❌ La factura no se generó correctamente.");
-                }
-
-                // 📌 Filtrar solo los servicios que pertenecen a la reserva actual
+                // 📌 Servicios consumidos
                 var serviciosConsumidos = _context.Servicios
                     .Include(s => s.TipoServicio)
-                    .Where(s => s.ReservaId == reserva.Id) // ✅ Filtrar por `ReservaId`
+                    .Where(s => s.ReservaId == reserva.Id)
                     .ToList();
 
-                // 📌 Validar si hay servicios asociados a la reserva
-                if (!serviciosConsumidos.Any())
-                {
-                    MessageBox.Show("⚠ No hay servicios asociados a esta reserva.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-
-                // ✅ Asignar `FacturaId` a los servicios si es necesario
-                foreach (var servicio in serviciosConsumidos)
-                {
-                    servicio.FacturaId = factura.Id; // ✅ Asigna el `FacturaId` correcto
-                    _context.Servicios.Update(servicio);
-                }
-
-                _context.SaveChanges(); // ✅ Guardar cambios en la base de datos
-
-                // 📌 Mostrar servicios en `DataGridView`
                 dgvDetalleFactura.DataSource = serviciosConsumidos.Select(s => new
                 {
                     Nombre = s.TipoServicio.Descripcion,
@@ -165,14 +122,25 @@ namespace HotelSOL1.FormsAPP
                     Descuento = s.DescuentoAplicado ? "✅ Descuento VIP" : "❌ Sin descuento"
                 }).ToList();
 
+                // 📌 Cálculo de costos
+                decimal montoBase = facturaService.CalcularMontoBase(reserva);
+                decimal montoServicios = serviciosConsumidos.Sum(s => s.TipoServicio.Precio);
+                decimal impuestos = (montoBase + montoServicios) * 0.18m;
+                decimal descuentoAplicado = esVIP ? (montoBase + montoServicios) * 0.1m : 0;
+                decimal totalPagar = montoBase + montoServicios + impuestos - descuentoAplicado;
+
+                lblPrecioFinal.Text = $"TOTAL: {totalPagar:C}";
+
+                // 📌 Estado de pago
+                lblEstado.Text = factura.Pagada ? "✅ Factura Pagada" : "⚠ Pendiente de Pago";
+                lblFecha.Text = $"Fecha Emisión: {factura.FechaEmision:dd/MM/yyyy}";
+
+                bool esTemporadaAlta = facturaService.EsTemporadaAlta(reserva.FechaInicio, reserva.FechaFin);
+                lblTemporada.Text = esTemporadaAlta ? "🌞 Temporada Alta (+20%)" : "🍃 Temporada Baja";
+
 
                 MessageBox.Show("Factura generada exitosamente!", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 CargarFacturas();
-            }
-            catch (DbUpdateException ex)
-            {
-                Console.WriteLine($"Error al actualizar la base de datos: {ex.InnerException?.Message}");
-                MessageBox.Show($"Error generando la factura:\n{ex.InnerException?.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (Exception ex)
             {
@@ -180,6 +148,8 @@ namespace HotelSOL1.FormsAPP
                 MessageBox.Show($"Error generando la factura:\n{ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+
 
 
 

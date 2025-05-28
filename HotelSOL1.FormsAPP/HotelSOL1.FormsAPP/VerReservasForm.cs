@@ -1,109 +1,237 @@
 ﻿using HotelSOL.DataAccess.Models;
+using HotelSOL.DataAccess.Service;
 using HotelSOL.DataAccess.Services;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace HotelSOL1.FormsAPP
 {
-    public partial class VerReservasForm : Form
+    public partial class ReservasForm : Form
     {
         private readonly ReservaService _reservaService;
+
         public Reserva ReservaSeleccionada { get; private set; }
 
-        public VerReservasForm(ReservaService reservaService)
+        public ReservasForm(ReservaService reservaService)
         {
             InitializeComponent();
             _reservaService = reservaService;
-            this.Load += new EventHandler(this.VerReservasForm_Load);
-
+            this.Load += new EventHandler(this.ReservasForm_Load);
         }
 
-        private void VerReservasForm_Load(object sender, EventArgs e)
+        private void ReservasForm_Load(object sender, EventArgs e)
         {
             try
             {
-                // Obtén las reservas de la base de datos
-                List<Reserva> reservas = _reservaService.ObtenerReservas();
+                // 📌 Verificar autenticación
+                if (!UsuarioAutenticadoValido()) return;
 
-                // Asegúrate de que tienes un DataGridView con el nombre dgvReservas
-                dgvReservas.DataSource = reservas;
+                // 📌 Filtrar reservas según el rol del usuario
+                List<Reserva> reservas = FiltrarReservasPorRol();
+                CargarReservasEnTabla(reservas);
 
-                // Configura las columnas, si es necesario
-                if (dgvReservas.Columns["Id"] != null)
-                {
-                    dgvReservas.Columns["Id"].HeaderText = "ID Reserva";
-                }
-                if (dgvReservas.Columns["FechaInicio"] != null)
-                {
-                    dgvReservas.Columns["FechaInicio"].HeaderText = "Fecha Inicio";
-                }
-                if (dgvReservas.Columns["FechaFin"] != null)
-                {
-                    dgvReservas.Columns["FechaFin"].HeaderText = "Fecha Fin";
-                }
-
-                if (dgvReservas.Columns["Estado"] != null)
-                {
-                    dgvReservas.Columns["Estado"].HeaderText = "Estado";
-                }
+                // 📌 Ocultar botones de Check-In y Check-Out si el usuario es Cliente
+                ConfigurarInterfazSegunRol();
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error al cargar las reservas: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MostrarMensajeError($"Error al cargar las reservas:\n{ex.Message}");
             }
         }
 
-        // Este es el evento para el botón Ver Detalles
-        private void btnVerDetalles_Click(object sender, EventArgs e)
+        private bool UsuarioAutenticadoValido()
         {
-            if (dgvReservas.SelectedRows.Count > 0)
+            if (Program.UsuarioAutenticado == null)
             {
-                int reservaId = Convert.ToInt32(dgvReservas.SelectedRows[0].Cells["Id"].Value);
-                ReservaSeleccionada = _reservaService.ObtenerReservaPorId(reservaId);
+                MostrarMensajeError("❌ No hay usuario autenticado.");
+                this.Close();
+                return false;
+            }
+            return true;
+        }
 
-                if (ReservaSeleccionada != null)
+        private List<Reserva> FiltrarReservasPorRol()
+        {
+            return Program.UsuarioAutenticado.Rol == "Cliente"
+                ? _reservaService.ObtenerReservas().Where(r => r.ClienteId == Program.UsuarioAutenticado.Id).ToList()
+                : _reservaService.ObtenerReservas();
+        }
+
+        private void CargarReservasEnTabla(List<Reserva> reservas)
+        {
+            dgvReservas.DataSource = reservas.Select(r => new
+            {
+                r.Id,
+                Cliente = r.Cliente != null ? r.Cliente.Nombre : "Desconocido",
+                FechaInicio = r.FechaInicio.ToString("dd/MM/yyyy"),
+                FechaFin = r.FechaFin.ToString("dd/MM/yyyy"),
+                Estado = r.Estado.ToString()
+            }).ToList();
+        }
+
+        private void ConfigurarInterfazSegunRol()
+        {
+            if (Program.UsuarioAutenticado.Rol == "Cliente")
+            {
+                btnCheckIn.Visible = false;
+                btnCheckOut.Visible = false;
+            }
+        }
+
+        private Reserva ObtenerReservaSeleccionada()
+        {
+            if (dgvReservas.SelectedRows.Count == 0)
+            {
+                MostrarMensajeError("❌ Seleccione una reserva antes de continuar.");
+                return null;
+            }
+
+            int reservaId = Convert.ToInt32(dgvReservas.SelectedRows[0].Cells["Id"].Value);
+            return _reservaService.ObtenerReservaPorId(reservaId);
+        }
+
+        private void btnCheckIn_Click(object sender, EventArgs e)
+        {
+            var reservaSeleccionada = ObtenerReservaSeleccionada();
+            if (reservaSeleccionada == null) return;
+
+            if (ConfirmarAccion("¿Desea registrar el Check-In?"))
+            {
+                if (_reservaService.RegistrarCheckIn(reservaSeleccionada.Id))
                 {
-                    this.DialogResult = DialogResult.OK; // ✅ Indicar que la selección fue exitosa
-                    this.Close(); // ✅ Cerrar el formulario de reservas
-
-                    // 📌 Abrir automáticamente la factura después de seleccionar la reserva
-                    var facturaService = new FacturaService(Program.DbContext);
-                    var usuarioAutenticado = Program.UsuarioAutenticado; // ✅ Obtener usuario autenticado
-
-                    var formFactura = new GenerarFacturaForm(ReservaSeleccionada, facturaService, usuarioAutenticado, Program.DbContext);
-                    formFactura.ShowDialog(); // ✅ Abrir factura después de seleccionar la reserva
+                    MostrarMensajeExito("✅ Check-In registrado con éxito.");
+                    ActualizarReservas();
+                }
+                else
+                {
+                    MostrarMensajeError("❌ No se pudo registrar el Check-In.");
                 }
             }
-            else
+        }
+
+        private void btnCheckOut_Click(object sender, EventArgs e)
+        {
+            var reservaSeleccionada = ObtenerReservaSeleccionada();
+            if (reservaSeleccionada == null) return;
+
+            if (ConfirmarAccion("¿Desea registrar el Check-Out?"))
             {
-                MessageBox.Show("Seleccione una reserva de la lista.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (_reservaService.RegistrarCheckOut(reservaSeleccionada.Id))
+                {
+                    MostrarMensajeExito("✅ Check-Out registrado con éxito.");
+                    ActualizarReservas();
+                }
+                else
+                {
+                    MostrarMensajeError("❌ No se pudo registrar el Check-Out.");
+                }
             }
         }
 
         private void btnGenerarFactura_Click(object sender, EventArgs e)
         {
-            if (dgvReservas.SelectedRows.Count > 0)
-            {
-                int reservaId = Convert.ToInt32(dgvReservas.SelectedRows[0].Cells["Id"].Value);
-                Reserva reservaSeleccionada = _reservaService.ObtenerReservaPorId(reservaId);
+            if (!UsuarioAutenticadoValido()) return;
 
-                if (reservaSeleccionada != null)
+            var reservaSeleccionada = ObtenerReservaSeleccionada();
+            if (reservaSeleccionada == null) return;
+
+            var facturaService = new FacturaService(Program.DbContext);
+            var clienteService = new ClienteService(Program.DbContext);
+            var usuarioAutenticado = Program.UsuarioAutenticado;
+
+            var formFactura = new GenerarFacturaForm(
+                reservaSeleccionada,
+                facturaService,
+                clienteService,
+                usuarioAutenticado,
+                Program.DbContext
+            );
+            formFactura.ShowDialog();
+        }
+
+        private void btnAgregarServicio_Click(object sender, EventArgs e)
+        {
+            if (!UsuarioAutenticadoValido()) return;
+
+            var reservaSeleccionada = ObtenerReservaSeleccionada();
+            if (reservaSeleccionada == null) return;
+
+            var servicioForm = new ServicioForm(reservaSeleccionada.Id, new ServicioService(Program.DbContext), _reservaService, new FacturaService(Program.DbContext));
+            servicioForm.ShowDialog();
+        }
+
+        private void btnServicios_Click(object sender, EventArgs e)
+        {
+            var reservaSeleccionada = ObtenerReservaSeleccionada();
+            if (reservaSeleccionada == null) return;
+
+            var servicioForm = new ServicioForm(
+                reservaSeleccionada.Id,
+                new ServicioService(Program.DbContext),
+                _reservaService,
+                new FacturaService(Program.DbContext)
+            );
+
+            servicioForm.ShowDialog();
+        }
+
+        private void txtBuscarCliente_TextChanged(object sender, EventArgs e)
+        {
+            if (Program.UsuarioAutenticado.Rol != "Administrador") return; // Solo administradores pueden buscar
+
+            string filtro = txtBuscarCliente.Text.Trim().ToLower();
+            var reservasFiltradas = _reservaService.ObtenerReservas()
+                .Where(r => r.Cliente != null && r.Cliente.Nombre.ToLower().Contains(filtro))
+                .Select(r => new
                 {
-                    var facturaService = new FacturaService(Program.DbContext);
-                    var usuarioAutenticado = Program.UsuarioAutenticado; // ✅ Obtener usuario autenticado
+                    r.Id,
+                    Cliente = r.Cliente.Nombre,
+                    FechaInicio = r.FechaInicio.ToString("dd/MM/yyyy"),
+                    FechaFin = r.FechaFin.ToString("dd/MM/yyyy"),
+                    Estado = r.Estado.ToString()
+                }).ToList();
 
-                    var formFactura = new GenerarFacturaForm(reservaSeleccionada, facturaService, usuarioAutenticado, Program.DbContext);
-                    formFactura.ShowDialog(); // ✅ Abrir factura
-                }
-            }
-            else
-            {
-                MessageBox.Show("Seleccione una reserva antes de generar la factura.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            dgvReservas.DataSource = reservasFiltradas;
         }
 
 
+        private void btnVerDetalles_Click(object sender, EventArgs e)
+        {
+            var reservaSeleccionada = ObtenerReservaSeleccionada();
+            if (reservaSeleccionada == null) return;
 
+            MessageBox.Show($"Detalles de la reserva:\nCliente: {reservaSeleccionada.Cliente.Nombre}\nEstado: {reservaSeleccionada.Estado}",
+                            "Detalles de Reserva", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            if (ConfirmarAccion("¿Desea salir de la gestión de reservas?"))
+            {
+                this.Close();
+            }
+        }
+
+        private void ActualizarReservas()
+        {
+            ReservasForm_Load(null, null);
+        }
+
+        private bool ConfirmarAccion(string mensaje)
+        {
+            return MessageBox.Show(mensaje, "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes;
+        }
+
+        private void MostrarMensajeError(string mensaje)
+        {
+            MessageBox.Show(mensaje, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void MostrarMensajeExito(string mensaje)
+        {
+            MessageBox.Show(mensaje, "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }

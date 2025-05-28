@@ -210,6 +210,18 @@ namespace HotelSOL1.FormsAPP
 
                 reservaService.RegistrarReserva(reserva, habitacionesSeleccionadas);
 
+
+                // 📌 Confirmar reserva inmediatamente después de guardarla
+                if (!reservaService.ConfirmarReserva(reserva.Id))
+                {
+                    MessageBox.Show("❌ No se pudo confirmar la reserva automáticamente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    MessageBox.Show("✅ Reserva confirmada correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+
                 if (reserva.Id == 0)
                 {
                     MessageBox.Show("Error: La reserva no se guardó correctamente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);

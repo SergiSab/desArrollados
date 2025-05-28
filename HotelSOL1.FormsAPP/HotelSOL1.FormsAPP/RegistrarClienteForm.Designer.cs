@@ -1,134 +1,113 @@
-﻿namespace HotelSOL1.FormsAPP
+﻿using System;
+using System.Windows.Forms;
+using System.Drawing;
+
+namespace HotelSOL1.FormsAPP
 {
     partial class RegistrarClienteForm
     {
-        private System.ComponentModel.IContainer components = null;
-
-        private Label lblNombre;
-        private TextBox txtNombre;
-        private Label lblApellido;
-        private TextBox txtApellido;
-        private Label lblDNI;
-        private TextBox txtDNI;
-        private Label lblDireccion;
-        private TextBox txtDireccion;
-        private Label lblEmail;
-        private TextBox txtEmail;
-        private Label lblTelefono;
-        private TextBox txtTelefono;
+        private PictureBox pbLogo;
+        private Panel pnlCliente;
+        private Label lblNombre, lblApellido, lblDNI, lblDireccion, lblEmail, lblTelefono, lblContraseña;
+        private TextBox txtNombre, txtApellido, txtDNI, txtDireccion, txtEmail, txtTelefono, txtContraseña;
         private CheckBox chkVIP;
-        private Button btnGuardar;
-        private Button btnCancelar;
-        private System.Windows.Forms.TextBox txtContraseña;
-        private System.Windows.Forms.Label lblContraseña; 
-
-
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-                components.Dispose();
-            base.Dispose(disposing);
-        }
+        private Button btnGuardar, btnCancelar;
 
         private void InitializeComponent()
         {
-            this.lblNombre = new Label();
-            this.txtNombre = new TextBox();
-            this.lblApellido = new Label();
-            this.txtApellido = new TextBox();
-            this.lblDNI = new Label();
-            this.txtDNI = new TextBox();
-            this.lblDireccion = new Label();
-            this.txtDireccion = new TextBox();
-            this.lblEmail = new Label();
-            this.txtEmail = new TextBox();
-            this.lblTelefono = new Label();
-            this.txtTelefono = new TextBox();
-            this.lblContraseña = new Label();
-            this.txtContraseña = new TextBox();
-            this.chkVIP = new CheckBox();
-            this.btnGuardar = new Button();
-            this.btnCancelar = new Button();
             this.SuspendLayout();
 
-            // lblNombre
-            lblNombre.Text = "Nombre:";
-            lblNombre.Location = new Point(30, 20);
-            txtNombre.Location = new Point(130, 20);
+            // 📌 Configuración del formulario
+            this.ClientSize = new System.Drawing.Size(900, 600);
+            this.StartPosition = FormStartPosition.CenterScreen;
+            this.Text = "Registrar Cliente";
+            this.BackColor = Color.White;
 
-            // lblApellido
-            lblApellido.Text = "Apellido:";
-            lblApellido.Location = new Point(30, 60);
-            txtApellido.Location = new Point(130, 60);
+            // 🎨 Fondo de imagen
+            this.BackgroundImage = Image.FromFile(@"C:\Users\Administrator\OneDrive\Escritorio\desArrollados\Imagenes\Fondo.jpg");
+            this.BackgroundImageLayout = ImageLayout.Stretch;
 
-            // lblDNI
-            lblDNI.Text = "DNI:";
-            lblDNI.Location = new Point(30, 100);
-            txtDNI.Location = new Point(130, 100);
+            // 🎨 Logo centrado arriba
+            pbLogo = new PictureBox();
+            pbLogo.Image = Image.FromFile(@"C:\Users\Administrator\OneDrive\Escritorio\desArrollados\Imagenes\Logo.png");
+            pbLogo.SizeMode = PictureBoxSizeMode.Zoom;
+            pbLogo.Size = new Size(130, 130);
+            pbLogo.BackColor = Color.Transparent;
+            pbLogo.Location = new Point((this.ClientSize.Width - pbLogo.Width) / 2, 20);
 
-            // lblDireccion
-            lblDireccion.Text = "Dirección:";
-            lblDireccion.Location = new Point(30, 140);
-            txtDireccion.Location = new Point(130, 140);
+            // 🔹 Panel transparente para organizar los campos
+            pnlCliente = new Panel();
+            pnlCliente.Size = new Size(650, 400);  // ✅ Ampliamos el tamaño para acomodar dos columnas
+            pnlCliente.Location = new Point(
+                (this.ClientSize.Width - pnlCliente.Width) / 2,
+                160 // ✅ Ajustar la posición del panel
+            );
+            pnlCliente.BackColor = Color.FromArgb(220, 240, 240, 240);
+            pnlCliente.Padding = new Padding(20);
 
-            // lblEmail
-            lblEmail.Text = "Email:";
-            lblEmail.Location = new Point(30, 180);
-            txtEmail.Location = new Point(130, 180);
+            // 📌 Organización en dos columnas
+            int col1 = 20;  // Primera columna
+            int col2 = 330; // Segunda columna
+            int fila = 20; // Espaciado vertical entre filas
 
-            // lblTelefono
-            lblTelefono.Text = "Teléfono:";
-            lblTelefono.Location = new Point(30, 220);
-            txtTelefono.Location = new Point(130, 220);
+            lblNombre = new Label() { Text = "Nombre:", Location = new Point(col1, fila), AutoSize = true };
+            txtNombre = new TextBox() { Location = new Point(col1, fila + 30), Size = new Size(280, 30) };
 
-            // Contraseña
+            lblApellido = new Label() { Text = "Apellido:", Location = new Point(col2, fila), AutoSize = true };
+            txtApellido = new TextBox() { Location = new Point(col2, fila + 30), Size = new Size(280, 30) };
 
-            this.lblContraseña.Text = "Contraseña:";
-            this.lblContraseña.Location = new Point(30, 260); // 🔹 Ajusta la posición correcta
-            this.Controls.Add(this.lblContraseña);
+            fila += 70; // 🔹 Mover a la siguiente fila
 
+            lblDNI = new Label() { Text = "DNI:", Location = new Point(col1, fila), AutoSize = true };
+            txtDNI = new TextBox() { Location = new Point(col1, fila + 30), Size = new Size(280, 30) };
 
-            this.txtContraseña.Location = new Point(130, 260); // 🔹 Ahora está debajo de los otros campos
-            this.txtContraseña.Size = new Size(200, 23);
-            this.txtContraseña.UseSystemPasswordChar = true; // 🔹 Oculta el texto de la contraseña
-            this.Controls.Add(this.txtContraseña);
+            lblDireccion = new Label() { Text = "Dirección:", Location = new Point(col2, fila), AutoSize = true };
+            txtDireccion = new TextBox() { Location = new Point(col2, fila + 30), Size = new Size(280, 30) };
 
+            fila += 70;
 
+            lblEmail = new Label() { Text = "Email:", Location = new Point(col1, fila), AutoSize = true };
+            txtEmail = new TextBox() { Location = new Point(col1, fila + 30), Size = new Size(280, 30) };
 
-            // chkVIP
-            chkVIP.Text = "¿Cliente VIP?";
-            chkVIP.Location = new Point(130, 300);
+            lblTelefono = new Label() { Text = "Teléfono:", Location = new Point(col2, fila), AutoSize = true };
+            txtTelefono = new TextBox() { Location = new Point(col2, fila + 30), Size = new Size(280, 30) };
 
-            // btnGuardar
-            btnGuardar.Text = "Guardar";
-            btnGuardar.Location = new Point(50, 340);
-            btnGuardar.Click += new EventHandler(this.btnGuardar_Click);
+            fila += 70;
 
-            // btnCancelar
-            btnCancelar.Text = "Cancelar";
-            btnCancelar.Location = new Point(180, 340);
-            btnCancelar.Click += new EventHandler(this.btnCancelar_Click);
+            lblContraseña = new Label() { Text = "Contraseña:", Location = new Point(col1, fila), AutoSize = true };
+            txtContraseña = new TextBox() { Location = new Point(col1, fila + 30), Size = new Size(280, 30), UseSystemPasswordChar = true };
 
-            // RegistrarClienteForm
-            this.ClientSize = new Size(350, 370);
-            this.Controls.AddRange(new Control[] {
+            chkVIP = new CheckBox() { Text = "¿Cliente VIP?", Location = new Point(col2, fila + 30), AutoSize = true };
+
+            // 📌 Botones alineados abajo y centrados
+            btnGuardar = new Button() { Text = "Guardar", Location = new Point(150, 310), Size = new Size(180, 40), BackColor = Color.LightGreen };
+            btnCancelar = new Button() { Text = "Cancelar", Location = new Point(350, 310), Size = new Size(180, 40), BackColor = Color.LightCoral };
+
+            // 🔗 Agregar controles al panel
+            pnlCliente.Controls.AddRange(new Control[] {
                 lblNombre, txtNombre,
                 lblApellido, txtApellido,
                 lblDNI, txtDNI,
                 lblDireccion, txtDireccion,
                 lblEmail, txtEmail,
                 lblTelefono, txtTelefono,
-                lblContraseña, txtContraseña, // 🔹 Agregado correctamente
+                lblContraseña, txtContraseña,
                 chkVIP,
                 btnGuardar, btnCancelar
             });
 
+            // 🔗 Agregar controles al formulario
+            this.Controls.Add(pbLogo);
+            this.Controls.Add(pnlCliente);
+            pnlCliente.BringToFront(); // ✅ Asegurar que el panel sea visible
 
-            this.Text = "Registrar Cliente";
-            this.StartPosition = FormStartPosition.CenterScreen;
+            // 🔗 Agregar funcionalidad a los botones
+            btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+
             this.ResumeLayout(false);
-            this.PerformLayout();
         }
     }
 }
+
+

@@ -36,11 +36,30 @@ namespace HotelSOL1.FormsAPP
             }
 
             var servicioSeleccionado = (TipoServicioEntity)listViewServicios.SelectedItems[0].Tag;
-            servicioService.RegistrarServicio(reservaId, servicioSeleccionado.Id, chkDescuento.Checked);
 
-            MessageBox.Show($"✅ Servicio '{servicioSeleccionado.Descripcion}' agregado correctamente!");
+            // 📌 Obtener la reserva para verificar si el cliente es VIP
+            var reserva = reservaService.ObtenerReservaPorId(reservaId);
+            if (reserva == null || reserva.ClienteId == 0)
+            {
+                MessageBox.Show("❌ No se encontró la reserva o el cliente no es válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // 📌 Obtener información del cliente
+            var cliente = reservaService.ObtenerClientePorId(reserva.ClienteId);
+            bool esVIP = cliente != null && cliente.VIP; // ✅ Verifica si el cliente es VIP
+
+            // 📌 Aplicar el descuento automáticamente si el cliente es VIP
+            bool aplicarDescuento = esVIP;
+
+            // 📌 Registrar el servicio con el descuento automático si corresponde
+            servicioService.RegistrarServicio(reservaId, servicioSeleccionado.Id, aplicarDescuento);
+
+            MessageBox.Show($"✅ Servicio '{servicioSeleccionado.Descripcion}' agregado correctamente con{(aplicarDescuento ? " descuento VIP!" : "ut descuento.")}");
+
             ActualizarFactura();
         }
+
 
         private void CargarServiciosDisponibles()
         {

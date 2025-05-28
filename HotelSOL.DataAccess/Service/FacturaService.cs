@@ -40,7 +40,9 @@ namespace HotelSOL.DataAccess.Services
             decimal montoBase = CalcularMontoBase(reserva); // ✅ Llamar el método directamente
             decimal montoServicios = serviciosConsumidos.Sum(s => s.Precio);
             decimal montoImpuestos = CalcularImpuesto(montoBase + montoServicios, impuestoPorcentaje);
-            decimal montoTotal = montoBase + montoServicios + montoImpuestos;
+            decimal descuentoAplicado = reserva.Cliente.VIP ? (montoBase + montoServicios) * 0.1m : 0;
+            decimal montoTotal = montoBase + montoServicios + montoImpuestos - descuentoAplicado;
+
 
 
             // 📌 Ahora, usa estos valores en la factura
@@ -123,7 +125,7 @@ namespace HotelSOL.DataAccess.Services
         }
 
         // 🔹 Calcular impuestos
-        public const decimal IMPUESTO_POR_DEFECTO = 10m;
+        public const decimal IMPUESTO_POR_DEFECTO = 18m;
 
         public decimal CalcularImpuesto(decimal monto, decimal? porcentaje = null)
         {

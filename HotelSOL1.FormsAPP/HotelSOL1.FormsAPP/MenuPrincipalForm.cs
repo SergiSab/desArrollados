@@ -33,89 +33,38 @@ namespace HotelSOL1.FormsAPP
         {
             lblUsuario.Text = $"Bienvenido, {usuarioAutenticado.Nombre} ({usuarioAutenticado.Rol})";
 
+            // 📌 Desactivar todos los botones por defecto
+            btnRegistrarCliente.Visible = false;
+            btnCrearReserva.Visible = false;
+            btnReservas.Visible = false;
+            btnExportarOdoo.Visible = false;
+            btnRegistrarUsuario.Visible = false;
+            btnGestionHabitaciones.Visible = false;
+
             switch (usuarioAutenticado.Rol)
             {
                 case "Administrador":
-                    btnRegistrarCliente.Visible = true;
-                    btnCrearReserva.Visible = true;
-                    btnVerReservas.Visible = true;
-                    btnGenerarFactura.Visible = true;
-                    btnExportarOdoo.Visible = true;
-                    btnRegistrarUsuario.Visible = true;
-                    btnGestionHabitaciones.Visible = true;
-
+                    ActivarBotones(btnRegistrarCliente, btnCrearReserva, btnExportarOdoo, btnRegistrarUsuario, btnGestionHabitaciones, btnReservas);
                     break;
 
                 case "Encargado":
-                    btnRegistrarCliente.Visible = false;
-                    btnCrearReserva.Visible = false;
-                    btnVerReservas.Visible = true; // 🔹 Supervisa reservas
-                    btnGenerarFactura.Visible = false;
-                    btnExportarOdoo.Visible = true;
-                    btnRegistrarUsuario.Visible = false;// 🔹 Acceso a gestión de proveedores y pedidos
-                    btnGestionHabitaciones.Visible = false;
+                    ActivarBotones(btnExportarOdoo);
                     break;
 
                 case "Recepcionista":
-                    btnRegistrarCliente.Visible = false;
-                    btnCrearReserva.Visible = true;
-                    btnVerReservas.Visible = true;
-                    btnGenerarFactura.Visible = true;
-                    btnExportarOdoo.Visible = false;
-                    btnRegistrarUsuario.Visible = false;
-                    btnGestionHabitaciones.Visible = false;
+                    ActivarBotones(btnCrearReserva);
                     break;
 
                 case "Cliente":
-                    btnRegistrarCliente.Visible = false;
-                    btnCrearReserva.Visible = true;
-                    btnVerReservas.Visible = true;
-                    btnGenerarFactura.Visible = true;
-                    btnExportarOdoo.Visible = false;
-                    btnRegistrarUsuario.Visible = false;
-                    btnGestionHabitaciones.Visible = false;
+                    ActivarBotones(btnCrearReserva, btnReservas);
                     break;
 
                 case "Contable":
-                    btnRegistrarCliente.Visible = false;
-                    btnCrearReserva.Visible = false;
-                    btnVerReservas.Visible = false;
-                    btnGenerarFactura.Visible = true; // 🔹 Solo consulta facturas y análisis financiero
-                    btnExportarOdoo.Visible = true;
-                    btnRegistrarUsuario.Visible = false;
-                    btnGestionHabitaciones.Visible = false;
-                    break;
-
-                case "Personal Limpieza":
-                    btnRegistrarCliente.Visible = false;
-                    btnCrearReserva.Visible = false;
-                    btnVerReservas.Visible = false;
-                    btnGenerarFactura.Visible = false;
-                    btnExportarOdoo.Visible = false;
-                    btnRegistrarUsuario.Visible = false;
-                    btnGestionHabitaciones.Visible = false;
-                    MessageBox.Show("🔹 Acceso a habitaciones por limpiar.");
-                    break;
-
-                case "Personal Restauración":
-                    btnRegistrarCliente.Visible = false;
-                    btnCrearReserva.Visible = false;
-                    btnVerReservas.Visible = false;
-                    btnGenerarFactura.Visible = false;
-                    btnExportarOdoo.Visible = false;
-                    btnRegistrarUsuario.Visible = false;
-                    btnGestionHabitaciones.Visible = false;
-                    MessageBox.Show("🔹 Acceso a pedidos de clientes.");
+                    ActivarBotones( btnExportarOdoo);
                     break;
 
                 case "Marketing y Publicidad":
-                    btnRegistrarCliente.Visible = false;
-                    btnCrearReserva.Visible = false;
-                    btnVerReservas.Visible = false;
-                    btnGenerarFactura.Visible = false;
-                    btnExportarOdoo.Visible = true; // 🔹 Acceso a gestión de redes y descuentos VIP
-                    btnRegistrarUsuario.Visible = false;
-                    btnGestionHabitaciones.Visible = false;
+                    ActivarBotones(btnExportarOdoo);
                     break;
 
                 default:
@@ -123,6 +72,15 @@ namespace HotelSOL1.FormsAPP
                     break;
             }
         }
+
+        private void ActivarBotones(params Button[] botones)
+        {
+            foreach (var boton in botones)
+            {
+                boton.Visible = true;
+            }
+        }
+
 
 
         private void btnRegistrarUsuario_Click(object sender, EventArgs e)
@@ -160,42 +118,22 @@ namespace HotelSOL1.FormsAPP
             form.ShowDialog();
         }
 
-
-
-        //Botones
-        private void btnVerReservas_Click(object sender, EventArgs e)
+        private void btnReservas_Click(object sender, EventArgs e)
         {
-            var reservaService = new ReservaService(Program.DbContext);
-            var form = new VerReservasForm(reservaService);
-            form.ShowDialog();
-        }
-
-        private void btnGenerarFactura_Click(object sender, EventArgs e)
-        {
-            var reservaService = new ReservaService(Program.DbContext);
-            var facturaService = new FacturaService(Program.DbContext);
-            var usuarioAutenticado = Program.UsuarioAutenticado; // 🔹 Asegura que el usuario está autenticado
-            if (usuarioAutenticado == null)
+            if (Program.UsuarioAutenticado == null)
             {
-                MessageBox.Show("Error: No hay usuario autenticado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("❌ No hay usuario autenticado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            // Abre el formulario de reservas para que el usuario elija una
-            var formReservas = new VerReservasForm(reservaService);
+            var reservaService = new ReservaService(Program.DbContext);
+            var formReservas = new ReservasForm(reservaService);
             formReservas.ShowDialog();
-            if (formReservas.ReservaSeleccionada != null)
-            {
-                var reserva = formReservas.ReservaSeleccionada;
-                var formFactura = new GenerarFacturaForm(reserva, facturaService, usuarioAutenticado, Program.DbContext); // ✅ Agregar `Program.DbContext`
-                formFactura.ShowDialog();
-            }
-
-            else
-            {
-                MessageBox.Show("Seleccione una reserva antes de generar la factura.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
         }
+
+
+
+
         private void btnGestionHabitaciones_Click(object sender, EventArgs e)
         {
             var habitacionService = new HabitacionService(Program.DbContext);
@@ -208,6 +146,7 @@ namespace HotelSOL1.FormsAPP
             var form = new ExportarOdooForm();
             form.ShowDialog();
         }
+   
 
         private void btnSalir_Click(object sender, EventArgs e)
         {

@@ -1,87 +1,89 @@
-﻿namespace HotelSOL1.FormsAPP
+﻿using System;
+using System.Windows.Forms;
+using System.Drawing;
+
+namespace HotelSOL1.FormsAPP
 {
     partial class RegistrarUsuarioForm
     {
-        private System.ComponentModel.IContainer components = null;
-        private System.Windows.Forms.Label lblNombre;
-        private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.Label lblEmail;
-        private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.Label lblContraseña;
-        private System.Windows.Forms.TextBox txtContraseña;
-        private System.Windows.Forms.Label lblRol;
-        private System.Windows.Forms.ComboBox cmbRol;
-        private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.Button btnCancelar;
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-                components.Dispose();
-            base.Dispose(disposing);
-        }
+        private PictureBox pbLogo;
+        private Panel pnlUsuario;
+        private Label lblNombre, lblEmail, lblContraseña, lblRol;
+        private TextBox txtNombre, txtEmail, txtContraseña;
+        private ComboBox cmbRol;
+        private Button btnGuardar, btnCancelar;
 
         private void InitializeComponent()
         {
-            this.lblNombre = new System.Windows.Forms.Label();
-            this.txtNombre = new System.Windows.Forms.TextBox();
-            this.lblEmail = new System.Windows.Forms.Label();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.lblContraseña = new System.Windows.Forms.Label();
-            this.txtContraseña = new System.Windows.Forms.TextBox();
-            this.lblRol = new System.Windows.Forms.Label();
-            this.cmbRol = new System.Windows.Forms.ComboBox();
-            this.btnGuardar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
             this.SuspendLayout();
 
-            // lblNombre
-            this.lblNombre.Text = "Nombre:";
-            this.lblNombre.Location = new System.Drawing.Point(30, 20);
-            this.Controls.Add(this.lblNombre);
-            this.txtNombre.Location = new System.Drawing.Point(130, 20);
-            this.Controls.Add(this.txtNombre);
-
-            // lblEmail
-            this.lblEmail.Text = "Email:";
-            this.lblEmail.Location = new System.Drawing.Point(30, 60);
-            this.Controls.Add(this.lblEmail);
-            this.txtEmail.Location = new System.Drawing.Point(130, 60);
-            this.Controls.Add(this.txtEmail);
-
-            // lblContraseña
-            this.lblContraseña.Text = "Contraseña:";
-            this.lblContraseña.Location = new System.Drawing.Point(30, 100);
-            this.Controls.Add(this.lblContraseña);
-            this.txtContraseña.Location = new System.Drawing.Point(130, 100);
-            this.txtContraseña.UseSystemPasswordChar = true;
-            this.Controls.Add(this.txtContraseña);
-
-            // lblRol
-            this.lblRol.Text = "Rol:";
-            this.lblRol.Location = new System.Drawing.Point(30, 140);
-            this.Controls.Add(this.lblRol);
-            this.cmbRol.Location = new System.Drawing.Point(130, 140);
-            this.cmbRol.Size = new System.Drawing.Size(200, 23);
-            this.cmbRol.Items.AddRange(new string[] { "Administrador", "Encargado", "Recepcionista", "Cliente", "Contable", "Personal Limpieza", "Personal Restauración", "Marketing y Publicidad" });
-            this.Controls.Add(this.cmbRol);
-
-            // btnGuardar
-            this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.Location = new System.Drawing.Point(50, 180);
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            this.Controls.Add(this.btnGuardar);
-
-            // btnCancelar
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.Location = new System.Drawing.Point(180, 180);
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            this.Controls.Add(this.btnCancelar);
-
-            // RegistrarUsuarioForm
-            this.ClientSize = new System.Drawing.Size(350, 250);
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            // 📌 Configuración del formulario
+            this.ClientSize = new Size(900, 600);
+            this.StartPosition = FormStartPosition.CenterScreen;
             this.Text = "Registrar Usuario";
+            this.BackColor = Color.White;
+
+            // 🎨 Fondo de imagen
+            this.BackgroundImage = Image.FromFile(@"C:\Users\Administrator\OneDrive\Escritorio\desArrollados\Imagenes\Fondo.jpg");
+            this.BackgroundImageLayout = ImageLayout.Stretch;
+
+            // 🎨 Logo centrado arriba
+            pbLogo = new PictureBox();
+            pbLogo.Image = Image.FromFile(@"C:\Users\Administrator\OneDrive\Escritorio\desArrollados\Imagenes\Logo.png");
+            pbLogo.SizeMode = PictureBoxSizeMode.Zoom;
+            pbLogo.Size = new Size(130, 130);
+            pbLogo.BackColor = Color.Transparent;
+            pbLogo.Location = new Point((this.ClientSize.Width - pbLogo.Width) / 2, 20);
+            this.Controls.Add(pbLogo); // ✅ Agregar logo al formulario
+
+            // 🔹 Panel transparente para organizar los campos
+            pnlUsuario = new Panel();
+            pnlUsuario.Size = new Size(450, 300);  // ✅ Ajustado para acomodar los elementos
+            pnlUsuario.Location = new Point((this.ClientSize.Width - pnlUsuario.Width) / 2, 170);
+            pnlUsuario.BackColor = Color.FromArgb(220, 240, 240, 240);
+            pnlUsuario.Padding = new Padding(20);
+
+            // 📌 Organización en dos columnas
+            int col1 = 20;
+            int col2 = 230;
+            int fila = 20;
+
+            lblNombre = new Label() { Text = "Nombre:", Location = new Point(col1, fila), AutoSize = true };
+            txtNombre = new TextBox() { Location = new Point(col1, fila + 30), Size = new Size(180, 30) };
+
+            lblEmail = new Label() { Text = "Email:", Location = new Point(col2, fila), AutoSize = true };
+            txtEmail = new TextBox() { Location = new Point(col2, fila + 30), Size = new Size(180, 30) };
+
+            fila += 70; // 🔹 Mover a la siguiente fila
+
+            lblContraseña = new Label() { Text = "Contraseña:", Location = new Point(col1, fila), AutoSize = true };
+            txtContraseña = new TextBox() { Location = new Point(col1, fila + 30), Size = new Size(180, 30), UseSystemPasswordChar = true };
+
+            lblRol = new Label() { Text = "Rol:", Location = new Point(col2, fila), AutoSize = true };
+            cmbRol = new ComboBox() { Location = new Point(col2, fila + 30), Size = new Size(180, 30) };
+            cmbRol.Items.AddRange(new string[] { "Administrador", "Encargado", "Recepcionista", "Cliente", "Contable", "Personal Limpieza", "Personal Restauración", "Marketing y Publicidad" });
+
+            // 📌 Botones alineados abajo y centrados
+            btnGuardar = new Button() { Text = "Guardar", Location = new Point(80, 210), Size = new Size(120, 40), BackColor = Color.LightGreen };
+            btnCancelar = new Button() { Text = "Cancelar", Location = new Point(250, 210), Size = new Size(120, 40), BackColor = Color.LightCoral };
+
+            // 🔗 Agregar controles al panel
+            pnlUsuario.Controls.AddRange(new Control[] {
+                lblNombre, txtNombre,
+                lblEmail, txtEmail,
+                lblContraseña, txtContraseña,
+                lblRol, cmbRol,
+                btnGuardar, btnCancelar
+            });
+
+            // 🔗 Agregar controles al formulario
+            this.Controls.Add(pnlUsuario);
+            pnlUsuario.BringToFront(); // ✅ Asegurar que el panel sea visible
+
+            // 🔗 Agregar funcionalidad a los botones
+            btnGuardar.Click += new EventHandler(this.btnGuardar_Click);
+            btnCancelar.Click += new EventHandler(this.btnCancelar_Click);
+
             this.ResumeLayout(false);
         }
     }
