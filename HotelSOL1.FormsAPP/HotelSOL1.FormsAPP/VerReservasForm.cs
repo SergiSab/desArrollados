@@ -51,13 +51,19 @@ namespace HotelSOL1.FormsAPP
             }
             return true;
         }
-
         private List<Reserva> FiltrarReservasPorRol()
         {
+            if (Program.UsuarioAutenticado.Rol == "Cliente" && Program.UsuarioAutenticado.ClienteId == null)
+            {
+                MessageBox.Show("❌ No tienes un perfil de Cliente asociado, por lo que no puedes ver reservas.");
+                return new List<Reserva>();
+            }
+
             return Program.UsuarioAutenticado.Rol == "Cliente"
-                ? _reservaService.ObtenerReservas().Where(r => r.ClienteId == Program.UsuarioAutenticado.Id).ToList()
+                ? _reservaService.ObtenerReservas().Where(r => r.ClienteId == Program.UsuarioAutenticado.ClienteId).ToList()
                 : _reservaService.ObtenerReservas();
         }
+
 
         private void CargarReservasEnTabla(List<Reserva> reservas)
         {

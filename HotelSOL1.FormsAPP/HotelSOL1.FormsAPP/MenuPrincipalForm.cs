@@ -33,45 +33,65 @@ namespace HotelSOL1.FormsAPP
         {
             lblUsuario.Text = $"Bienvenido, {usuarioAutenticado.Nombre} ({usuarioAutenticado.Rol})";
 
-            // 📌 Desactivar todos los botones por defecto
+            // 📌 Ocultar todos los botones inicialmente
             btnRegistrarCliente.Visible = false;
             btnCrearReserva.Visible = false;
-            btnReservas.Visible = false;
             btnExportarOdoo.Visible = false;
             btnRegistrarUsuario.Visible = false;
             btnGestionHabitaciones.Visible = false;
+            btnReservas.Visible = false;
+            btnContabilidad.Visible = false;
+            btnStockProveedores.Visible = false;
+            btnSalir.Visible = false;
+
+            // 📌 Lista de botones que estarán visibles según el rol
+            List<Button> botonesVisibles = new List<Button>();
 
             switch (usuarioAutenticado.Rol)
             {
                 case "Administrador":
-                    ActivarBotones(btnRegistrarCliente, btnCrearReserva, btnExportarOdoo, btnRegistrarUsuario, btnGestionHabitaciones, btnReservas);
+                    botonesVisibles.AddRange(new[] { btnRegistrarCliente, btnCrearReserva, btnExportarOdoo, btnRegistrarUsuario, btnGestionHabitaciones, btnReservas, btnContabilidad, btnStockProveedores, btnSalir });
                     break;
 
                 case "Encargado":
-                    ActivarBotones(btnExportarOdoo);
+                    botonesVisibles.Add(btnExportarOdoo);
+                    botonesVisibles.Add(btnSalir);
                     break;
 
                 case "Recepcionista":
-                    ActivarBotones(btnCrearReserva);
+                    botonesVisibles.Add(btnCrearReserva);
+                    botonesVisibles.Add(btnSalir);
                     break;
 
                 case "Cliente":
-                    ActivarBotones(btnCrearReserva, btnReservas);
+                    botonesVisibles.AddRange(new[] { btnCrearReserva, btnReservas, btnSalir });
                     break;
 
                 case "Contable":
-                    ActivarBotones( btnExportarOdoo);
+                    botonesVisibles.Add(btnExportarOdoo);
+                    botonesVisibles.Add(btnSalir);
                     break;
 
                 case "Marketing y Publicidad":
-                    ActivarBotones(btnExportarOdoo);
+                    botonesVisibles.Add(btnExportarOdoo);
+                    botonesVisibles.Add(btnSalir);
                     break;
 
                 default:
                     MessageBox.Show("❌ Rol no reconocido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
             }
+
+            foreach (var boton in botonesVisibles)
+            {
+                boton.Visible = true; // 📌 Asegura que los botones activos son visibles
+                pnlMenu.Controls.Add(boton); // 📌 Agrega cada botón al panel
+            }
         }
+
+
+        // 📌 Ajustar el tamaño de los botones si hay pocos visibles
+
 
         private void ActivarBotones(params Button[] botones)
         {

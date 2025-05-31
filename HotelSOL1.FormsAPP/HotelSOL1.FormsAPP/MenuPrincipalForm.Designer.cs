@@ -52,19 +52,20 @@ namespace HotelSOL1.FormsAPP
             int fila = 60;
 
             btnRegistrarUsuario = new Button() { Text = "Registrar Usuario", Location = new Point(col1, fila), Size = new Size(200, 50) };
-            btnRegistrarCliente = new Button() { Text = "Registrar Cliente", Location = new Point(col2, fila), Size = new Size(200, 50) };
-            btnCrearReserva = new Button() { Text = "Crear Reserva", Location = new Point(col3, fila), Size = new Size(200, 50) };
+            btnRegistrarCliente = new Button() { Text = "Registrar Cliente", Location = new Point(col3, fila), Size = new Size(200, 50) };
+            btnCrearReserva = new Button() { Text = "Crear Reserva", Location = new Point(col2, fila), Size = new Size(200, 50) };
 
             fila += 70;
             btnExportarOdoo = new Button() { Text = "Exportar a Odoo", Location = new Point(col3, fila), Size = new Size(200, 50) };
             btnReservas = new  Button() { Text = "Reservas", Location = new Point(col2, fila), Size = new Size(200, 50) };
-
-            fila += 70;
             btnGestionHabitaciones = new Button() { Text = "Gestión de Habitaciones", Location = new Point(col1, fila), Size = new Size(200, 50) };
+            fila += 70;
+
             btnContabilidad = new Button() { Text = "Contabilidad", Location = new Point(col3, fila), Size = new Size(200, 50) };
+            btnStockProveedores = new Button() { Text = "Stock & Proveedores", Location = new Point(col1, fila), Size = new Size(200, 50) };
 
             fila += 70;
-            btnStockProveedores = new Button() { Text = "Stock & Proveedores", Location = new Point(col1, fila), Size = new Size(200, 50) };
+ 
 
             // 📌 Botón de salir centrado
             btnSalir = new Button() { Text = "Salir", Location = new Point((pnlMenu.Width - 200) / 2, fila + 80), Size = new Size(200, 50), BackColor = Color.LightCoral };
@@ -78,6 +79,7 @@ namespace HotelSOL1.FormsAPP
             // 📌 Agregar controles al formulario
             this.Controls.Add(pnlMenu);
             pnlMenu.BringToFront();
+
 
             // 📌 Asignar funcionalidad a los botones
             btnRegistrarUsuario.Click += new EventHandler(this.btnRegistrarUsuario_Click);

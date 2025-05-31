@@ -1,183 +1,25 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <Clientes>
   <Cliente>
-    <ClienteId>2</ClienteId>
-    <DNI>87654321B</DNI>
-    <Nombre>Ana</Nombre>
-    <Apellido>Gómez</Apellido>
-    <Direccion>Avenida Sol 45, Valencia</Direccion>
-    <Email>ana.gomez@mail.com</Email>
-    <Telefono>987654321</Telefono>
-    <VIP>false</VIP>
-  </Cliente>
-  <Cliente>
-    <ClienteId>3</ClienteId>
-    <DNI>1234569B</DNI>
-    <Nombre>Alejandro</Nombre>
-    <Apellido>Pérez</Apellido>
-    <Direccion>Calle Mayor 1</Direccion>
-    <Email>Alejandro.perez@mail.com</Email>
-    <Telefono>123443789</Telefono>
-    <VIP>true</VIP>
-  </Cliente>
-  <Cliente>
-    <ClienteId>7</ClienteId>
-    <DNI>3234869B</DNI>
-    <Nombre>Claudia</Nombre>
-    <Apellido>Risso</Apellido>
-    <Direccion>Calle Lleida 1</Direccion>
-    <Email>Claudia.risso@mail.com</Email>
-    <Telefono>1342443789</Telefono>
-    <VIP>false</VIP>
-  </Cliente>
-  <Cliente>
-    <ClienteId>8</ClienteId>
-    <DNI>9876543A</DNI>
-    <Nombre>María</Nombre>
-    <Apellido>González</Apellido>
-    <Direccion>Calle Nueva 2</Direccion>
-    <Email>maria.gonzalez@mail.com</Email>
-    <Telefono>987654321</Telefono>
-    <VIP>false</VIP>
-  </Cliente>
-  <Cliente>
-    <ClienteId>9</ClienteId>
-    <DNI>4236543A</DNI>
-    <Nombre>Juana</Nombre>
-    <Apellido>González</Apellido>
-    <Direccion>Calle Vieja 2</Direccion>
-    <Email>Juana.gonzalez@mail.com</Email>
-    <Telefono>954654321</Telefono>
-    <VIP>false</VIP>
-  </Cliente>
-  <Cliente>
-    <ClienteId>10</ClienteId>
-    <DNI>07345678A</DNI>
-    <Nombre>Ignacio</Nombre>
-    <Apellido>Rodriguez</Apellido>
-    <Direccion>Calle barcelona 123</Direccion>
-    <Email>Ignacio.rodriguez@mail.com</Email>
-    <Telefono>5435123456</Telefono>
-    <VIP>true</VIP>
-  </Cliente>
-  <Cliente>
-    <ClienteId>12</ClienteId>
-    <DNI>786045678A</DNI>
-    <Nombre> Juan</Nombre>
-    <Apellido>Rodriguez</Apellido>
-    <Direccion>Calle barcelona 1</Direccion>
-    <Email>Juan.rodriguez@mail.com</Email>
-    <Telefono>532556</Telefono>
-    <VIP>true</VIP>
-  </Cliente>
-  <Cliente>
-    <ClienteId>13</ClienteId>
-    <DNI>27586934A</DNI>
-    <Nombre> Gemma</Nombre>
-    <Apellido>Diaz</Apellido>
-    <Direccion>Calle amapola 25</Direccion>
-    <Email>Gemma.Diaz@mail.com</Email>
-    <Telefono>94567894</Telefono>
-    <VIP>true</VIP>
-  </Cliente>
-  <Cliente>
-    <ClienteId>14</ClienteId>
-    <DNI>47146788A</DNI>
-    <Nombre>Isaac</Nombre>
-    <Apellido>Torres</Apellido>
-    <Direccion>Calle ancha 23</Direccion>
-    <Email>isaac.torres@mail.com</Email>
-    <Telefono>32141250</Telefono>
-    <VIP>false</VIP>
-  </Cliente>
-  <Cliente>
-    <ClienteId>15</ClienteId>
+    <ClienteId>4</ClienteId>
+    <UsuarioId>3</UsuarioId>
     <DNI>47126216K</DNI>
     <Nombre>Ingrid</Nombre>
     <Apellido>Diaz</Apellido>
-    <Direccion>Calle florenci 23</Direccion>
-    <Email>ingrid.diaz@mail.com</Email>
-    <Telefono>6785674</Telefono>
+    <Direccion>Florenci Valls 64</Direccion>
+    <Email>idiazris@uoc.edu</Email>
+    <Telefono>610847936</Telefono>
     <VIP>true</VIP>
   </Cliente>
   <Cliente>
-    <ClienteId>1012</ClienteId>
-    <DNI>456236543A</DNI>
+    <ClienteId>6</ClienteId>
+    <UsuarioId>11</UsuarioId>
+    <DNI>47895060K</DNI>
     <Nombre>Juan</Nombre>
-    <Apellido>González</Apellido>
-    <Direccion>Calle Vieja 2</Direccion>
-    <Email>Juan.gonzalez@mail.com</Email>
-    <Telefono>9954654321</Telefono>
+    <Apellido>Lopez</Apellido>
+    <Direccion>San Mrtin550</Direccion>
+    <Email>JuanLopez@gmail.com</Email>
+    <Telefono>659043219</Telefono>
     <VIP>false</VIP>
-  </Cliente>
-  <Cliente>
-    <ClienteId>1013</ClienteId>
-    <DNI>puipui</DNI>
-    <Nombre>iñih</Nombre>
-    <Apellido>uipi</Apellido>
-    <Direccion>piuipu</Direccion>
-    <Email>ipu</Email>
-    <Telefono>upiip</Telefono>
-    <VIP>false</VIP>
-  </Cliente>
-  <Cliente>
-    <ClienteId>1014</ClienteId>
-    <DNI>5674325</DNI>
-    <Nombre>Alejandro</Nombre>
-    <Apellido>Suarez</Apellido>
-    <Direccion>San Tomass</Direccion>
-    <Email>AlejandroSuarez@gmail.com</Email>
-    <Telefono>678905435</Telefono>
-    <VIP>true</VIP>
-  </Cliente>
-  <Cliente>
-    <ClienteId>1015</ClienteId>
-    <DNI>46577925F</DNI>
-    <Nombre>Sergi</Nombre>
-    <Apellido>Sabate</Apellido>
-    <Direccion>Avenida las palmas</Direccion>
-    <Email>SergiSabate@gmail.com</Email>
-    <Telefono>678945634</Telefono>
-    <VIP>false</VIP>
-  </Cliente>
-  <Cliente>
-    <ClienteId>2016</ClienteId>
-    <DNI>4352526</DNI>
-    <Nombre>Adolfo</Nombre>
-    <Apellido>german</Apellido>
-    <Direccion>olivos</Direccion>
-    <Email>AdolfoGerman@gmail.com</Email>
-    <Telefono>654373</Telefono>
-    <VIP>false</VIP>
-  </Cliente>
-  <Cliente>
-    <ClienteId>2017</ClienteId>
-    <DNI>57434765</DNI>
-    <Nombre>Juancito</Nombre>
-    <Apellido>beredicto</Apellido>
-    <Direccion>santa coloma</Direccion>
-    <Email>juan@gmail.com</Email>
-    <Telefono>6758394</Telefono>
-    <VIP>false</VIP>
-  </Cliente>
-  <Cliente>
-    <ClienteId>2018</ClienteId>
-    <DNI>47324525</DNI>
-    <Nombre>Toni</Nombre>
-    <Apellido>Dominguez</Apellido>
-    <Direccion>San Domingo</Direccion>
-    <Email>ToniDominguez@gmail.com</Email>
-    <Telefono>6789534</Telefono>
-    <VIP>true</VIP>
-  </Cliente>
-  <Cliente>
-    <ClienteId>2019</ClienteId>
-    <DNI>48675898</DNI>
-    <Nombre>Tomas</Nombre>
-    <Apellido>Fernandez</Apellido>
-    <Direccion>Av callo</Direccion>
-    <Email>TomasFernandez@gmail.com</Email>
-    <Telefono>678946578</Telefono>
-    <VIP>true</VIP>
   </Cliente>
 </Clientes>

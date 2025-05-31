@@ -1,18 +1,83 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <Usuarios>
   <Usuario>
-    <id>1</id>
-    <nombre>admin</nombre>
-    <rol>Administrador</rol>
+    <Id>3</Id>
+    <Nombre>Ingrid</Nombre>
+    <Email>idiazris@uoc.edu</Email>
+    <Rol>Cliente</Rol>
+    <ClienteID>4</ClienteID>
+    <Contraseña>$2b$12$zUKEFxwvkwPpJW26jJnmPeOJ9L0vGDyo1xkD1Pj0hnDP4l4qidzCy</Contraseña>
   </Usuario>
   <Usuario>
-    <id>2</id>
-    <nombre>admin</nombre>
-    <rol>Administrador</rol>
+    <Id>4</Id>
+    <Nombre>Admin Prueba</Nombre>
+    <Email>admin@hotelSOL.com</Email>
+    <Rol>Administrador</Rol>
+    <ClienteID>0</ClienteID>
+    <Contraseña>$2b$12$8XHWK7vJcENIXyCTcnpaU.KOCa7sHHy7VlKXESPVxLfbU4s8cBqCu</Contraseña>
   </Usuario>
   <Usuario>
-    <id>3</id>
-    <nombre>admin</nombre>
-    <rol>Administrador</rol>
+    <Id>5</Id>
+    <Nombre>juan</Nombre>
+    <Email>juan@hotel.com</Email>
+    <Rol>Encargado</Rol>
+    <ClienteID>0</ClienteID>
+    <Contraseña>$2b$12$vAgyZNhaPTatsty7Rj8iQuXWPmRz1suaFlKblNOr/AhcmNlhVxFxq</Contraseña>
+  </Usuario>
+  <Usuario>
+    <Id>6</Id>
+    <Nombre>Dorita</Nombre>
+    <Email>Dorita@hotel.com</Email>
+    <Rol>Recepcionista</Rol>
+    <ClienteID>0</ClienteID>
+    <Contraseña>$2b$12$0fUwV7MMtK3OaY.RN8BiCudWw0yCytZa3Il1HbYLcEZZD/Yl/eMLW</Contraseña>
+  </Usuario>
+  <Usuario>
+    <Id>7</Id>
+    <Nombre>Ricardo</Nombre>
+    <Email>Ricardo@hotel.com</Email>
+    <Rol>Contable</Rol>
+    <ClienteID>0</ClienteID>
+    <Contraseña>$2b$12$PuN016r3GF3JowIsLDokyee4I29oxZtZ2vfX/gFHLtMOtz41d.B.a</Contraseña>
+  </Usuario>
+  <Usuario>
+    <Id>8</Id>
+    <Nombre>Manuela</Nombre>
+    <Email>Manuela@hotel.com</Email>
+    <Rol>Personal Limpieza</Rol>
+    <ClienteID>0</ClienteID>
+    <Contraseña>$2b$12$1w3flSqSvnweZ5e0YXbxX.uqUB5W5LGv23HwIXOgQdb0xblZN3MM.</Contraseña>
+  </Usuario>
+  <Usuario>
+    <Id>9</Id>
+    <Nombre>Alberto</Nombre>
+    <Email>Alberto@hotel.com</Email>
+    <Rol>Personal Restauración</Rol>
+    <ClienteID>0</ClienteID>
+    <Contraseña>$2b$12$AnHzviNMVtF.viNr0UM2kO77pq7V7fY.M19KnyTeR1dYucWFB/yb2</Contraseña>
+  </Usuario>
+  <Usuario>
+    <Id>11</Id>
+    <Nombre>Juan</Nombre>
+    <Email>JuanLopez@gmail.com</Email>
+    <Rol>Cliente</Rol>
+    <ClienteID>0</ClienteID>
+    <Contraseña>$2b$12$6vzAvKFxXL0F6qJ/y7vFDuVyC2xUrQRmTSNsz3kysCd3H5G9vU4wy</Contraseña>
+  </Usuario>
+  <Usuario>
+    <Id>13</Id>
+    <Nombre>Alberto</Nombre>
+    <Email>Albero@hotel.com</Email>
+    <Rol>Recepcionista</Rol>
+    <ClienteID>0</ClienteID>
+    <Contraseña>$2b$12$3.fOxCQcfO.4Ps6QemPvrOufLcRjxjLRf1wcqyrAyKwKzrjC1y6TC</Contraseña>
+  </Usuario>
+  <Usuario>
+    <Id>14</Id>
+    <Nombre>Susana</Nombre>
+    <Email>Susana@hotel.com</Email>
+    <Rol>Recepcionista</Rol>
+    <ClienteID>0</ClienteID>
+    <Contraseña>$2b$12$QYat618PUKT/m.apg6Vjt.JBTYIoW3NANvAQ5/ootF3O2xCxJ2ey6</Contraseña>
   </Usuario>
 </Usuarios>

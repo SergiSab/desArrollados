@@ -5,7 +5,7 @@ from lxml import etree
 # Configuración
 server = r'INGRID-PC'  
 database = 'HotelSOL'
-output_dir = r'C:\Users\Administrator\OneDrive\Escritorio\uni\producto2CapaDatos(P59)_DiazRisso_Ingrid\HotelSOL\SQLEXPRESS'
+output_dir = r'C:\Users\Administrator\OneDrive\Escritorio\desArrollados\SQLEXPRESS'
 output_file = os.path.join(output_dir, 'clientes.xml')
 
 # Crear carpeta si no existe
@@ -25,7 +25,7 @@ try:
     cursor = conn.cursor()
 
     cursor.execute("""
-        SELECT ClienteId, dni, nombre, apellido, direccion, email, telefono, vip
+        SELECT ClienteId, dni, nombre, apellido, direccion, email, telefono, vip, UsuarioId
         FROM Clientes
     """)
 
@@ -35,9 +35,12 @@ try:
     for row in cursor.fetchall():
         cliente_elem = etree.SubElement(root, "Cliente")
 
-        # Asegurar que ClienteId es un número entero válido
+        # Asegurar que ClienteId y UsuarioId sean números enteros válidos
         cliente_id = str(getattr(row, "ClienteId", 0)) if row.ClienteId is not None else "0"
+        usuario_id = str(getattr(row, "UsuarioId", 0)) if row.UsuarioId is not None else "0"
+
         etree.SubElement(cliente_elem, "ClienteId").text = cliente_id
+        etree.SubElement(cliente_elem, "UsuarioId").text = usuario_id
 
         # Manejar datos evitando `None`
         etree.SubElement(cliente_elem, "DNI").text = getattr(row, "dni", "") or ""
@@ -55,4 +58,4 @@ try:
     print(f"Archivo exportado correctamente: {output_file}")
 
 except Exception as e:
-    print(f" Error durante la exportación: {e}")
+    print(f"Error durante la exportación: {e}")

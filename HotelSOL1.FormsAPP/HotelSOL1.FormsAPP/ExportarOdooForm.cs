@@ -27,8 +27,8 @@ namespace HotelSOL1.FormsAPP
 
         private void btnExportar_Click(object sender, EventArgs e)
         {
-            string scriptDir = @"C:\Users\Administrator\OneDrive\Escritorio\uni\producto2CapaDatos(P59)_DiazRisso_Ingrid\HotelSOL\OdooExportScripts";
-            string importarScriptPath = @"C:\Users\Administrator\OneDrive\Escritorio\uni\producto2CapaDatos(P59)_DiazRisso_Ingrid\HotelSOL\python";
+            string scriptDir = @"C:\Users\Administrator\OneDrive\Escritorio\desArrollados\OdooExportScripts";
+            string importarScriptPath = @"C:\Users\Administrator\OneDrive\Escritorio\desArrollados\python";
 
             if (CheckBoxClientes.Checked)
             {

@@ -80,7 +80,7 @@ namespace HotelSOL.DataAccess.Services
         public decimal ObtenerPrecioHabitacion(int habitacionId)
         {
             var habitacion = _context.Habitaciones.Include(h => h.TipoHabitacion).FirstOrDefault(h => h.Id == habitacionId);
-            return habitacion?.TipoHabitacion.PrecioBase ?? 0; // 🔹 Usa el precio del tipo de habitación
+            return habitacion?.TipoHabitacion.PrecioBase ?? 0; // Usa el precio del tipo de habitación
         }
 
         // 🔹 Eliminar habitación si no tiene reservas activas
