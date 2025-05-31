@@ -2,10 +2,6 @@
 using HotelSOL.DataAccess.Models;
 using HotelSOL.DataAccess.Services;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Windows.Forms;
 
 namespace HotelSOL1.FormsAPP
 {
@@ -162,9 +158,10 @@ namespace HotelSOL1.FormsAPP
                 return;
             }
 
-            int facturaId = int.Parse(lblFacturaId.Text.Replace("Factura ID: ", "").Trim()); // ✅ Extrae el ID de la etiqueta
-
-            var pagoService = new PagoService(Program.DbContext);
+            int facturaId = int.Parse(lblFacturaId.Text.Replace("Factura ID: ", "").Trim());
+            var ctx = Program.DbContext;
+            var contService = new ContabilidadService(ctx);
+            var pagoService = new PagoService(ctx, contService);
             var pagoForm = new PagoForm(facturaId, pagoService);
             pagoForm.ShowDialog();
         }

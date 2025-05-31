@@ -1,6 +1,4 @@
 ﻿// HotelSOL1.FormsAPP/StockDialogForm.cs
-using System;
-using System.Windows.Forms;
 using HotelSOL.DataAccess.Models;
 
 namespace HotelSOL1.FormsAPP

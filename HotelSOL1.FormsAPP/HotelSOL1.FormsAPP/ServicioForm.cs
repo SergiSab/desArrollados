@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Windows.Forms;
-using HotelSOL.DataAccess.Models;
+﻿using HotelSOL.DataAccess.Models;
 using HotelSOL.DataAccess.Service;
 using HotelSOL.DataAccess.Services;
 

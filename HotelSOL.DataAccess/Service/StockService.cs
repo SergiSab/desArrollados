@@ -1,10 +1,4 @@
-﻿using System.Text;
-using System.Threading.Tasks;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using HotelSOL.DataAccess.Models;
-using Microsoft.EntityFrameworkCore;
+﻿using HotelSOL.DataAccess.Models;
 
 namespace HotelSOL.DataAccess.Service
 {

@@ -2,12 +2,6 @@
 using HotelSOL.DataAccess.Models;
 using HotelSOL.DataAccess.Service;
 using HotelSOL.DataAccess.Services;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Windows.Forms;
 
 namespace HotelSOL1.FormsAPP
 {
@@ -35,7 +29,7 @@ namespace HotelSOL1.FormsAPP
             this.facturaService = facturaService;
             this.servicioService = servicioService; // ✅ Asignar `servicioService`
 
-        
+
 
 
             // 🔹 Si el usuario autenticado es un cliente, solo puede reservar a su nombre

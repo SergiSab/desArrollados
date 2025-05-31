@@ -1,9 +1,6 @@
 ﻿// HotelSOL.DataAccess/Service/PedidoService.cs
 using HotelSOL.DataAccess.Models;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace HotelSOL.DataAccess.Service
 {
